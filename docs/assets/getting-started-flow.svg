@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360" role="img" aria-label="Book pipeline quick demo flow">
+  <style>
+    .box { fill: #0b6aa2; stroke: #0d3559; stroke-width: 2; rx: 10; ry: 10; }
+    .box-light { fill: #e6f2fb; stroke: #0d3559; stroke-width: 2; rx: 10; ry: 10; }
+    .arrow { stroke: #0d3559; stroke-width: 2; marker-end: url(#arrowhead); }
+    .text { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 16px; fill: #0d3559; font-weight: 600; }
+    .note { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 14px; fill: #0d3559; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0d3559" />
+    </marker>
+  </defs>
+  <rect x="40" y="40" width="200" height="80" class="box" />
+  <text x="140" y="85" text-anchor="middle" class="text">Run demo.sh</text>
+  <text x="140" y="110" text-anchor="middle" class="note">fiction / non-fiction / all</text>
+
+  <line x1="240" y1="80" x2="380" y2="80" class="arrow" />
+  <line x1="240" y1="120" x2="380" y2="140" class="arrow" />
+
+  <rect x="380" y="40" width="200" height="80" class="box-light" />
+  <text x="480" y="80" text-anchor="middle" class="text">Copies templates</text>
+  <text x="480" y="105" text-anchor="middle" class="note">config/ + files/ tree</text>
+
+  <rect x="380" y="160" width="200" height="80" class="box-light" />
+  <text x="480" y="200" text-anchor="middle" class="text">Drops stub content</text>
+  <text x="480" y="225" text-anchor="middle" class="note">Phase 1 → Phase 2</text>
+
+  <line x1="580" y1="80" x2="720" y2="80" class="arrow" />
+  <line x1="580" y1="200" x2="720" y2="200" class="arrow" />
+
+  <rect x="720" y="40" width="180" height="80" class="box" />
+  <text x="810" y="80" text-anchor="middle" class="text">Open outputs</text>
+  <text x="810" y="105" text-anchor="middle" class="note">demo-phase-log.md</text>
+
+  <rect x="720" y="160" width="180" height="100" class="box" />
+  <text x="810" y="195" text-anchor="middle" class="text">Show draft</text>
+  <text x="810" y="220" text-anchor="middle" class="note">chapter-0-outline.md</text>
+  <text x="810" y="240" text-anchor="middle" class="note">chapter-1-draft-v1.md</text>
+</svg>
