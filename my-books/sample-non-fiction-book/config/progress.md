@@ -14,23 +14,23 @@
 ### Overall Progress
 
 ```
-█████░░░░░░░░░░░░░░░ 19% (13,442 / 70,000 words)
+█████░░░░░░░░░░░░░░░ 21% (14,723 / 70,000 words)
 ```
 
 | Metric | Value |
 |---------|----------|
-| **Words Written** | 13,442 |
-| **Chapters Complete** | 6 / 19 (incl. intro) |
-| **Days Active** | 1 |
-| **Avg Words/Day** | 13,442 |
+| **Words Written** | 14,723 |
+| **Chapters Complete** | 7 / 19 (incl. intro) |
+| **Days Active** | 2 |
+| **Avg Words/Day** | 7,362 |
 | **Part I (Market Reality)** | ✅ Complete (3/3 chapters) |
-| **Part II (Platforms)** | 🟡 In Progress (2/3 chapters) |
+| **Part II (Platforms)** | ✅ Complete (3/3 chapters) |
 
 ### Project Phase
 
 - [x] 📋 Planning
 - [x] 🔬 Research (import completed)
-- [ ] ✍️ First draft (6/19 chapters drafted)
+- [ ] ✍️ First draft (7/19 chapters drafted)
 - [ ] ✂️ Editing
 - [ ] 🔍 Proofreading
 - [ ] ✅ Complete
@@ -47,7 +47,7 @@
 | 3 | Volatility, Leverage, Gambling | 3,500 | 2,114 | 60% | ✅ draft-v1 | 2026-01-04 |
 | 4 | eToro — Copy Trading Reality | 3,000 | 2,417 | 81% | ✅ draft-v1 | 2026-01-04 |
 | 5 | Binance — Power and Danger | 3,500 | 1,902 | 54% | ✅ draft-v1 | 2026-01-05 |
-| 6 | Coinbase and Other Platforms | 3,000 | 0 | 0% | ⬜ outline | - |
+| 6 | Coinbase and Other Platforms | 3,000 | 1,281 | 43% | ✅ draft-v1 | 2026-01-05 |
 | 7 | Bitcoin — The Gravity Center | 3,500 | 0 | 0% | ⬜ outline | - |
 | 8 | Ethereum and Altcoin Ecosystem | 3,500 | 0 | 0% | ⬜ outline | - |
 | 9 | Which Coins Deserve Capital | 3,500 | 0 | 0% | ⬜ outline | - |
@@ -119,16 +119,16 @@
 
 **2026-01-05**:
 - Drafted Chapter 5 (Binance — Power and Danger) with focus on leverage defaults, funding costs, and safety rails
-- Part II (Platforms) now 2/3 chapters drafted
-- Total draft word count: 13,442
+- Drafted Chapter 6 (Coinbase and Other Platforms) emphasizing simplicity, regulated safeguards, and platform selection rules
+- Part II (Platforms) complete — 3/3 chapters drafted
+- Total draft word count: 14,723
 
 **Next steps**:
-- Part II (Platforms): Chapters 5-6 (Binance, Coinbase) - 2 of 3 complete
 - Part III (Coins): Chapters 7-9 (Bitcoin, Ethereum, altcoins)
 - Part IV (Wins & Losses): Chapters 10-12 (personal case studies)
 - Part V (Strategy): Chapters 13-15 (regimes, risk, drawdowns)
 - Part VI (Sustainability): Chapters 16-18 (profits, compounding, mental health)
 - Conclusion: ~2,500 words
 
-**Current pace**: 13,442 words in 1 day
-**Remaining**: ~56,558 words (~5-6 more days at current pace)
+**Current pace**: 14,723 words in 2 days
+**Remaining**: ~55,277 words (~7-8 more days at current pace)
