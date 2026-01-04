@@ -1,21 +1,20 @@
 # Chapter 1 — Sketching the Idea in 20 Minutes
 
 <!-- METADATA
-version: 1
+version: 2
 status: draft
-words: 260
+words: 236
 created: demo-run
 modified: demo-run
 -->
 
 > **Purpose:** Show how the pipeline moves from a filled-out PROJECT.md to a usable first-draft page in under half an hour.
 
-1. **Frame the problem.** Define the reader's pain point in two sentences and link it to the book's promise.
-2. **Pick a single case study.** Use a real or hypothetical team sprint and include one metric (cycle time, defects, or throughput).
-3. **Note the constraint.** Mention what you are deliberately *not* covering in this short pass.
-4. **Call the next step.** Suggest what Researcher should validate before editing (e.g., citation or benchmark).
+The fastest way to lose a team is to promise momentum and deliver paperwork. This chapter opens with that gap: a head of delivery wants a thin playbook her leads can actually use this quarter, not a manifesto that dies in their inbox. The book’s promise is modest and sharp—ship a usable draft in days, keep iterating in public—and this first pass demonstrates what “usable” looks like.
 
-This stub is intentionally short so a screen recording shows the transition from outline → draft without long waits. Replace the numbered bullets with prose once Researcher signs off.
+Picture a small product team pushing to cut cycle time by 20% before their next board update. They know the bottleneck: decisions stall whenever stories jump swimlanes. In a 20-minute working session, they translate that pain into one observable metric—time from “ready for review” to “approved”—and sketch a single intervention: daily 10-minute triage with a rotating reviewer. That specificity is what turns PROJECT.md into a page people can test tomorrow.
+
+We keep the constraint explicit. This sprint leaves citations, vendor comparisons, and long-form interviews for later; the goal is to capture a plausible path that research can either validate or falsify. The brevity is deliberate so the pipeline demo shows real progress with minimal lag. Next, Researcher should pull a benchmark for teams of similar size and one contrasting example where triage failed, so the second pass can anchor the claim without bloating the prose.
 
 ---
 
