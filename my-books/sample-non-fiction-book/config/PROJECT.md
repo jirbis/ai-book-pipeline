@@ -11,7 +11,7 @@
 | **Length** | ~70,000 words / 6 parts (~18 chapters) |
 | **Language** | English |
 | **Author** | To confirm — first-person trader voice |
-| **Status** | `imported` |
+| **Status** | `drafting` |
 
 ---
 
@@ -93,7 +93,7 @@ The book speaks to overwhelmed beginners and bruised returnees who have chased p
 ### Current stage
 - [x] Research
 - [x] Planning
-- [ ] First draft
+- [x] First draft (in progress - 7% complete)
 - [ ] Editing
 - [ ] Final proofread
 
@@ -101,18 +101,43 @@ The book speaks to overwhelmed beginners and bruised returnees who have chased p
 
 | Chapter/Section | Status | Words | Last update |
 | --- | --- | --- | --- |
-| Introduction | outline | 0 | import pass |
-| Part I — Market Reality | outline | 0 | import pass |
-| Part II — Platforms | outline | 0 | import pass |
-| Part III — Coins | outline | 0 | import pass |
-| Part IV — Wins & Losses | outline | 0 | import pass |
-| Part V — Strategy | outline | 0 | import pass |
-| Part VI — Sustainability | outline | 0 | import pass |
-| Conclusion | outline | 0 | import pass |
+| Introduction | draft-v1 ✅ | ~1,900 | 2026-01-04 |
+| Ch 1 — Why Most Traders Lose | draft-v1 ✅ | ~2,800 | 2026-01-04 |
+| Part I (Ch 2-3) — Market Reality | outline/stub | ~500 | 2026-01-04 |
+| Part II — Platforms | outline | 0 | - |
+| Part III — Coins | outline | 0 | - |
+| Part IV — Wins & Losses | outline | 0 | - |
+| Part V — Strategy | outline | 0 | - |
+| Part VI — Sustainability | outline | 0 | - |
+| Conclusion | outline | 0 | - |
+
+**Total**: ~5,200 / 70,000 words (7.4%)
 
 ---
 
 ## Notes
+
+**Import & Setup (2026-01-04)**:
+- Import completed: crypto-trader-synopsis.md processed
+- Book structure: 6 parts, ~18 chapters, ~70,000 words target
+- Personal narrative style: first-person trading experiences
+- Focus platforms: eToro, Binance, Coinbase
+- Key message: survive by not losing, systematic over emotional trading
+
+**Author Voice (2026-01-04)**:
+- author-voice.md generated from Introduction + Chapter 1 analysis (~4,700 words)
+- Core voice: "First-person confessional trading memoir: brutally honest, conversational, self-deprecating"
+- Key features: Specific dollar amounts, setup-setup-punch rhythm, blunt truth-telling
+- Balance: 30% personal narrative, 40% frameworks, 30% concepts
+- Critical: DO NOT soften blunt language during editing
+
+**Content Status**:
+- Introduction draft (~1,900 words): $47k loss story, sets expectations
+- Chapter 1 draft (~2,800 words): Why most traders lose money
+- Chapters 2-3: Stubs (~500 words combined)
+- Total progress: 5,200 / 70,000 words (7.4%)
+
+**To Do**:
 - Validate platform-specific details (fees, custody limitations, regional restrictions)
 - Collect statistics on leverage liquidation rates and survival curves for new traders
 - Capture personal trade logs to expand Part IV case studies
