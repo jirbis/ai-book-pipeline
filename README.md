@@ -6,6 +6,13 @@
 
 **What this is not:** A single-click book generator or a replacement for your judgment as an author or editor.
 
+## Example prompts to try early
+
+- "Import my book materials for `my-books/my-great-book/` from `files/import`."
+- "Outline a three-chapter structure for `my-books/my-first-book` based on the notes in `config/PROJECT.md`."
+- "Draft chapter 1 for `my-books/sample-non-fiction-book` using the author voice in `config/author-voice.md`."
+- "Review and proofread the draft in `my-books/sample-fiction-book/edits/chapter-2.md` before exporting."
+
 ## Who this is for
 
 - Authors of non-fiction, fiction, and expert guides
