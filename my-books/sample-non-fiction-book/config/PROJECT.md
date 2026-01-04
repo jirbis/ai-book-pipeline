@@ -93,7 +93,7 @@ The book speaks to overwhelmed beginners and bruised returnees who have chased p
 ### Current stage
 - [x] Research
 - [x] Planning
-- [x] First draft (in progress - 7% complete)
+- [x] First draft (in progress - 13% complete)
 - [ ] Editing
 - [ ] Final proofread
 
@@ -101,17 +101,18 @@ The book speaks to overwhelmed beginners and bruised returnees who have chased p
 
 | Chapter/Section | Status | Words | Last update |
 | --- | --- | --- | --- |
-| Introduction | draft-v1 ✅ | ~1,900 | 2026-01-04 |
-| Ch 1 — Why Most Traders Lose | draft-v1 ✅ | ~2,800 | 2026-01-04 |
-| Part I (Ch 2-3) — Market Reality | outline/stub | ~500 | 2026-01-04 |
-| Part II — Platforms | outline | 0 | - |
-| Part III — Coins | outline | 0 | - |
-| Part IV — Wins & Losses | outline | 0 | - |
-| Part V — Strategy | outline | 0 | - |
-| Part VI — Sustainability | outline | 0 | - |
+| Introduction | draft-v1 ✅ | 1,894 | 2026-01-04 |
+| Ch 1 — Why Most Traders Lose | draft-v1 ✅ | 2,812 | 2026-01-04 |
+| Ch 2 — How Exchanges Make Money | draft-v1 ✅ | 2,302 | 2026-01-04 |
+| Ch 3 — Volatility, Leverage, Gambling | draft-v1 ✅ | 2,114 | 2026-01-04 |
+| Part II (Ch 4-6) — Platforms | outline | 0 | - |
+| Part III (Ch 7-9) — Coins | outline | 0 | - |
+| Part IV (Ch 10-12) — Wins & Losses | outline | 0 | - |
+| Part V (Ch 13-15) — Strategy | outline | 0 | - |
+| Part VI (Ch 16-18) — Sustainability | outline | 0 | - |
 | Conclusion | outline | 0 | - |
 
-**Total**: ~5,200 / 70,000 words (7.4%)
+**Total**: 9,122 / 70,000 words (13.0%)
 
 ---
 
@@ -131,11 +132,14 @@ The book speaks to overwhelmed beginners and bruised returnees who have chased p
 - Balance: 30% personal narrative, 40% frameworks, 30% concepts
 - Critical: DO NOT soften blunt language during editing
 
-**Content Status**:
-- Introduction draft (~1,900 words): $47k loss story, sets expectations
-- Chapter 1 draft (~2,800 words): Why most traders lose money
-- Chapters 2-3: Stubs (~500 words combined)
-- Total progress: 5,200 / 70,000 words (7.4%)
+**Content Status (2026-01-04)**:
+- Introduction draft (1,894 words): $47k liquidation loss story, sets realistic expectations
+- Chapter 1 draft (2,812 words): Why most traders lose money (zero-sum game, fees, emotional vs systematic)
+- Chapter 2 draft (2,302 words): How exchanges make money ($261 in fees, copy trading illusion, opportunity cost)
+- Chapter 3 draft (2,114 words): Volatility vs leverage ($8k liquidation, 5x wiped 6 months gains, spot holdings survive)
+- **Part I (Market Reality) Complete**: Chapters 1-3 drafted
+- Total progress: 9,122 / 70,000 words (13.0%)
+- Remaining: Chapters 4-18 + Conclusion (~60,878 words)
 
 **To Do**:
 - Validate platform-specific details (fees, custody limitations, regional restrictions)
