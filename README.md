@@ -1,4 +1,4 @@
-# Book Pipeline
+# Book Pipeline for Claude Code Agents
 
 **AI-guided book creation, from idea to publication.**
 
