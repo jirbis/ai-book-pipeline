@@ -1,230 +1,64 @@
-# README FOR HUMANS:
- [https://jirbis.github.io/ai-book-pipeline](https://jirbis.github.io/ai-book-pipeline)
-
-
 # Book Pipeline for Claude Code Agents
 
-Pipeline for writing books with AI agents via Claude Code.
+**AI-guided book creation, from idea to publication.**
 
+**What this is:** A guided workflow where specialized AI agents help you research, draft, edit, and package a book using simple folder-based files.
 
-## New here?
+**What this is not:** A single-click book generator or a replacement for your judgment as an author or editor.
 
-See [docs/getting-started.md](docs/getting-started.md) for one-command demos (fiction and non-fiction) plus ready-made outputs for screenshots/GIFs.
+## Who this is for
 
-## Project Structure
+- Authors of non-fiction, fiction, and expert guides
+- Small publishers and editors coordinating manuscripts
+- Teams experimenting with AI agent workflows for content production
 
-```
-book-pipeline/
-├── README.md                    # This file
-│
-├── engine/                      # Framework engine
-│   ├── book-templates/          # Templates for creating new books
-│   │   ├── fiction/             # Templates for fiction literature
-│   │   │   ├── TEMPLATE.md      # Master structure template
-│   │   │   ├── world.md         # World/setting template
-│   │   │   ├── characters.md    # Characters template
-│   │   │   ├── plot.md          # Plot template
-│   │   │   ├── chapter.md       # Chapter template
-│   │   │   └── scenes.md        # Scenes template
-│   │   │
-│   │   ├── non-fiction/         # Templates for non-fiction
-│   │   │   ├── TEMPLATE.md      # Master structure template
-│   │   │   ├── outline.md       # Book outline template
-│   │   │   ├── chapter.md       # Chapter template
-│   │   │   ├── research.md      # Research template
-│   │   │   └── bibliography.md  # Bibliography template
-│   │   │
-│   │   ├── PROJECT.md           # Project file template
-│   │   ├── author-voice.md      # Shared template
-│   │   ├── progress.md          # Shared template
-│   │   ├── review-checklist.md  # Shared template
-│   │   └── style-guide.md       # Shared template
-│   │
-│   ├── agents/                  # Agent configurations
-│   │   ├── AGENTS.md            # Description of agent roles
-│   │   ├── WORKFLOW.md          # Workflow (6 phases)
-│   │   ├── INTEGRATION.md       # Integration with Claude Code
-│   │   ├── orchestrator.md      # Main coordinator
-│   │   ├── importer.md          # Import existing materials
-│   │   ├── writer.md            # Writer agent
-│   │   ├── editor.md            # Editor agent
-│   │   ├── researcher.md        # Researcher agent
-│   │   ├── critic.md            # Critic agent
-│   │   ├── proofreader.md       # Final proofreading
-│   │   └── publisher.md         # Publishing
-│   │
-│   └── STRUCTURE.md             # Project structure description
-│
-└── my-books/                    # Your books
-    ├── sample-fiction-book/     # Fiction example (generated)
-    │   ├── config/              # Configuration for this book
-    │   │   ├── PROJECT.md       # Project metadata
-    │   │   ├── characters.md    # Characters (for fiction)
-    │   │   ├── plot.md          # Plot (for fiction)
-    │   │   ├── world.md         # World (for fiction)
-    │   │   ├── style-guide.md   # Style for this book
-    │   │   └── progress.md      # Progress for this book
-    │   │
-    │   ├── files/               # Working files for THIS book
-    │   │   ├── import/          # Import materials
-    │   │   ├── content/         # Chapter content
-    │   │   ├── research/        # Research
-    │   │   ├── edits/           # Editing reports
-    │   │   ├── reviews/         # Reviews
-    │   │   ├── proofread/       # Proofreading reports
-    │   │   ├── handoff/         # Handoff between agents
-    │   │   └── output/          # Final files (DOCX, PDF, EPUB)
-    │   │
-    │   └── README.md
-    │
-    └── sample-non-fiction-book/ # Non-fiction example (generated)
-        ├── config/              # Configuration for this book
-        ├── files/               # Working files for THIS book
-        └── README.md
-```
+## Quickstart (5–10 minutes)
 
-## Quick Start
+1. Clone the repo: `git clone <repo-url> && cd book-pipeline`.
+2. Copy the example book: `cp -r my-books/sample-non-fiction-book my-books/my-first-book` (or the fiction sample).
+3. Set the author voice: edit `my-books/my-first-book/config/author-voice.md` to reflect tone and examples you like.
+4. Run the first agent step to drop in ready-to-open files: `bash engine/demo.sh non-fiction --reset --book my-books/my-first-book` (swap to `fiction` if you copied that sample).
 
-### 1. Creating a New Project
+## Pipeline roles (at a glance)
 
-For a fast walkthrough with pre-seeded files, run `bash engine/demo.sh fiction --reset` (or `non-fiction`) from the repo root. It will populate the matching sample project in `my-books/sample-*/files` with stub Phase 1 → Phase 2 outputs you can open immediately.
+- **ORCHESTRATOR:** Coordinates the project and hands tasks to other agents.
+- **RESEARCHER:** Finds facts, sources, and supporting material.
+- **WRITER:** Drafts chapters that follow your outline and voice.
+- **EDITOR:** Improves structure, clarity, and flow.
+- **CRITIC:** Reviews for gaps, consistency, and quality issues.
+- **PROOFREADER:** Catches typos and formatting issues before release.
+- **PUBLISHER:** Assembles the final manuscript and exports files.
 
-```bash
-# Create directory structure for new book
-mkdir -p my-books/my-new-book/{config,files/{import,content,research,edits,reviews,handoff,proofread,output}}
-
-# Copy templates
-# For fiction:
-cp engine/book-templates/PROJECT.md my-books/my-new-book/config/
-cp engine/book-templates/author-voice.md my-books/my-new-book/config/
-cp engine/book-templates/progress.md my-books/my-new-book/config/
-cp engine/book-templates/review-checklist.md my-books/my-new-book/config/
-cp engine/book-templates/style-guide.md my-books/my-new-book/config/
-cp engine/book-templates/fiction/*.md my-books/my-new-book/config/
-
-# For non-fiction:
-cp engine/book-templates/PROJECT.md my-books/my-new-book/config/
-cp engine/book-templates/author-voice.md my-books/my-new-book/config/
-cp engine/book-templates/progress.md my-books/my-new-book/config/
-cp engine/book-templates/review-checklist.md my-books/my-new-book/config/
-cp engine/book-templates/style-guide.md my-books/my-new-book/config/
-cp engine/book-templates/non-fiction/*.md my-books/my-new-book/config/
-
-# Fill in project metadata
-# Edit my-books/my-new-book/config/PROJECT.md
-```
-
-### 2. Choose Book Type
-
-- **Non-fiction**: Use templates from `engine/book-templates/non-fiction/`
-- **Fiction**: Use templates from `engine/book-templates/fiction/`
-- **Shared**: Common files from `engine/book-templates/` (style-guide, progress, etc.)
-
-### 3. Running Agents
-
-Agents work in the following order:
-1. **Orchestrator** — plans and coordinates
-2. **Researcher** — gathers information (for non-fiction)
-3. **Writer** — writes content
-4. **Editor** — edits and improves
-5. **Critic** — final quality check
-
-## Using with Claude Code
-
-The framework works through the Claude Code agent system:
+## Project structure
 
 ```
-1. Create structure for new book in my-books/<book-name>/
-2. Fill in config/PROJECT.md with your data
-3. Read engine/agents/WORKFLOW.md to understand the process
-4. Run: "Initialize book project according to WORKFLOW.md"
-5. ORCHESTRATOR will create structure and launch agents
-6. Agents work in phases: Research → Write → Edit → Review
-7. Progress is tracked in my-books/<book-name>/config/progress.md
+my-books/
+  example-book/
+    config/
+    research/
+    drafts/
+    edits/
+    reviews/
+    output/
 ```
 
-**Important**: Agents use Claude Code tools (Read, Write, Edit, Grep, WebSearch).
+## Concrete example: idea → research → first chapter → reviewed output
 
-**Documentation**:
-- 📘 `engine/agents/INTEGRATION.md` — **Start here!** Integration with Claude Code
-- 🔄 `engine/agents/WORKFLOW.md` — Workflow (6 phases: Import → Init → Draft → Edit → Review → Publish)
-- 🤖 `engine/agents/AGENTS.md` — Description of agents and their roles
-- 🎨 `engine/book-templates/author-voice.md` — Template for describing author voice
+1. You jot down a book idea and brief outline in `config/PROJECT.md`.
+2. The RESEARCHER gathers key facts and notes into `research/chapter-1-research.md`.
+3. The WRITER produces a first chapter draft that matches your voice.
+4. The EDITOR polishes it, the CRITIC reviews it, and you receive a clean, commented file ready for your approval.
 
-### Agent quick references
-- `CLAUDE.md` — Claude Code quick-start aligned with the current workflow and file naming
-- `CODEX.md` — Codex counterpart that mirrors the same workflow expectations and commands
+## Learn more
 
-## Command-Line Helper
+- One-command demo with ready-made outputs: see `docs/getting-started.md`.
+- Agent workflow details: `engine/agents/WORKFLOW.md` and `engine/agents/AGENTS.md`.
+- Using an AI coding agent? Point it to `CLAUDE.md` for commands and structure guidance.
 
-You can drive common workflow steps without memorizing every path:
+## License & attribution
 
-```bash
-# Create structure and copy templates into my-books/my-new-book/config/
-python -m engine.cli init my-new-book --type fiction
+MIT License
 
-# Check required files and directories for a book
-python -m engine.cli status my-new-book
+Developed and maintained by Jirbis GmbH
 
-# Show workflow guidance for a specific phase (0-5 or alias)
-python -m engine.cli phase my-new-book 2     # Writing Drafts
-python -m engine.cli phase my-new-book edit  # Editing
-
-# View the sample-book generation steps tied to your author voice
-python -m engine.cli samples my-new-book
-```
-
-## New Features
-
-### 📥 Import Existing Materials (Phase 0)
-
-If you already have drafts:
-
-```bash
-# 1. Create directory for book (if not already created)
-mkdir -p my-books/my-book/files/import
-
-# 2. Place files in my-books/my-book/files/import/
-# 3. Run import
-claude "Run import of materials from my-books/my-book/files/import/"
-
-# IMPORTER will automatically:
-# - Determine content type
-# - Create config/PROJECT.md and other configuration files
-# - Organize materials into files/content/, files/research/, etc.
-# - Extract your author voice into config/author-voice.md
-```
-
-### 🎨 Author Voice
-
-The framework preserves your unique writing style:
-
-```bash
-# After import or writing first chapters:
-# - config/author-voice.md is automatically filled
-# - All agents follow your voice
-# - PROOFREADER protects your authorial features
-
-# Generate examples in your style:
-claude "Generate sample fiction book based on config/author-voice.md"
-```
-
-**Sample books** — these are 3 sample chapters written in your style for:
-- Validating the extracted voice
-- Demonstrating how the book will sound
-- Training agents in your style
-
-### ✅ Final Author Review
-
-Before publication (Phase 4.5-4.8):
-1. **Author reviews** the AI's work
-2. **Edits are made** by agents
-3. **PROOFREADER** final proofreading (6 passes)
-4. **Publication** only after author approval
-
-## Working Principles
-
-1. **Incremental** — write in parts, save progress
-2. **Consistency** — follow style-guide
-3. **Versioning** — use Git for change history
-4. **Review** — each chapter goes through editor and critic
+GitHub Pages: https://jirbis.github.io/book-pipeline
