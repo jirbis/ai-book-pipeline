@@ -1,111 +1,111 @@
-# Non-Fiction Book Template
+# TEMPLATE.md — Master template for non-fiction books
 
-Мастер-шаблон для создания нон-фикшн книг.
-
-## Типичная структура Non-Fiction
+## Typical Non-Fiction Structure
 
 ```
-book/
-├── front-matter/
-│   ├── title.md           # Титульная страница
-│   ├── dedication.md      # Посвящение
-│   ├── preface.md         # Предисловие автора
-│   └── introduction.md    # Введение
-│
-├── content/
-│   ├── part-1/
-│   │   ├── chapter-01.md
-│   │   ├── chapter-02.md
-│   │   └── chapter-03.md
-│   ├── part-2/
-│   │   ├── chapter-04.md
-│   │   └── ...
-│   └── conclusion.md
-│
-├── back-matter/
-│   ├── appendix-a.md      # Приложения
-│   ├── glossary.md        # Глоссарий
-│   ├── bibliography.md    # Библиография
-│   ├── notes.md           # Примечания
-│   └── index.md           # Указатель
-│
+project/
+├── PROJECT.md         # Book configuration
+├── config/
+│   ├── outline.md     # High-level plan
+│   ├── style-guide.md # Voice, tone, formatting
+│   ├── progress.md    # Progress tracker
+│   └── research.md    # Research tracker
+└── files/
+    ├── content/
+    │   ├── title.md           # Title page
+    │   ├── dedication.md      # Dedication
+    │   ├── preface.md         # Author preface
+    │   └── introduction.md    # Introduction
+    ├── chapters/
+    │   ├── chapter-01.md
+    │   ├── chapter-02.md
+    │   └── ...
+    ├── appendix-a.md      # Appendices
+    ├── glossary.md        # Glossary
+    ├── bibliography.md    # Bibliography
+    ├── notes.md           # Notes
+    └── index.md           # Index
+```
+
+Auxiliary folders:
+```
+files/
 └── research/
-    ├── sources.md         # Список источников
-    ├── interviews.md      # Материалы интервью
-    ├── data.md            # Данные и статистика
-    └── quotes.md          # Цитаты
+    ├── sources.md         # Source list
+    ├── interviews.md      # Interview materials
+    ├── data.md            # Data and statistics
+    └── quotes.md          # Quotes
 ```
 
-## Жанры Non-Fiction
+## Non-Fiction Genres
 
-### Практическое руководство (How-To)
-- Фокус: пошаговые инструкции
-- Структура: проблема → решение → практика
-- Элементы: чек-листы, упражнения, примеры
+### Practical guide (How-To)
+- Focus: step-by-step instructions
+- Structure: problem → solution → practice
+- Elements: checklists, exercises, examples
 
-### Бизнес-книга
-- Фокус: концепция + кейсы
-- Структура: идея → обоснование → применение
-- Элементы: исследования, истории компаний, фреймворки
+### Business book
+- Focus: concept + case studies
+- Structure: idea → justification → application
+- Elements: research, company stories, frameworks
 
-### Научно-популярная
-- Фокус: объяснение сложного простыми словами
-- Структура: история открытия → суть → значение
-- Элементы: аналогии, визуализации, эксперименты
+### Popular science
+- Focus: explain the complex in simple words
+- Structure: discovery story → essence → significance
+- Elements: analogies, visuals, experiments
 
-### Мемуары / Биография
-- Фокус: личная история с универсальным уроком
-- Структура: хронологическая или тематическая
-- Элементы: диалоги, сцены, рефлексия
+### Memoir / Biography
+- Focus: personal story with a universal lesson
+- Structure: chronological or thematic
+- Elements: dialogue, scenes, reflection
 
-### Self-Help
-- Фокус: трансформация читателя
-- Структура: диагностика → метод → результат
-- Элементы: тесты, практики, истории успеха
+### Transformation / Self-help
+- Focus: reader transformation
+- Structure: diagnosis → method → result
+- Elements: tests, practices, success stories
 
-## Рабочий процесс
+## Workflow
 
-### Фаза 1: Исследование
-1. Собрать источники → `research/sources.md`
-2. Провести интервью → `research/interviews.md`
-3. Систематизировать данные → `research/data.md`
-4. Выписать ключевые цитаты → `research/quotes.md`
+### Phase 1: Research
+1. Gather sources → `research/sources.md`
+2. Conduct interviews → `research/interviews.md`
+3. Systematize data → `research/data.md`
+4. Collect key quotes → `research/quotes.md`
 
-### Фаза 2: Планирование
-1. Определить "большую идею" книги
-2. Создать `outline.md` — детальный план
-3. Для каждой главы определить:
-   - Главный тезис
-   - Поддерживающие аргументы
-   - Примеры и истории
-   - Практические выводы
+### Phase 2: Planning
+1. Define the book’s “big idea”
+2. Create `outline.md` — detailed plan
+3. For each chapter define:
+   - Main thesis
+   - Supporting arguments
+   - Examples and stories
+   - Practical takeaways
 
-### Фаза 3: Написание
-1. Писать по главам в порядке, удобном автору
-2. Каждая глава → отдельный файл
-3. Первый черновик — без редактуры
-4. Цель: 500-2000 слов за сессию
+### Phase 3: Writing
+1. Write chapters in the order convenient to the author
+2. Each chapter → separate file
+3. First draft — no editing
+4. Goal: 500–2000 words per session
 
-### Фаза 4: Редактура
-1. Структурная редактура (порядок, логика)
-2. Стилистическая редактура (ясность, голос)
-3. Линейная редактура (предложения, слова)
-4. Корректура (грамматика, пунктуация)
+### Phase 4: Editing
+1. Structural edit (order, logic)
+2. Stylistic edit (clarity, voice)
+3. Line edit (sentences, wording)
+4. Proofread (grammar, punctuation)
 
-## Ключевые метрики
+## Key Metrics
 
-| Метрика | Целевое значение |
-|---------|------------------|
-| Слов на главу | 3,000-7,000 |
-| Глав в книге | 8-15 |
-| Общий объём | 40,000-80,000 слов |
-| Читаемость (Flesch) | 50-70 (для mass market) |
+| Metric | Target value |
+| --- | --- |
+| Words per chapter | 3,000–7,000 |
+| Chapters in book | 8–15 |
+| Total length | 40,000–80,000 words |
+| Readability (Flesch) | 50–70 (for mass market) |
 
-## Чек-лист главы Non-Fiction
-
-- [ ] Есть ясный главный тезис
-- [ ] Логичная структура аргументации
-- [ ] Минимум 2-3 конкретных примера
-- [ ] Данные подкреплены источниками
-- [ ] Практический вывод для читателя
-- [ ] Переход к следующей главе
+## Chapter Checklist (Non-Fiction)
+- [ ] Clear main thesis
+- [ ] Logical argument structure
+- [ ] At least 2–3 concrete examples
+- [ ] Data backed by sources
+- [ ] Practical takeaway for the reader
+- [ ] Transition to the next chapter

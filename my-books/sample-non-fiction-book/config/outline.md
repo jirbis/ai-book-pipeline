@@ -1,109 +1,93 @@
-# Outline — План книги
+# Outline — Book Plan
 
-## Обзор
+## Overview
 
-**Название**: [Рабочее название]  
-**Подзаголовок**: [Уточняющий подзаголовок]  
-**Главная идея**: [Одно предложение — что читатель получит]
+**Title**: [Working title]  
+**Subtitle**: [Clarifying subtitle]  
+**Big idea**: [One sentence — what the reader gets]
 
-## Структура книги
+## Book Structure
 
-### Введение
-**Цель**: Захватить внимание, объяснить зачем читать
+### Introduction
+**Goal**: Grab attention, explain why to read
+- [ ] Hook (story, statistic, provocative question)
+- [ ] Problem the book solves
+- [ ] Promise to the reader
+- [ ] Brief structure overview
+- [ ] About the author (why I can write this)
+**Length**: ~2,000–3,000 words
 
-- [ ] Хук (история, статистика, провокационный вопрос)
-- [ ] Проблема, которую решает книга
-- [ ] Обещание читателю
-- [ ] Краткий обзор структуры
-- [ ] Об авторе (почему я могу об этом писать)
+### Part I: [Part title]
+**Focus**: [What this part covers]
 
-**Объём**: ~2,000-3,000 слов
+#### Chapter 1: [Title]
+**Main thesis**: [One sentence]
 
----
+**Structure**:
+1. Opening story/example
+2. Key concept #1
+3. Key concept #2
+4. Evidence and data
+5. Practical application
+6. Conclusions and transition
 
-### Часть I: [Название части]
-**Фокус**: [Что охватывает эта часть]
+**Sources for the chapter**:
+- [ ] [Source 1]
+- [ ] [Source 2]
 
-#### Глава 1: [Название]
-**Главный тезис**: [Одно предложение]
+**Examples/Cases**:
+- [ ] [Example 1]
+- [ ] [Example 2]
 
-**Структура**:
-1. Открывающая история/пример
-2. Ключевая концепция #1
-3. Ключевая концепция #2
-4. Доказательства и данные
-5. Практическое применение
-6. Выводы и переход
+#### Chapter 2: [Title]
+**Main thesis**: [One sentence]
 
-**Источники для главы**:
-- [ ] [Источник 1]
-- [ ] [Источник 2]
+**Structure**:
+1. Opening story/example
+2. Key concept #1
+3. Key concept #2
+4. Evidence and data
+5. Practical application
+6. Conclusions and transition
 
-**Примеры/Кейсы**:
-- [ ] [Пример 1]
-- [ ] [Пример 2]
+### Part II: [Part title]
+**Focus**: [What this part covers]
 
----
+#### Chapter 3: [Title]
+[Same structure]
 
-#### Глава 2: [Название]
-**Главный тезис**: [Одно предложение]
+### Conclusion
+**Goal**: Synthesis, call to action, inspiration
+- [ ] Brief summary of key ideas
+- [ ] Unifying concept
+- [ ] Concrete next steps for the reader
+- [ ] Inspiring ending
+**Length**: ~2,000–3,000 words
 
-**Структура**:
-1. ...
-2. ...
+## Additional Materials
 
----
+### Appendices
+- [ ] Appendix A: [Title] — [Description]
+- [ ] Appendix B: [Title] — [Description]
 
-### Часть II: [Название части]
-**Фокус**: [Что охватывает эта часть]
+### Glossary
+- [ ] Needed: yes/no
+- [ ] Approximate number of terms: ___
 
-#### Глава 3: [Название]
-...
+### Bibliography
+- [ ] Citation format: [APA/MLA/Chicago/other]
+- [ ] Approximate number of sources: ___
 
----
+## Writing Timeline
 
-### Заключение
-**Цель**: Синтез, призыв к действию, вдохновение
+| Item | Deadline | Status |
+| --- | --- | --- |
+| Research | | ⬜ |
+| Introduction | | ⬜ |
+| Chapter 1 | | ⬜ |
+| Chapter 2 | | ⬜ |
+| Conclusion | | ⬜ |
+| Editing | | ⬜ |
 
-- [ ] Краткое резюме ключевых идей
-- [ ] Объединяющая концепция
-- [ ] Конкретные следующие шаги для читателя
-- [ ] Вдохновляющий финал
-
-**Объём**: ~2,000-3,000 слов
-
----
-
-## Дополнительные материалы
-
-### Приложения
-- [ ] Приложение A: [Название] — [Описание]
-- [ ] Приложение B: [Название] — [Описание]
-
-### Глоссарий
-- [ ] Нужен: да/нет
-- [ ] Примерное количество терминов: ___
-
-### Библиография
-- [ ] Формат цитирования: [APA/MLA/Chicago/другой]
-- [ ] Примерное количество источников: ___
-
----
-
-## Хронология написания
-
-| Элемент | Дедлайн | Статус |
-|---------|---------|--------|
-| Исследование | | ⬜ |
-| Введение | | ⬜ |
-| Глава 1 | | ⬜ |
-| Глава 2 | | ⬜ |
-| ... | | ⬜ |
-| Заключение | | ⬜ |
-| Редактура | | ⬜ |
-
----
-
-## Заметки к плану
-
-[Место для заметок, альтернативных идей, вопросов]
+## Notes for the Plan
+[Space for notes, alternate ideas, questions]

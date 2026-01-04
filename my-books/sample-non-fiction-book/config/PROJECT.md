@@ -1,110 +1,100 @@
-# PROJECT.md — Конфигурация проекта книги
+# PROJECT.md — Book Project Configuration
 
-## Метаданные
+## Metadata
 
-| Поле | Значение |
-|------|----------|
-| **Название** | The Productivity Paradox: Why Doing Less Achieves More |
-| **Тип** | `non-fiction` |
-| **Жанр** | Business / Self-Help / Productivity |
-| **Целевая аудитория** | Professionals 30-50, knowledge workers, entrepreneurs |
-| **Объём** | ~60,000 слов / 12 глав |
-| **Язык** | Английский |
-| **Автор** | Sample Author |
-| **Статус** | `planning` |
+| Field | Value |
+| --- | --- |
+| **Title** | The Productivity Paradox: Why Doing Less Achieves More |
+| **Type** | `non-fiction` |
+| **Genre** | Business / Self-Help / Productivity |
+| **Target audience** | Professionals 30–50, knowledge workers, entrepreneurs |
+| **Length** | ~60,000 words / 12 chapters |
+| **Language** | English |
+| **Author** | Sample Author |
+| **Status** | `planning` |
 
-## Концепция
+---
 
-### Логлайн (1 предложение)
-> A research-backed guide to achieving more by strategically doing less, challenging the culture of perpetual busyness.
+## Concept
 
-### Синопсис (1 абзац)
-We've been sold a lie: that more hours, more tasks, and more hustle equals more success. Drawing from cognitive science, organizational psychology, and real-world case studies, this book reveals why the most productive people aren't the busiest—they're the most strategic. Learn the frameworks used by top performers to identify high-impact work, eliminate decision fatigue, and create sustainable productivity systems that actually work.
+### Logline (1 sentence)
 
-### Ключевые темы
-1. Quality over quantity в работе
-2. Когнитивная нагрузка и decision fatigue
-3. Системное мышление vs тактическая суета
-4. Sustainable productivity vs burnout
+[Fill in]
 
-## Структура
+### Synopsis (1 paragraph)
 
-### Формат
-- [x] Главы с номерами
-- [ ] Части + главы
-- [x] Главы с названиями
-- [ ] Другое: ___
+[Fill in]
 
-### План (высокоуровневый)
+### Key themes
+1. Quality over quantity at work
+2. Cognitive load and decision fatigue
+3. Systems thinking vs. tactical busywork
 
-```
-Part I: The Problem (Chapters 1-3)
-  - Chapter 1: The Busy Trap — why we confuse activity with achievement
-  - Chapter 2: The Science of Cognitive Load
-  - Chapter 3: The Cost of Context Switching
+---
 
-Part II: The Framework (Chapters 4-8)
-  - Chapter 4: Impact Mapping — identifying high-leverage work
-  - Chapter 5: Energy Management Over Time Management
-  - Chapter 6: The Art of Strategic Saying No
-  - Chapter 7: Systems Over Goals
-  - Chapter 8: Deep Work Protocols
+## Structure
 
-Part III: Implementation (Chapters 9-12)
-  - Chapter 9: Designing Your Ideal Week
-  - Chapter 10: Tools and Technology
-  - Chapter 11: Team and Organizational Applications
-  - Chapter 12: Sustaining the Practice
-```
+### Format
+- [x] Numbered chapters
+- [ ] Parts + chapters
+- [x] Chapters with titles
+- [ ] Other: ___
 
-## Стиль
+### High-level plan
+[Outline of parts/chapters]
 
-### Тон
-- [ ] Формальный
-- [x] Разговорный
-- [ ] Академический
-- [ ] Художественный
-- [ ] Другое: ___
+---
 
-### Повествование (для fiction)
-N/A
+## Style
 
-### Особенности стиля
-Conversational but authoritative. Use stories and case studies to illustrate concepts. Balance research citations with practical applications. Short paragraphs, clear headings, actionable takeaways.
+### Tone
+- [ ] Formal
+- [x] Conversational
+- [ ] Academic
+- [ ] Fictional
+- [ ] Other: ___
 
-## Референсы
+### Narrative (for fiction)
+[Not applicable]
 
-### Похожие книги
-1. Deep Work (Cal Newport) — фокус на концентрацию
-2. Essentialism (Greg McKeown) — философия "less but better"
-3. Four Thousand Weeks (Oliver Burkeman) — философский взгляд на time management
+### Style notes
+[Fill in]
 
-### Источники (для non-fiction)
-- Cognitive psychology research on decision fatigue
-- Organizational behavior studies
-- Case studies from Fortune 500 companies
-- Interviews with high performers across industries
+---
 
-## Рабочий процесс
+## References
 
-### Текущий этап
-- [x] Исследование
-- [x] Планирование
-- [ ] Первый черновик
-- [ ] Редактура
-- [ ] Финальная вычитка
+### Comparable books
+1. Deep Work (Cal Newport) — focus on concentration
+2. Essentialism (Greg McKeown) — “less but better” philosophy
+3. Four Thousand Weeks (Oliver Burkeman) — philosophical take on time management
 
-### Прогресс
+### Sources (for non-fiction)
+[List of key research sources]
 
-| Глава | Статус | Слов | Последнее обновление |
-|-------|--------|------|---------------------|
-| 1 | outline | 0 | 2026-01-02 |
-| 2 | outline | 0 | 2026-01-02 |
-| 3-12 | planning | 0 | - |
+---
 
-## Заметки
+## Workflow
 
-- Нужно провести 5-10 интервью с топ-перформерами
-- Собрать актуальные исследования (последние 5 лет)
-- Разработать практические упражнения для каждой главы
-- Создать downloadable workbook/templates
+### Current stage
+- [x] Research
+- [x] Planning
+- [ ] First draft
+- [ ] Editing
+- [ ] Final proofread
+
+### Progress
+
+| Chapter | Status | Words | Last update |
+| --- | --- | --- | --- |
+| 0 | [status] | 0 | [date] |
+| 1 | [status] | 0 | [date] |
+| ... | | | |
+
+---
+
+## Notes
+- Need to conduct 5–10 interviews with top performers
+- Collect recent studies (last 5 years)
+- Develop practical exercises for each chapter
+- Create downloadable workbook/templates

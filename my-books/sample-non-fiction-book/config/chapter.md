@@ -1,125 +1,105 @@
-# Глава [N]: [Название главы]
+# Chapter [N]: [Chapter Title]
 
-## Метаданные
+## Metadata
 
-| Поле | Значение |
-|------|----------|
-| Номер главы | [N] |
-| Часть | [Часть N] |
-| Статус | `outline` / `draft` / `revision` / `final` |
-| Версия | 1.0 |
-| Слов | 0 |
-| Последнее обновление | [дата] |
-
----
-
-## Тезис главы
-
-> [Главная мысль главы в одном предложении. Что читатель должен понять и запомнить после прочтения?]
+| Field | Value |
+| --- | --- |
+| Chapter number | [N] |
+| Part | [Part N] |
+| Status | `outline` / `draft` / `revision` / `final` |
+| Version | 1.0 |
+| Words | 0 |
+| Last updated | [date] |
 
 ---
 
-## Ключевые точки
-
-1. **[Точка 1]**: [Краткое описание]
-2. **[Точка 2]**: [Краткое описание]
-3. **[Точка 3]**: [Краткое описание]
+## Chapter Thesis
+> [Main idea in one sentence. What should the reader understand and remember after reading?]
 
 ---
 
-## Структура главы
-
-### Открытие (Hook)
-*Цель: захватить внимание за первые 300 слов*
-
-[История / Статистика / Вопрос / Парадокс]
+## Key Points
+1. **[Point 1]**: [Brief description]
+2. **[Point 2]**: [Brief description]
+3. **[Point 3]**: [Brief description]
 
 ---
 
-### Контекст
-*Цель: дать фон, объяснить почему это важно*
+## Chapter Structure
 
-[Контекст проблемы или темы]
+### Opening (Hook)
+*Goal: capture attention in the first 300 words*
 
----
+[Story / Statistic / Question / Paradox]
 
-### Основная часть
+### Context
+*Goal: give background, explain why it matters*
 
-#### Концепция 1: [Название]
+[Context of the problem or topic]
 
-[Объяснение концепции]
+### Main Body
 
-**Пример**: [Конкретный пример или кейс]
+#### Concept 1: [Title]
+[Explain the concept]
+**Example**: [Specific example or case]
 
----
+#### Concept 2: [Title]
+[Explain the concept]
+**Data**: [Statistic or study]
 
-#### Концепция 2: [Название]
+#### Concept 3: [Title]
+[Explain the concept]
+**Story**: [Illustrative story]
 
-[Объяснение концепции]
+### Practical Application
+*Goal: turn knowledge into action*
 
-**Данные**: [Статистика или исследование]
+**What to do:**
+1. [Step 1]
+2. [Step 2]
+3. [Step 3]
 
----
+**What to avoid:**
+- [Pitfall 1]
+- [Pitfall 2]
 
-#### Концепция 3: [Название]
+### Conclusions and Transition
+*Goal: reinforce and build a bridge to the next chapter*
 
-[Объяснение концепции]
+**Key takeaways:**
+- [Takeaway 1]
+- [Takeaway 2]
+- [Takeaway 3]
 
-**История**: [Иллюстрирующая история]
-
----
-
-### Практическое применение
-*Цель: перевести знание в действие*
-
-**Что делать:**
-1. [Шаг 1]
-2. [Шаг 2]
-3. [Шаг 3]
-
-**Чего избегать:**
-- [Ошибка 1]
-- [Ошибка 2]
-
----
-
-### Выводы и переход
-*Цель: закрепить и создать мост к следующей главе*
-
-**Ключевые выводы:**
-- [Вывод 1]
-- [Вывод 2]
-- [Вывод 3]
-
-**Переход**: [Как это связано с темой следующей главы]
+**Transition**: [How this ties into the next chapter]
 
 ---
 
-## Источники главы
+## Chapter Sources
 
-| # | Источник | Где используется |
-|---|----------|------------------|
-| 1 | [Автор, Название, Год] | [Секция] |
-| 2 | [Автор, Название, Год] | [Секция] |
-
----
-
-## Заметки для редактуры
-
-### Что проверить
-- [ ] Логика аргументации
-- [ ] Достаточно примеров
-- [ ] Источники корректны
-- [ ] Переходы плавные
-- [ ] Голос консистентен
-
-### Комментарии
-[Заметки редактора или автора]
+| # | Source | Where it’s used |
+| --- | --- | --- |
+| 1 | [Author, Title, Year] | [Section] |
+| 2 | [Author, Title, Year] | [Section] |
 
 ---
 
-## История версий
+## Editing Notes
 
-| Версия | Дата | Изменения |
-|--------|------|-----------|
-| 1.0 | [дата] | Первый черновик |
+### What to check
+- [ ] Argument logic
+- [ ] Enough examples
+- [ ] Sources are correct
+- [ ] Transitions are smooth
+- [ ] Voice is consistent
+
+### Comments
+[Notes from the editor or author]
+
+---
+
+## Version History
+
+| Version | Date | Changes |
+| --- | --- | --- |
+| 1.0 | [date] | First draft |

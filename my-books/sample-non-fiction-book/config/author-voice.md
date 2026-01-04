@@ -1,398 +1,305 @@
-# Author Voice — Голос автора
-
-Этот файл описывает уникальные характеристики авторского стиля и голоса, которые должны быть сохранены во время редактуры и корректуры.
-
----
-
-## Что такое "голос автора"?
-
-**Голос автора** — это уникальная манера письма, которая делает текст узнаваемым. Это сочетание:
-- Выбора слов (лексика)
-- Построения предложений (синтаксис)
-- Ритма и темпа
-- Тона и настроения
-- Характерных выражений и оборотов
-
-**Важно**: При редактуре и корректуре голос автора должен быть СОХРАНЁН, даже если он отклоняется от стандартных норм.
-
----
-
-## Как заполнить этот файл
-
-### 1. Анализ существующих текстов автора
-
-Если у автора уже есть написанные тексты:
-```markdown
-Read engine/files/import/**/*.md
-Проанализировать:
-- Частые обороты речи
-- Длину предложений
-- Предпочитаемую лексику
-- Характерные метафоры
-```
-
-### 2. Интервью с автором
-
-Задайте автору вопросы:
-- Какие писатели вдохновляют?
-- Какой тон предпочитается? (серьёзный/ироничный/игривый)
-- Есть ли "фирменные" выражения?
-- Какие слова/обороты раздражают?
-
-### 3. Образцы текста
-
-Попросите автора написать 2-3 абзаца на любую тему:
-- Сохраните их как эталон
-- Используйте для сравнения при редактуре
-
----
-
-## Шаблон описания голоса автора
-
-### Общая характеристика
-
-**Тон**: [Выберите или опишите]
-- [ ] Формальный
-- [ ] Разговорный
-- [ ] Ироничный
-- [ ] Серьёзный
-- [ ] Игривый
-- [ ] Академический
-- [ ] Поэтичный
-- [ ] Другое: ___
-
-**Описание одним предложением**:
-> [Например: "Тёплый, разговорный, с лёгкой иронией и неожиданными метафорами"]
-
----
-
-### Лексические особенности
-
-#### Предпочитаемые слова и выражения
-
-**Часто используемые слова**:
-- [слово] — [контекст использования]
-- [слово] — [контекст использования]
-
-**Характерные выражения**:
-- "[выражение]" — используется для [цель]
-- "[выражение]" — авторский оборот
-
-**Избегаемые слова**:
-- [слово] — автор предпочитает [альтернатива]
-- [слово] — не соответствует тону
-
-#### Уровень формальности
-
-- [ ] Высокий (канцеляризмы, сложные конструкции)
-- [ ] Средний (нейтральный литературный язык)
-- [ ] Низкий (разговорная речь, сленг)
-
-**Примеры**:
-```
-Формальный: "осуществить реализацию"
-Авторский: "[как пишет автор]"
-```
-
----
-
-### Синтаксические особенности
-
-#### Длина предложений
-
-**Преобладающая длина**:
-- [ ] Короткие (до 10 слов) — рубленый стиль
-- [ ] Средние (10-20 слов) — стандартный стиль
-- [ ] Длинные (20+ слов) — плавное повествование
-- [ ] Смешанные — для ритма
-
-**Пример типичного предложения**:
-> [Вставить характерное предложение автора]
-
-#### Структура предложений
-
-**Предпочитаемая структура**:
-- [ ] Простые предложения
-- [ ] Сложносочинённые
-- [ ] Сложноподчинённые
-- [ ] Парцелляция (намеренные обрывы)
-
-**Пример**:
-> [Характерная конструкция]
-
----
-
-### Ритм и темп
-
-#### Пейсинг
-
-**Общий темп повествования**:
-- [ ] Быстрый (короткие предложения, активное действие)
-- [ ] Средний (сбалансированный)
-- [ ] Медленный (описательный, созерцательный)
-- [ ] Переменный (меняется по ситуации)
-
-**Техники создания ритма**:
-- [Техника 1]: [пример]
-  > "[Пример из текста автора]"
-- [Техника 2]: [пример]
-
-#### Паузы и акценты
-
-**Использование пауз**:
-- Многоточия: [как и когда используются]
-- Тире: [как и когда используются]
-- Короткие предложения-удары: [примеры]
-
----
-
-### Тон и настроение
-
-#### Диапазон эмоций
-
-**Преобладающее настроение**:
-- [ ] Оптимистичное
-- [ ] Меланхоличное
-- [ ] Нейтральное
-- [ ] Саркастичное
-- [ ] Вдохновляющее
-- [ ] Провокационное
-
-**Вариации тона**:
-- В серьёзных моментах: [описание + пример]
-- В юмористических: [описание + пример]
-- В напряжённых: [описание + пример]
-
----
-
-### Стилистические приёмы
-
-#### Любимые приёмы автора
-
-**Метафоры и сравнения**:
-- Тип: [например: "неожиданные, из бытовой жизни"]
-- Пример:
-  > "[Характерная метафора автора]"
-
-**Повторы**:
-- Анафора (повтор в начале): [использует / не использует]
-- Эпифора (повтор в конце): [использует / не использует]
-- Пример:
-  > "[Если есть]"
-
-**Фигуры речи**:
-- Ирония: [как проявляется]
-- Гипербола: [как используется]
-- Другое: [что характерно]
-
----
-
-### Диалоги (для Fiction)
-
-#### Стиль диалогов
-
-**Атрибуция**:
-- Предпочитаемые глаголы: ["сказал" / разнообразные]
-- Частота атрибуции: [каждая реплика / через одну / редко]
-- Позиция: [до / после / в середине реплики]
-
-**Реплики**:
-- Длина: [короткие / развёрнутые]
-- Прерывания: [использует / не использует]
-- Диалекты: [передаёт / не передаёт]
-
-**Пример характерного диалога**:
-```
-[Вставить пример диалога из текстов автора]
-```
-
----
-
-### Описания (для Fiction)
-
-#### Баланс show vs tell
-
-- [ ] Преимущественно show (через действия и детали)
-- [ ] Преимущественно tell (прямое описание)
-- [ ] Смешанный подход
-
-**Пример**:
-```
-Tell: "Он был зол."
-Авторский show: "[Как автор показывает злость]"
-```
-
-#### Сенсорные детали
-
-**Какие чувства задействует**:
-- [ ] Визуальные (зрение)
-- [ ] Аудиальные (слух)
-- [ ] Тактильные (осязание)
-- [ ] Обонятельные (запах)
-- [ ] Вкусовые
-
-**Характерный пример описания**:
-> "[Типичное описание места/персонажа]"
-
----
-
-### Намеренные отклонения от норм
-
-#### Грамматические вольности
-
-**Разрешённые отклонения**:
-1. **[Отклонение]**: [Зачем используется]
-   - Пример: "[текст]"
-   - Почему сохраняем: [объяснение]
-
-2. **[Отклонение]**: [Зачем используется]
-
-#### Неологизмы и авторские слова
-
-**Авторские термины**:
-- "[слово]" — значение: [определение]
-- "[слово]" — использование: [контекст]
-
-**Важно**: Эти слова НЕ ИСПРАВЛЯТЬ при корректуре!
-
----
-
-### Табу (чего автор избегает)
-
-#### Запрещённые слова и обороты
-
-**Не использовать**:
-- [слово/оборот] — причина: [почему]
-- [слово/оборот] — альтернатива: [что вместо этого]
-
-#### Неприемлемые приёмы
-
-**Избегать**:
-- [приём] — потому что: [объяснение]
-- [приём] — это идёт вразрез с голосом автора
-
----
-
-### Образцы эталонного текста
-
-#### Образец 1: [Тип текста]
-
-**Описание**: [Что демонстрирует этот образец]
-
-```
-[Вставить 2-3 абзаца эталонного текста автора]
-```
-
-**Ключевые особенности этого образца**:
-1. [Особенность]
-2. [Особенность]
-3. [Особенность]
-
-#### Образец 2: [Тип текста]
-
-**Описание**: [Что демонстрирует]
-
-```
-[Текст]
-```
-
-**Ключевые особенности**:
-1. [Особенность]
-
----
-
-### Образец 3: [Тип текста]
-
-**Описание**: [Что демонстрирует]
-
-```
-[Текст]
-```
-
-**Ключевые особенности**:
-1. [Особенность]
-
----
-
-## Инструкции для агентов
-
-### Для WRITER
-
-**При написании**:
-- Следуй описанному голосу
-- Используй характерные обороты
-- Имитируй ритм образцов
-- В случае сомнений — обращайся к образцам
-
-**Чек-лист**:
-- [ ] Тон соответствует описанному
-- [ ] Длина предложений в характерном диапазоне
-- [ ] Использованы типичные для автора слова
-- [ ] Избегнуты табуированные обороты
-
-### Для EDITOR
-
-**При редактуре**:
-- НЕ "исправляй" авторский голос
-- Сохраняй намеренные отклонения от норм
-- Усиливай характерные черты, не стирай их
-- Спрашивай автора при неуверенности
-
-**Красные флаги** (когда править нельзя):
-- Авторские неологизмы
-- Характерные обороты (даже если нестандартны)
-- Намеренные грамматические вольности
-- Стилистические приёмы
-
-### Для PROOFREADER
-
-**При корректуре**:
-- Проверяй этот файл ПЕРЕД исправлением "ошибок"
-- Отличай ошибку от авторского стиля
-- В отчёте помечай "потенциальные ошибки vs авторский стиль"
-- При сомнении — НЕ исправляй, запроси подтверждение
-
-**Как проверить**:
-1. Найдена "ошибка" → проверить author-voice.md
-2. Если это авторская особенность → пометить "intentional"
-3. Если неясно → добавить в отчёт с вопросом автору
-4. Только если точно ошибка → исправлять
-
----
-
-## Эволюция голоса
-
-Голос автора может развиваться в процессе работы над книгой.
-
-**Как отслеживать**:
-- Регулярно сравнивать новые главы с образцами
-- Фиксировать появление новых характерных черт
-- Обновлять этот файл при значительных изменениях
-
-**История изменений**:
-| Дата | Изменение | Причина |
-|------|-----------|---------|
-| [YYYY-MM-DD] | [Что изменилось] | [Почему] |
-
----
-
-## Примечания
-
-[Дополнительные наблюдения об авторском голосе, которые не вошли в основные разделы]
-
----
-
-## Заполнение этого файла
-
-**Когда заполнять**:
-1. **Phase 0 (Import)**: Если импортируются существующие тексты — анализ и извлечение голоса
-2. **Phase 1 (Planning)**: Автор заполняет предпочтения и табу
-3. **Phase 2 (Writing)**: По мере написания фиксируются появляющиеся паттерны
-4. **Phase 3 (Editing)**: EDITOR добавляет наблюдения
-
-**Кто заполняет**:
-- **Автор**: Предпочтения, табу, образцы
-- **IMPORTER**: Анализ существующих текстов
-- **ORCHESTRATOR**: Координация заполнения
-- **EDITOR**: Наблюдения за консистентностью
-- **PROOFREADER**: Использует как справочник
+# Author Voice
+
+This file describes the unique qualities of the author’s style and voice that must be preserved during editing and proofreading.
+
+## What is the “author’s voice”?
+**Author’s voice** is the distinctive manner of writing that makes the text recognizable. It combines:
+- Word choice (lexicon)
+- Sentence construction (syntax)
+- Rhythm and pace
+- Tone and mood
+- Signature expressions and turns of phrase
+
+**Important**: During editing and proofreading the author’s voice must be PRESERVED, even if it deviates from standard norms.
+
+## How to fill out this file
+
+### 1. Analyze existing author texts
+If the author already has written material, analyze:
+- Frequent turns of phrase
+- Sentence length
+- Preferred vocabulary
+- Characteristic metaphors
+
+### 2. Interview with the author
+Ask:
+- Which writers inspire you?
+- What tone is preferred? (serious/ironic/playful)
+- Are there “signature” expressions?
+- Which words/phrases are irritating?
+
+### 3. Text samples
+Ask the author to write 2–3 paragraphs on any topic:
+- Save them as benchmarks
+- Use them for comparison during editing
+
+## Author Voice Template
+
+### Overall Description
+**Tone**: [Choose or describe]
+- [ ] Formal
+- [ ] Conversational
+- [ ] Ironic
+- [ ] Serious
+- [ ] Playful
+- [ ] Academic
+- [ ] Poetic
+- [ ] Other: ___
+
+**One-sentence description**:
+> [Example: “Warm, conversational, with light irony and unexpected metaphors.”]
+
+### Lexical Features
+#### Preferred words and expressions
+**Frequently used words**:
+- [word] — [context]
+- [word] — [context]
+
+**Signature expressions**:
+- “[expression]” — used for [purpose]
+- “[expression]” — author-specific phrase
+
+**Words to avoid**:
+- [word] — author prefers [alternative]
+- [word] — doesn’t fit the tone
+
+#### Formality level
+- [ ] High (bureaucratic language, complex constructions)
+- [ ] Medium (neutral literary language)
+- [ ] Low (colloquial speech, slang)
+
+**Examples**:
+Formal: “to carry out implementation”  
+Author style: “[how the author writes it]”
+
+### Syntactic Features
+#### Sentence length
+**Typical length**:
+- [ ] Short (up to 10 words) — clipped style
+- [ ] Medium (10–20 words) — standard style
+- [ ] Long (20+ words) — flowing narration
+- [ ] Mixed — for rhythm
+
+**Example of a typical sentence**:
+> [Insert a characteristic sentence from the author]
+
+#### Sentence structure
+**Preferred structure**:
+- [ ] Simple sentences
+- [ ] Compound
+- [ ] Complex
+- [ ] Parcelling (intentional fragments)
+
+**Example**:
+> [Characteristic construction]
+
+### Rhythm and Pace
+#### Pacing
+**Overall pace**:
+- [ ] Fast (short sentences, active action)
+- [ ] Medium (balanced)
+- [ ] Slow (descriptive, contemplative)
+- [ ] Variable (shifts by situation)
+
+**Techniques for rhythm**:
+- [Technique 1]: [example]
+  > “[Excerpt from the author’s text]”
+- [Technique 2]: [example]
+
+#### Pauses and emphasis
+**Use of pauses**:
+- Ellipses: [how/when used]
+- Em dash: [how/when used]
+- Short punch sentences: [examples]
+
+### Tone and Mood
+#### Emotional range
+**Dominant mood**:
+- [ ] Optimistic
+- [ ] Melancholic
+- [ ] Neutral
+- [ ] Sarcastic
+- [ ] Inspiring
+- [ ] Provocative
+
+**Tone variations**:
+- In serious moments: [description + example]
+- In humorous moments: [description + example]
+- In tense moments: [description + example]
+
+### Stylistic Devices
+#### Favorite devices
+**Metaphors and comparisons**:
+- Type: [e.g., “unexpected, everyday-life based”]
+- Example:
+  > “[Characteristic author metaphor]”
+
+**Repetition**:
+- Anaphora (repetition at the start): [uses / doesn’t use]
+- Epiphora (repetition at the end): [uses / doesn’t use]
+- Example:
+  > “[If available]”
+
+**Figures of speech**:
+- Irony: [how it appears]
+- Hyperbole: [how it’s used]
+- Other: [what’s typical]
+
+### Dialogue (for Fiction)
+#### Dialogue style
+**Attribution**:
+- Preferred verbs: [“said” / varied]
+- Frequency of attribution: [every line / every other / rarely]
+- Position: [before / after / mid-line]
+
+**Lines**:
+- Length: [short / extended]
+- Interruptions: [uses / doesn’t use]
+- Dialects: [renders / doesn’t render]
+
+**Example of characteristic dialogue**:
+[Insert a dialogue example from the author’s texts]
+
+### Description (for Fiction)
+#### Show vs. Tell balance
+- [ ] Mostly show (through action and detail)
+- [ ] Mostly tell (direct description)
+- [ ] Mixed approach
+
+**Example**:
+Tell: “He was angry.”  
+Author’s show: “[How the author shows anger]”
+
+#### Sensory details
+**Which senses are engaged**:
+- [ ] Visual
+- [ ] Auditory
+- [ ] Tactile
+- [ ] Olfactory
+- [ ] Taste
+
+**Characteristic descriptive example**:
+> “[Typical description of place/character]”
+
+### Intentional Deviations from Norms
+#### Grammatical liberties
+**Allowed deviations**:
+1. **[Deviation]**: [Why it’s used]
+   - Example: “[text]”
+   - Why we keep it: [explanation]
+2. **[Deviation]**: [Why it’s used]
+
+#### Neologisms and author’s words
+**Author terms**:
+- “[word]” — meaning: [definition]
+- “[word]” — usage: [context]
+
+**Important**: DO NOT CORRECT these words during proofreading!
+
+### Taboos (what the author avoids)
+#### Forbidden words and phrases
+**Do not use**:
+- [word/phrase] — reason: [why]
+- [word/phrase] — alternative: [use instead]
+
+#### Unacceptable devices
+**Avoid**:
+- [device] — because: [explanation]
+- [device] — conflicts with the author’s voice
+
+### Benchmark Text Samples
+#### Sample 1: [Text type]
+**Description**: [What this sample shows]
+
+[Insert 2–3 benchmark paragraphs from the author]
+
+**Key traits of this sample**:
+1. [Trait]
+2. [Trait]
+3. [Trait]
+
+#### Sample 2: [Text type]
+**Description**: [What it demonstrates]
+
+[Text]
+
+**Key traits**:
+1. [Trait]
+
+#### Sample 3: [Text type]
+**Description**: [What it demonstrates]
+
+[Text]
+
+**Key traits**:
+1. [Trait]
+
+## Instructions for Agents
+
+### For WRITER
+**While writing**:
+- Follow the described voice
+- Use signature turns of phrase
+- Imitate the rhythm of the samples
+- When in doubt, consult the samples
+
+**Checklist**:
+- [ ] Tone matches what’s described
+- [ ] Sentence length stays in the characteristic range
+- [ ] Typical author words are used
+- [ ] Taboo phrases are avoided
+
+### For EDITOR
+**While editing**:
+- Do NOT “fix” the author’s voice
+- Preserve intentional deviations from norms
+- Amplify signature traits, don’t erase them
+- Ask the author when unsure
+
+**Red flags** (don’t change):
+- Author neologisms
+- Signature phrases (even if nonstandard)
+- Intentional grammatical liberties
+- Stylistic devices
+
+### For PROOFREADER
+**While proofreading**:
+- Check this file BEFORE fixing “errors”
+- Distinguish error from author style
+- In the report, mark “potential errors vs. author style”
+- If unsure—do NOT change, ask for confirmation
+
+**How to check**:
+1. Found an “error” → check author-voice.md
+2. If it’s an author trait → mark “intentional”
+3. If unclear → add to the report with a question for the author
+4. Only if it’s clearly an error → fix it
+
+## Voice Evolution
+The author’s voice can evolve during the book project.
+
+**How to track**:
+- Regularly compare new chapters with the samples
+- Record new emerging traits
+- Update this file when significant changes occur
+
+**Change history**:
+| Date | Change | Reason |
+| [YYYY-MM-DD] | [What changed] | [Why] |
+
+## Notes
+[Additional observations about the author’s voice that didn’t fit above]
+
+## Filling This File
+**When to fill**:
+1. **Phase 0 (Import)**: If existing texts are imported—analyze and extract the voice
+2. **Phase 1 (Planning)**: Author records preferences and taboos
+3. **Phase 2 (Writing)**: Capture emerging patterns while writing
+4. **Phase 3 (Editing)**: EDITOR adds consistency observations
+
+**Who fills it**:
+- **Author**: Preferences, taboos, samples
+- **IMPORTER**: Analysis of existing texts
+- **ORCHESTRATOR**: Coordinates completion
+- **EDITOR**: Notes on consistency
+- **PROOFREADER**: Uses as reference

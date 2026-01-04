@@ -1,179 +1,179 @@
-# Review Checklist — Чек-лист ревью
+# Review Checklist
 
-Используется агентами EDITOR и CRITIC для проверки качества контента.
-
----
-
-## Для Non-Fiction
-
-### Структура и организация
-
-- [ ] Есть чёткий главный тезис главы
-- [ ] Логическая последовательность аргументов
-- [ ] Каждая секция связана с предыдущей
-- [ ] Нет неожиданных прыжков в темах
-- [ ] Введение задаёт ожидания
-- [ ] Заключение выполняет обещания
-
-### Содержание
-
-- [ ] Главный тезис подкреплён доказательствами
-- [ ] Минимум 2-3 конкретных примера
-- [ ] Статистика из надёжных источников
-- [ ] Цитаты точны и атрибутированы
-- [ ] Нет фактических ошибок
-- [ ] Термины определены при первом использовании
-
-### Практичность
-
-- [ ] Есть практические выводы
-- [ ] Советы конкретны и применимы
-- [ ] Понятно "что делать дальше"
-- [ ] Примеры релевантны для целевой аудитории
-
-### Вовлечённость
-
-- [ ] Hook захватывает внимание
-- [ ] Интересно читать (не скучно)
-- [ ] Есть истории/анекдоты
-- [ ] Язык живой, не канцелярский
-- [ ] Переходы между секциями плавные
-
-### Ясность
-
-- [ ] Понятно неспециалисту
-- [ ] Нет жаргона без объяснений
-- [ ] Предложения не длиннее 25-30 слов
-- [ ] Абзацы не длиннее 5-7 предложений
-- [ ] Активный залог преобладает
+Used by the EDITOR and CRITIC agents to assess content quality.
 
 ---
 
-## Для Fiction
+## For Non-Fiction
 
-### Персонажи
+### Structure and Organization
 
-- [ ] Действия соответствуют характеру
-- [ ] Мотивации понятны
-- [ ] Голоса различимы
-- [ ] Есть эмоциональная глубина
-- [ ] Развитие логично
+- [ ] There is a clear main thesis for the chapter
+- [ ] Logical sequence of arguments
+- [ ] Each section connects to the previous one
+- [ ] No unexpected jumps between topics
+- [ ] The introduction sets expectations
+- [ ] The conclusion delivers on the promises
 
-### Сюжет
+### Content
 
-- [ ] Каждая сцена меняет что-то
-- [ ] Есть конфликт/напряжение
-- [ ] События логичны (в рамках мира)
-- [ ] Пейсинг правильный (не затянуто)
-- [ ] Cliffhanger или переход в конце главы
+- [ ] The main thesis is supported by evidence
+- [ ] At least 2–3 concrete examples
+- [ ] Statistics come from reliable sources
+- [ ] Quotes are accurate and attributed
+- [ ] No factual errors
+- [ ] Terms are defined at first use
 
-### Мир
+### Practicality
 
-- [ ] Описания сенсорны (не только визуальные)
-- [ ] Мир консистентен
-- [ ] Детали не противоречат предыдущим главам
-- [ ] Правила магии/технологий соблюдаются
-- [ ] География/время суток логичны
+- [ ] Practical takeaways are present
+- [ ] Advice is specific and applicable
+- [ ] It is clear “what to do next”
+- [ ] Examples are relevant to the target audience
 
-### Диалоги
+### Engagement
 
-- [ ] Звучат естественно
-- [ ] Двигают сюжет или раскрывают характер
-- [ ] Каждый персонаж говорит по-своему
-- [ ] Нет "on the nose" (слишком прямолинейных)
-- [ ] Баланс диалога и действия
+- [ ] The hook grabs attention
+- [ ] It’s interesting to read (not dull)
+- [ ] There are stories/anecdotes
+- [ ] Language is lively, not bureaucratic
+- [ ] Transitions between sections are smooth
 
-### Проза
+### Clarity
+
+- [ ] Understandable to a non-specialist
+- [ ] No jargon without explanations
+- [ ] Sentences are no longer than 25–30 words
+- [ ] Paragraphs are no longer than 5–7 sentences
+- [ ] Active voice predominates
+
+---
+
+## For Fiction
+
+### Characters
+
+- [ ] Actions match the character
+- [ ] Motivations are clear
+- [ ] Voices are distinct
+- [ ] There is emotional depth
+- [ ] Development is logical
+
+### Plot
+
+- [ ] Every scene changes something
+- [ ] There is conflict/tension
+- [ ] Events are logical (within the world)
+- [ ] Pacing feels right (not drawn out)
+- [ ] Cliffhanger or transition at the end of the chapter
+
+### World
+
+- [ ] Descriptions are sensory (not only visual)
+- [ ] Worldbuilding is consistent
+- [ ] Details don’t contradict prior chapters
+- [ ] Rules of magic/technology are followed
+- [ ] Geography/time of day make sense
+
+### Dialogue
+
+- [ ] Sounds natural
+- [ ] Moves the plot or reveals character
+- [ ] Each character speaks in their own voice
+- [ ] No “on the nose” (overly direct) lines
+- [ ] Balance between dialogue and action
+
+### Prose
 
 - [ ] Show, don't tell
-- [ ] Сильные глаголы (не "был", "является")
-- [ ] Минимум наречий
-- [ ] Разнообразие длины предложений
-- [ ] Ритм соответствует настроению
+- [ ] Strong verbs (not just “was,” “is”)
+- [ ] Minimal adverbs
+- [ ] Varied sentence lengths
+- [ ] Rhythm matches the mood
 
 ---
 
-## Для обоих типов
+## For Both Types
 
-### Стиль
+### Style
 
-- [ ] Голос консистентен
-- [ ] Тон соответствует style-guide
-- [ ] Нет слов-паразитов
-- [ ] Повторы оправданы (для эффекта)
-- [ ] Метафоры работают
+- [ ] Voice is consistent
+- [ ] Tone aligns with the style guide
+- [ ] No filler words
+- [ ] Repetitions are intentional (for effect)
+- [ ] Metaphors work
 
-### Грамматика и механика
+### Grammar and Mechanics
 
-- [ ] Орфография правильная
-- [ ] Пунктуация корректная
-- [ ] Согласование времён
-- [ ] Согласование числа
-- [ ] Деепричастия правильны
+- [ ] Spelling is correct
+- [ ] Punctuation is correct
+- [ ] Tenses agree
+- [ ] Number agreement is correct
+- [ ] Participles are used properly
 
-### Форматирование
+### Formatting
 
-- [ ] Заголовки единообразны
-- [ ] Курсив/жирный используются правильно
-- [ ] Списки форматированы консистентно
-- [ ] Цитаты оформлены правильно
-- [ ] Абзацы не слишком длинные
+- [ ] Headings are uniform
+- [ ] Italics/bold are used correctly
+- [ ] Lists are formatted consistently
+- [ ] Quotes are formatted correctly
+- [ ] Paragraphs aren’t too long
 
-### Консистентность
+### Consistency
 
-- [ ] Имена написаны одинаково
-- [ ] Термины используются консистентно
-- [ ] Даты и числа в едином формате
-- [ ] Нет противоречий с другими главами
-- [ ] Таймлайн логичен
+- [ ] Names are spelled the same way throughout
+- [ ] Terms are used consistently
+- [ ] Dates and numbers follow a single format
+- [ ] No contradictions with other chapters
+- [ ] Timeline is logical
 
-### Технические аспекты
+### Technical Aspects
 
-- [ ] Метаданные заполнены
-- [ ] Версия указана
-- [ ] Количество слов в пределах цели
-- [ ] Заметки для следующего редактора добавлены
-
----
-
-## Критерии готовности
-
-### APPROVED — Готово к публикации
-- Все пункты выполнены
-- Нет критических проблем
-- Максимум 2-3 мелких замечания
-
-### APPROVED_MINOR — Мелкие правки
-- Основные пункты выполнены
-- 5-10 мелких проблем
-- Не требуется переписывание
-
-### NEEDS_REVISION — Требует доработки
-- Некоторые важные пункты не выполнены
-- 10-20 проблем разного уровня
-- Требуется повторное ревью
-
-### MAJOR_REWRITE — Существенная переработка
-- Много критических проблем
-- Не выполнено >50% пунктов
-- Требуется переписывание
+- [ ] Metadata is filled in
+- [ ] Version is specified
+- [ ] Word count is within target
+- [ ] Notes for the next editor are added
 
 ---
 
-## Использование
+## Readiness Criteria
 
-### Для EDITOR
-1. Проходить по чек-листу после каждого уровня редактуры
-2. Отмечать проблемные места
-3. Создавать отчёт с конкретными рекомендациями
+### APPROVED — Ready for Publication
+- All items are satisfied
+- No critical issues
+- Maximum of 2–3 minor notes
 
-### Для CRITIC
-1. Использовать для финального ревью
-2. Думать как читатель, не редактор
-3. Проверять не механически, а критически
-4. Давать вердикт на основе общей картины
+### APPROVED_MINOR — Minor Edits
+- Key items are satisfied
+- 5–10 minor issues
+- No rewrite required
 
-### Для WRITER
-1. Самопроверка перед отправкой EDITOR
-2. Идентификация слабых мест
-3. Планирование доработок
+### NEEDS_REVISION — Needs Work
+- Some important items are missing
+- 10–20 issues of varying severity
+- Requires another review
+
+### MAJOR_REWRITE — Major Overhaul
+- Many critical issues
+- More than 50% of items not satisfied
+- Requires rewriting
+
+---
+
+## Usage
+
+### For EDITOR
+1. Go through the checklist after each level of editing
+2. Mark problem areas
+3. Create a report with specific recommendations
+
+### For CRITIC
+1. Use for final review
+2. Think like a reader, not an editor
+3. Check critically, not mechanically
+4. Give a verdict based on the big picture
+
+### For WRITER
+1. Self-check before sending to EDITOR
+2. Identify weak spots
+3. Plan revisions

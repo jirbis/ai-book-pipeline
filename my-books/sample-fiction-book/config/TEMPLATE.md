@@ -1,128 +1,116 @@
-# Fiction Book Template
+# TEMPLATE.md — Master template for fiction projects
 
-Мастер-шаблон для создания художественных произведений.
-
-## Типичная структура Fiction
+## Typical Fiction Structure
 
 ```
-book/
-├── world/
-│   ├── world.md           # Мир и сеттинг
-│   ├── magic-system.md    # Магия/технологии (если есть)
-│   ├── history.md         # История мира
-│   ├── locations.md       # Локации
-│   └── cultures.md        # Культуры и общества
+project/
+├── PROJECT.md         # Book configuration
+├── config/
+│   ├── world.md           # World and setting
+│   ├── magic-system.md    # Magic/technology (if any)
+│   ├── history.md         # World history
+│   ├── locations.md       # Locations
+│   └── cultures.md        # Cultures and societies
 │
-├── characters/
-│   ├── characters.md      # Мастер-файл персонажей
-│   ├── protagonist.md     # Главный герой
-│   ├── antagonist.md      # Антагонист
-│   └── supporting/        # Второстепенные персонажи
-│       ├── [имя].md
+│   ├── characters.md      # Master character file
+│   ├── protagonist.md     # Protagonist
+│   ├── antagonist.md      # Antagonist
+│   └── supporting/        # Supporting characters
+│       ├── [name].md
 │       └── ...
 │
-├── plot/
-│   ├── plot.md            # Общий сюжет
-│   ├── outline.md         # Поглавный план
-│   ├── timeline.md        # Хронология событий
-│   └── subplots.md        # Второстепенные линии
+│   ├── plot.md            # Overall plot
+│   ├── outline.md         # Chapter-by-chapter plan
+│   ├── timeline.md        # Event chronology
+│   └── subplots.md        # Secondary arcs
 │
-├── content/
-│   ├── part-1/
-│   │   ├── chapter-01.md
-│   │   ├── chapter-02.md
-│   │   └── ...
-│   └── part-2/
-│       └── ...
-│
-└── reference/
-    ├── style-guide.md     # Голос и стиль
-    ├── themes.md          # Темы и символы
-    └── research.md        # Исследования для реализма
+│   ├── style-guide.md     # Voice and style
+│   ├── themes.md          # Themes and symbols
+│   └── research.md        # Research for realism
+└── files/
+    ├── content/chapters/
+    ├── notes/
+    └── research/
 ```
 
-## Жанры Fiction
+## Fiction Genres
 
-### Литературная проза
-- Фокус: глубина персонажей, язык, темы
-- Структура: гибкая, часто экспериментальная
-- Элементы: внутренний мир, символизм, подтекст
+### Literary fiction
+- Focus: depth of characters, language, themes
+- Structure: flexible, often experimental
+- Elements: interiority, symbolism, subtext
 
-### Триллер/Детектив
-- Фокус: интрига, напряжение, разгадка
-- Структура: тайна → расследование → разоблачение
-- Элементы: улики, красные сельди, твисты
+### Thriller / Mystery
+- Focus: intrigue, tension, revelation
+- Structure: mystery → investigation → reveal
+- Elements: clues, red herrings, twists
 
-### Фэнтези
-- Фокус: worldbuilding, магическая система
-- Структура: путешествие героя, эпический конфликт
-- Элементы: карты, системы магии, народы
+### Fantasy
+- Focus: worldbuilding, magic system
+- Structure: hero’s journey, epic conflict
+- Elements: maps, magic systems, peoples
 
-### Sci-Fi
-- Фокус: идеи, технологии, социум будущего
-- Структура: "что если?" → исследование → последствия
-- Элементы: научные концепции, футуризм
+### Science fiction
+- Focus: ideas, technology, future societies
+- Structure: “what if?” → exploration → consequences
+- Elements: scientific concepts, futurism
 
-### Романтика
-- Фокус: отношения, эмоциональное развитие
-- Структура: встреча → препятствия → HEA/HFN
-- Элементы: chemistry, конфликт, intimacy
+### Romance
+- Focus: relationships, emotional growth
+- Structure: meeting → obstacles → HEA/HFN
+- Elements: chemistry, conflict, intimacy
 
-### Хоррор
-- Фокус: страх, напряжение, атмосфера
-- Структура: нормальность → вторжение ужаса → кульминация
-- Элементы: атмосфера, pacing, психология
+### Horror
+- Focus: fear, tension, atmosphere
+- Structure: normalcy → intrusion of horror → climax
+- Elements: atmosphere, pacing, psychology
 
-## Рабочий процесс
+## Workflow
 
-### Фаза 1: Концепция
-1. Идея → логлайн (1 предложение)
-2. Синопсис (1 страница)
-3. Тема — о чём книга на глубинном уровне?
+### Phase 1: Concept
+1. Idea → logline (1 sentence)
+2. Synopsis (1 page)
+3. Theme — what is the book about at a deep level?
 
-### Фаза 2: Worldbuilding
-1. Создать `world.md` — только то, что влияет на сюжет
-2. Определить правила мира
-3. Продумать "айсберг" — 90% мира за кадром
+### Phase 2: Worldbuilding
+1. Create `world.md` — only what affects the plot
+2. Set the rules of the world
+3. Think iceberg: 90% of the world stays off-page
 
-### Фаза 3: Персонажи
-1. Протагонист — want vs need, arc
-2. Антагонист — мотивация, mirror hero
-3. Ключевые второстепенные
+### Phase 3: Characters
+1. Protagonist — want vs. need, arc
+2. Antagonist — motivation, mirror to hero
+3. Key supporting characters
 
-### Фаза 4: Сюжет
-1. Структура (3 акта / Save the Cat / Hero's Journey)
-2. Beat sheet — ключевые точки
-3. Поглавный outline
+### Phase 4: Plot
+1. Structure (3 acts / Save the Cat / Hero's Journey)
+2. Beat sheet — key moments
+3. Chapter-by-chapter outline
 
-### Фаза 5: Первый черновик
-1. Писать быстро, не редактируя
-2. Цель: 1,000-2,000 слов в день
-3. Следовать outline, но разрешить отклонения
+### Phase 5: First Draft
+1. Write quickly without editing
+2. Goal: 1,000–2,000 words per day
+3. Follow the outline but allow deviations
 
-### Фаза 6: Редактура
-1. Developmental edit (структура, персонажи)
-2. Line edit (проза, голос)
-3. Copy edit (грамматика, consistency)
-4. Proofread (опечатки)
+### Phase 6: Editing
+1. Developmental edit (structure, characters)
+2. Line edit (prose, voice)
+3. Copy edit (grammar, consistency)
+4. Proofread (typos)
 
-## Ключевые метрики
+## Key Metrics
 
-| Жанр | Слов | Глав |
-|------|------|------|
-| Роман (общий) | 70,000-100,000 | 20-30 |
-| Фэнтези/Sci-Fi | 90,000-120,000 | 25-40 |
-| Триллер | 70,000-90,000 | 25-35 |
-| Романтика | 50,000-80,000 | 20-30 |
-| YA | 50,000-80,000 | 20-30 |
-| Middle Grade | 30,000-50,000 | 15-20 |
+| Genre | Words | Chapters |
+| --- | --- | --- |
+| General novel | 70,000–100,000 | 20–30 |
+| Fantasy/Sci-Fi | 90,000–120,000 | 25–40 |
+| Thriller | 70,000–90,000 | 25–35 |
+| Romance | 50,000–80,000 | 20–30 |
 
-## Чек-лист главы Fiction
-
-- [ ] Есть цель сцены (что меняется?)
-- [ ] Конфликт присутствует
-- [ ] Персонажи действуют согласно характерам
-- [ ] Show, don't tell
-- [ ] Сенсорные детали (не только визуальные)
-- [ ] Hook в конце главы
-- [ ] Продвигает сюжет ИЛИ раскрывает персонажа (или оба)
+## Fiction Chapter Checklist
+- [ ] Each scene has a goal (what changes?)
+- [ ] Conflict is present
+- [ ] Characters act according to their traits
+- [ ] Sensory details (not only visual)
+- [ ] Hook at the end of the chapter
+- [ ] Moves plot AND/OR reveals character (or both)

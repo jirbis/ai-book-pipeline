@@ -1,219 +1,219 @@
-# Characters — Персонажи
+# Characters
 
-## Обзор персонажей
+## Character Overview
 
-### Иерархия
+### Hierarchy
 
-| Уровень | Персонажи | Глубина проработки |
+| Level | Characters | Depth of detail |
 |---------|-----------|-------------------|
-| **Главные** | [Имена] | Полный профиль |
-| **Ключевые второстепенные** | [Имена] | Средний профиль |
-| **Эпизодические** | [Имена] | Краткий профиль |
+| **Main** | [Names] | Full profile |
+| **Key supporting** | [Names] | Medium profile |
+| **Minor** | [Names] | Short profile |
 
 ---
 
-## Протагонист
+## Protagonist
 
-### Базовая информация
+### Basic Information
 
-| Поле | Значение |
+| Field | Value |
 |------|----------|
-| **Имя** | [Полное имя] |
-| **Прозвища** | [Как называют другие] |
-| **Возраст** | [Возраст на начало истории] |
-| **Пол/Гендер** | |
-| **Раса/Вид** | [Для фэнтези/sci-fi] |
-| **Профессия** | |
-| **Социальный статус** | |
+| **Name** | [Full name] |
+| **Nicknames** | [What others call them] |
+| **Age** | [Age at story start] |
+| **Sex/Gender** | |
+| **Race/Species** | [For fantasy/sci-fi] |
+| **Profession** | |
+| **Social status** | |
 
-### Внешность
+### Appearance
 
-**Краткое описание**: [2-3 предложения для читателя]
+**Brief description**: [2–3 sentences for the reader]
 
-- **Рост**: 
-- **Телосложение**: 
-- **Волосы**: 
-- **Глаза**: 
-- **Особые приметы**: 
-- **Стиль одежды**: 
-- **Голос**: [Тембр, манера речи]
-- **Язык тела**: [Характерные жесты]
+- **Height**: 
+- **Build**: 
+- **Hair**: 
+- **Eyes**: 
+- **Distinguishing marks**: 
+- **Clothing style**: 
+- **Voice**: [Timbre, speech manner]
+- **Body language**: [Characteristic gestures]
 
-### Психология
+### Psychology
 
-#### Want vs Need
-- **Want** (чего хочет): [Внешняя цель]
-- **Need** (что на самом деле нужно): [Внутренняя потребность]
-- **Ложь** (во что верит): [Ложное убеждение, мешающее достичь Need]
+#### Want vs. Need
+- **Want** (external goal): [What they want]
+- **Need** (inner need): [What they truly need]
+- **Lie** (false belief): [Belief that blocks the Need]
 
-#### Личность
-- **Темперамент**: [Сангвиник/Холерик/Флегматик/Меланхолик]
-- **MBTI** (опционально): [Тип]
-- **Эннеаграмма** (опционально): [Тип]
+#### Personality
+- **Temperament**: [Sanguine/Choleric/Phlegmatic/Melancholic]
+- **MBTI** (optional): [Type]
+- **Enneagram** (optional): [Type]
 
-#### Черты характера
-**Сильные стороны**:
-1. [Черта]
-2. [Черта]
-3. [Черта]
+#### Traits
+**Strengths**:
+1. [Trait]
+2. [Trait]
+3. [Trait]
 
-**Слабости/Недостатки**:
-1. [Черта]
-2. [Черта]
-3. [Черта]
+**Weaknesses/Flaws**:
+1. [Trait]
+2. [Trait]
+3. [Trait]
 
-**Страхи**:
-- Глубинный страх: [Чего боится на самом деле]
-- Поверхностные страхи: [Конкретные фобии]
+**Fears**:
+- Core fear: [What they truly fear]
+- Surface fears: [Specific phobias]
 
-**Мотивация**:
-[Что им движет]
+**Motivation**:
+[What drives them]
 
-### Бэкстори
+### Backstory
 
-#### История жизни
-[Ключевые события до начала книги]
+#### Life History
+[Key events before the story begins]
 
-#### Травмы и раны
-- **Рана из прошлого**: [Событие, сформировавшее "ложь"]
-- **Как проявляется**: [Поведенческие паттерны]
+#### Wounds and Scars
+- **Past wound**: [Event that formed the “lie”]
+- **How it shows**: [Behavior patterns]
 
-#### Важные отношения в прошлом
-| Кто | Отношения | Статус | Влияние |
+#### Key Past Relationships
+| Who | Relationship | Status | Impact |
 |-----|-----------|--------|---------|
-| [Имя] | [Тип] | Жив/мёртв | [Как повлияло] |
+| [Name] | [Type] | Alive/Dead | [How it affected them] |
 
-### Арка персонажа
+### Character Arc
 
-#### Точка А (начало)
-[Кто персонаж в начале истории]
+#### Point A (beginning)
+[Who the character is at the start]
 
-#### Ключевые моменты трансформации
-1. [Момент 1] — [Что меняется]
-2. [Момент 2] — [Что меняется]
-3. [Момент 3] — [Что меняется]
+#### Key Transformation Moments
+1. [Moment 1] — [What changes]
+2. [Moment 2] — [What changes]
+3. [Moment 3] — [What changes]
 
-#### Точка Б (конец)
-[Кем становится персонаж]
+#### Point B (end)
+[Who the character becomes]
 
-#### Тип арки
-- [ ] Позитивная (рост)
-- [ ] Негативная (падение)
-- [ ] Плоская (уже изменился, меняет мир вокруг)
-- [ ] Диссонансная (думает, что изменился, но нет)
+#### Arc Type
+- [ ] Positive (growth)
+- [ ] Negative (downfall)
+- [ ] Flat (already changed, changes the world)
+- [ ] Dissonant (thinks they changed, but didn’t)
 
-### Отношения
+### Relationships
 
-| Персонаж | Тип отношений | Динамика | Развитие в книге |
+| Character | Relationship type | Dynamic | Development in the book |
 |----------|---------------|----------|------------------|
-| [Имя] | [Враг/друг/любовь/...] | [Описание] | [Как меняется] |
+| [Name] | [Enemy/friend/love/...] | [Description] | [How it changes] |
 
-### Голос персонажа
+### Character Voice
 
-**Паттерны речи**:
-- Характерные выражения: [Фразы]
-- Словарный запас: [Богатый/простой/специфический]
-- Длина предложений: [Короткие/длинные]
-- Что избегает говорить: [Темы, слова]
+**Speech patterns**:
+- Signature expressions: [Phrases]
+- Vocabulary: [Rich/simple/specific]
+- Sentence length: [Short/long]
+- Avoids talking about: [Topics, words]
 
-**Пример диалога**:
-> "[Типичная реплика персонажа]"
+**Dialogue example**:
+> “[Typical line for the character]”
 
-### Символы и мотивы
+### Symbols and Motifs
 
-- **Ассоциативный цвет**: 
-- **Символ**: 
-- **Повторяющийся мотив**: 
-
----
-
-## Антагонист
-
-[Использовать ту же структуру, что для протагониста]
-
-### Дополнительно для антагониста
-
-**Почему он злодей**:
-[Мотивация с его точки зрения — он считает себя правым]
-
-**Зеркало героя**:
-[Как антагонист отражает теневую сторону протагониста]
-
-**Моральная сложность**:
-- [ ] Чистое зло (редко работает хорошо)
-- [ ] Понятные мотивы
-- [ ] Мог бы быть героем в другой истории
-- [ ] Герой в своей собственной истории
+- **Associated color**: 
+- **Symbol**: 
+- **Recurring motif**: 
 
 ---
 
-## Второстепенные персонажи
+## Antagonist
 
-### [Имя персонажа]
+[Use the same structure as for the protagonist]
 
-| Поле | Значение |
+### Additional for Antagonist
+
+**Why they are the villain**:
+[Motivation from their point of view—they believe they are right]
+
+**Hero’s mirror**:
+[How the antagonist reflects the protagonist’s shadow]
+
+**Moral complexity**:
+- [ ] Pure evil (rarely works well)
+- [ ] Understandable motives
+- [ ] Could be a hero in another story
+- [ ] Hero of their own story
+
+---
+
+## Supporting Characters
+
+### [Character Name]
+
+| Field | Value |
 |------|----------|
-| **Роль в истории** | [Ментор/Союзник/...] |
-| **Функция** | [Зачем нужен сюжету] |
-| **Связь с протагонистом** | |
+| **Role in story** | [Mentor/Ally/...] |
+| **Function** | [Why the plot needs them] |
+| **Connection to protagonist** | |
 
-**Краткое описание**: [1-2 предложения]
+**Brief description**: [1–2 sentences]
 
-**Характерная черта**: [Что делает запоминающимся]
+**Signature trait**: [What makes them memorable]
 
-**Арка** (если есть): [Краткое описание]
+**Arc** (if any): [Short description]
 
 ---
 
-## Архетипы и функции
+## Archetypes and Functions
 
-| Архетип | Персонаж | Функция |
+| Archetype | Character | Function |
 |---------|----------|---------|
-| Герой | | Совершает путешествие |
-| Ментор | | Даёт знания/артефакт |
-| Привратник | | Проверяет готовность |
-| Вестник | | Приносит призыв |
-| Оборотень | | Непредсказуем |
-| Тень | | Антагонист/тёмная сторона |
-| Союзник | | Помогает герою |
-| Трикстер | | Комический рельеф, провокатор |
+| Hero | | Undertakes the journey |
+| Mentor | | Provides knowledge/artifact |
+| Threshold Guardian | | Tests readiness |
+| Herald | | Brings the call |
+| Shapeshifter | | Unpredictable |
+| Shadow | | Antagonist/dark side |
+| Ally | | Helps the hero |
+| Trickster | | Comic relief, provocateur |
 
 ---
 
-## Сеть отношений
+## Relationship Map
 
 ```
-[Протагонист]
-    ├── Любовь ─── [Имя]
-    ├── Дружба ─── [Имя]
-    ├── Ментор ─── [Имя]
-    ├── Конфликт ─── [Антагонист]
-    │       └── Подчинённый ─── [Имя]
-    └── Семья ─── [Имя]
+[Protagonist]
+    ├── Love ─── [Name]
+    ├── Friend ─── [Name]
+    ├── Mentor ─── [Name]
+    ├── Conflict ─── [Antagonist]
+    │       └── Subordinate ─── [Name]
+    └── Family ─── [Name]
 ```
 
 ---
 
-## Чек-лист персонажей
+## Character Checklist
 
-### Для главных персонажей
-- [ ] Want и Need определены и конфликтуют
-- [ ] Есть ложь/заблуждение
-- [ ] Бэкстори объясняет поведение
-- [ ] Арка продумана
-- [ ] Голос узнаваем
-- [ ] Мотивация понятна
+### For main characters
+- [ ] Want and Need are defined and in conflict
+- [ ] There is a lie/misbelief
+- [ ] Backstory explains behavior
+- [ ] Arc is planned
+- [ ] Voice is recognizable
+- [ ] Motivation is clear
 
-### Для второстепенных
-- [ ] Выполняет функцию в сюжете
-- [ ] Имеет хотя бы одну яркую черту
-- [ ] Не клише
+### For supporting
+- [ ] Serves a function in the plot
+- [ ] Has at least one vivid trait
+- [ ] Not a cliché
 
 ---
 
-## Заметки
+## Notes
 
-[Идеи, нерешённые вопросы о персонажах]
+[Ideas, open questions about characters]
 
 ---
 

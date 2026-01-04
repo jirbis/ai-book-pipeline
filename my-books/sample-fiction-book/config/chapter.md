@@ -1,169 +1,169 @@
-# Глава [N]: [Название главы]
+# Chapter [N]: [Chapter Title]
 
-## Метаданные
+## Metadata
 
-| Поле | Значение |
+| Field | Value |
 |------|----------|
-| Номер главы | [N] |
-| Часть/Акт | [Часть N / Акт N] |
-| POV | [Чьими глазами] |
-| Время | [Когда происходит] |
-| Место | [Где происходит] |
-| Статус | `outline` / `draft` / `revision` / `final` |
-| Версия | 1.0 |
-| Слов | 0 |
+| Chapter number | [N] |
+| Part/Act | [Part N / Act N] |
+| POV | [Whose perspective] |
+| Time | [When it happens] |
+| Place | [Where it happens] |
+| Status | `outline` / `draft` / `revision` / `final` |
+| Version | 1.0 |
+| Words | 0 |
 
 ---
 
-## Цель главы
+## Chapter Goal
 
-### Сюжетная функция
-> [Что эта глава делает для истории? Почему она необходима?]
+### Story Function
+> [What does this chapter do for the story? Why is it necessary?]
 
-### Что меняется
-- **В начале главы**: [Состояние истории/персонажа]
-- **В конце главы**: [Новое состояние]
+### What Changes
+- **At the start of the chapter**: [Story/character state]
+- **At the end of the chapter**: [New state]
 
-### Обещание читателю
-[Что читатель получит от этой главы: информация, эмоция, экшн?]
-
----
-
-## Структура главы
-
-### Hook (Первые строки)
-**Цель**: Захватить внимание
-**Тип хука**: 
-- [ ] Действие
-- [ ] Диалог
-- [ ] Загадка/вопрос
-- [ ] Сенсорное описание
-- [ ] Внутренний конфликт
-
-[Написать hook]
+### Promise to the Reader
+[What the reader gets from this chapter: information, emotion, action?]
 
 ---
 
-### Сцена 1: [Название/Описание]
+## Chapter Structure
 
-**Локация**: [Где]
-**Время**: [Когда]
-**Персонажи**: [Кто присутствует]
+### Hook (Opening lines)
+**Goal**: Grab attention  
+**Hook type**: 
+- [ ] Action
+- [ ] Dialogue
+- [ ] Mystery/question
+- [ ] Sensory description
+- [ ] Internal conflict
 
-**Цель POV-персонажа**: [Чего хочет добиться]
-**Конфликт**: [Что мешает]
-**Исход**: [Успех / Провал / Осложнение]
-
-**Содержание**:
-[Описание того, что происходит]
-
-**Диалог** (ключевые моменты):
-> [Важные реплики]
-
-**Сенсорные детали**:
-- Вид: 
-- Звук: 
-- Запах: 
-- Осязание: 
-- Вкус: 
+[Write the hook]
 
 ---
 
-### Сцена 2: [Название/Описание]
+### Scene 1: [Title/Description]
 
-[Та же структура]
+**Location**: [Where]  
+**Time**: [When]  
+**Characters**: [Who is present]
+
+**POV character goal**: [What they want to achieve]  
+**Conflict**: [What stands in the way]  
+**Outcome**: [Success / Failure / Complication]
+
+**Content**:  
+[Description of what happens]
+
+**Dialogue** (key beats):
+> [Important lines]
+
+**Sensory details**:
+- Sight: 
+- Sound: 
+- Smell: 
+- Touch: 
+- Taste: 
 
 ---
 
-### Сцена 3: [Название/Описание]
+### Scene 2: [Title/Description]
 
-[Та же структура]
-
----
-
-### Cliffhanger / Закрытие главы
-
-**Тип концовки**:
-- [ ] Cliffhanger (резкий обрыв на пике)
-- [ ] Поворот (неожиданная информация)
-- [ ] Решение (персонаж принимает решение)
-- [ ] Вопрос (новый вопрос для читателя)
-- [ ] Эмоциональный момент (сильное чувство)
-
-[Написать концовку]
+[Same structure]
 
 ---
 
-## Персонажи в главе
+### Scene 3: [Title/Description]
 
-| Персонаж | Роль в главе | Развитие | Ключевой момент |
+[Same structure]
+
+---
+
+### Cliffhanger / Chapter Close
+
+**Ending type**:
+- [ ] Cliffhanger (sharp break at a peak)
+- [ ] Reveal (unexpected information)
+- [ ] Decision (character makes a choice)
+- [ ] Question (new question for the reader)
+- [ ] Emotional moment (strong feeling)
+
+[Write the ending]
+
+---
+
+## Characters in the Chapter
+
+| Character | Role in chapter | Development | Key moment |
 |----------|--------------|----------|-----------------|
-| [Имя] | POV | [Что узнаёт/меняется] | [Когда] |
-| [Имя] | Второстепенный | | |
+| [Name] | POV | [What they learn/change] | [When] |
+| [Name] | Supporting | | |
 
 ---
 
-## Информация для читателя
+## Information for the Reader
 
-### Что раскрывается
-- [ ] [Информация 1]
-- [ ] [Информация 2]
+### What is revealed
+- [ ] [Information 1]
+- [ ] [Information 2]
 
-### Что намекается (setup)
-- [ ] [Намёк 1] → расплата в главе [N]
-- [ ] [Намёк 2] → расплата в главе [N]
+### What is hinted (setup)
+- [ ] [Hint 1] → payoff in chapter [N]
+- [ ] [Hint 2] → payoff in chapter [N]
 
-### Что скрывается
-- [ ] [Информация] — раскроется в главе [N]
-
----
-
-## Темы и символы
-
-**Как тема проявляется**: [Связь с главной темой книги]
-
-**Символы в главе**: [Образы, повторяющиеся мотивы]
+### What is concealed
+- [ ] [Information] — revealed in chapter [N]
 
 ---
 
-## Переходы
+## Themes and Symbols
 
-### Из предыдущей главы
-[Как эта глава продолжает предыдущую]
+**How the theme shows up**: [Connection to the book’s main theme]
 
-### В следующую главу
-[Как setup для следующей главы]
+**Symbols in the chapter**: [Images, recurring motifs]
 
 ---
 
-## Текст главы
+## Transitions
+
+### From the previous chapter
+[How this chapter continues the previous one]
+
+### To the next chapter
+[How it sets up the next chapter]
 
 ---
 
-[Здесь будет текст главы]
+## Chapter Text
 
 ---
 
-## Заметки для редактуры
+[The chapter text goes here]
 
-### Проверить
-- [ ] POV консистентен
-- [ ] Голос персонажа узнаваем
+---
+
+## Editing Notes
+
+### Check
+- [ ] POV is consistent
+- [ ] Character voice is recognizable
 - [ ] Show, don't tell
-- [ ] Пейсинг правильный
-- [ ] Диалоги звучат естественно
-- [ ] Описания не перегружены
+- [ ] Pacing feels right
+- [ ] Dialogue sounds natural
+- [ ] Descriptions aren’t overloaded
 
-### Проблемные места
-[Что требует доработки]
+### Problem Areas
+[What needs more work]
 
-### Комментарии
-[Заметки от редактора или автора]
+### Comments
+[Notes from the editor or author]
 
 ---
 
-## История версий
+## Version History
 
-| Версия | Дата | Изменения |
+| Version | Date | Changes |
 |--------|------|-----------|
-| 1.0 | [дата] | Первый черновик |
+| 1.0 | [date] | First draft |

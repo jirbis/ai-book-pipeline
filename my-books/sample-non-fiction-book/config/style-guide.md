@@ -1,207 +1,207 @@
-# Style Guide — Руководство по стилю
+# Style Guide
 
-## Цель документа
+## Document Goal
 
-Обеспечить консистентность голоса, тона и форматирования на протяжении всей книги.
-
----
-
-## Голос и тон
-
-### Общий тон
-
-**Выбрать один**:
-- [ ] Формальный (академический, профессиональный)
-- [ ] Полуформальный (экспертный, но доступный)
-- [ ] Разговорный (дружеский, личный)
-- [ ] Интимный (как письмо другу)
-
-### Описание голоса
-[3-5 прилагательных, описывающих голос книги]
-
-Например: "Тёплый, уверенный, немного ироничный, практичный"
-
-### Образец голоса
-
-**Так НЕ надо**:
-> [Пример неправильного тона]
-
-**Так НАДО**:
-> [Пример правильного тона]
+Ensure the voice, tone, and formatting stay consistent throughout the entire book.
 
 ---
 
-## Обращение к читателю
+## Voice and Tone
 
-### Местоимения
+### Overall Tone
 
-| Контекст | Использовать | Не использовать |
+**Choose one**:
+- [ ] Formal (academic, professional)
+- [ ] Semi-formal (expert but accessible)
+- [ ] Conversational (friendly, personal)
+- [ ] Intimate (like a letter to a friend)
+
+### Voice Description
+[3–5 adjectives that describe the book’s voice]
+
+Example: “Warm, confident, slightly wry, practical”
+
+### Voice Samples
+
+**Don’t do this**:
+> [Example of the wrong tone]
+
+**Do this**:
+> [Example of the correct tone]
+
+---
+
+## Addressing the Reader
+
+### Pronouns
+
+| Context | Use | Avoid |
 |----------|--------------|-----------------|
-| К читателю | [вы/ты] | |
-| Об авторе | [я/мы] | |
-| Общие утверждения | [люди/мы все] | |
+| To the reader | [you/you all] | |
+| About the author | [I/we] | |
+| General statements | [people/we all] | |
 
-### Инклюзивный язык
-- [ ] Использовать гендерно-нейтральные формы
-- [ ] Избегать предположений о читателе
-- [ ] Учитывать культурное разнообразие
+### Inclusive Language
+- [ ] Use gender-neutral forms
+- [ ] Avoid assumptions about the reader
+- [ ] Account for cultural diversity
 
 ---
 
-## Лексика
+## Lexicon
 
-### Технические термины
+### Technical Terms
 
-| Термин | Определение | Как вводить |
+| Term | Definition | How to introduce |
 |--------|-------------|-------------|
-| [Термин] | [Значение] | При первом использовании дать определение |
+| [Term] | [Meaning] | Define at first use |
 
-### Слова-маркеры (избегать)
+### Words to Avoid
 
-- Очень, весьма, крайне (усилители)
-- Интересно, удивительно (субъективные оценки без доказательств)
-- Очевидно, конечно (предположения о знаниях читателя)
-- [Добавить специфичные для проекта]
+- Very, highly, extremely (empty intensifiers)
+- Interesting, surprising (subjective judgments without evidence)
+- Obviously, of course (assumes reader knowledge)
+- [Add project-specific items]
 
-### Предпочтительные слова
+### Preferred Words
 
-| Вместо | Использовать |
+| Instead of | Use |
 |--------|--------------|
-| [Слово A] | [Слово B] |
+| [Word A] | [Word B] |
 
 ---
 
-## Грамматика и пунктуация
+## Grammar and Punctuation
 
-### Оксфордская запятая
-- [ ] Да: "яблоки, груши, и сливы"
-- [ ] Нет: "яблоки, груши и сливы"
+### Oxford Comma
+- [ ] Yes: “apples, pears, and plums”
+- [ ] No: “apples, pears and plums”
 
-### Кавычки
-- [ ] «Ёлочки» для диалога
-- [ ] "Лапки" для цитат/выделения
-- [ ] 'Одинарные' для цитат внутри цитат
+### Quotation Marks
+- [ ] Double quotes for dialogue
+- [ ] Double quotes for citations/emphasis
+- [ ] Single quotes for quotes inside quotes
 
-### Тире и дефисы
-- Дефис (-): составные слова
-- Короткое тире (–): диапазоны, вместо "до"
-- Длинное тире (—): паузы в тексте
+### Dashes and Hyphens
+- Hyphen (-): compound words
+- En dash (–): ranges, instead of “to”
+- Em dash (—): pauses in text
 
-### Числа
-- [ ] Словами до 10, цифрами 11+
-- [ ] Всегда цифрами в технических контекстах
-- [ ] Другое: ___
+### Numbers
+- [ ] Words up to 10, digits 11+
+- [ ] Always digits in technical contexts
+- [ ] Other: ___
 
-### Время глаголов
-- Non-fiction: [ ] Настоящее / [ ] Прошедшее
-- Fiction: [ ] Настоящее / [ ] Прошедшее
+### Verb Tense
+- Non-fiction: [ ] Present / [ ] Past
+- Fiction: [ ] Present / [ ] Past
 
 ---
 
-## Форматирование
+## Formatting
 
-### Заголовки
+### Headings
 
 ```
-# Название главы
-## Раздел
-### Подраздел
-#### Мелкий раздел (редко)
+# Chapter Title
+## Section
+### Subsection
+#### Minor section (rare)
 ```
 
-### Выделение
+### Emphasis
 
-- **Жирный**: Ключевые понятия при первом введении
-- *Курсив*: Иностранные слова, названия произведений, акцент
-- `Код`: Технические термины, команды
+- **Bold**: Key concepts at first mention
+- *Italics*: Foreign words, titles of works, emphasis
+- `Code`: Technical terms, commands
 
-### Списки
-- Маркированные: для неупорядоченных перечислений
-- Нумерованные: для последовательностей, рейтингов
+### Lists
+- Bulleted: unordered lists
+- Numbered: sequences, rankings
 
-### Цитаты
+### Quotes
 
-> Длинные цитаты (более 40 слов) оформляются как blockquote.
+> Long quotes (over 40 words) go in a blockquote.
 
-Короткие цитаты "остаются в тексте".
+Short quotes “stay inline.”
 
 ---
 
-## Специфика жанра
+## Genre-Specific Notes
 
-### Для Non-Fiction
+### For Non-Fiction
 
-**Ссылки на источники**:
-- В тексте: (Автор, год)
-- Сноски: для дополнительных комментариев
-- Концевые примечания: для длинных пояснений
+**Source references**:
+- In text: (Author, year)
+- Footnotes: for additional comments
+- Endnotes: for longer explanations
 
-**Примеры и кейсы**:
-- Анонимизировать реальных людей (если не публичные фигуры)
-- Формат: история → анализ → вывод
+**Examples and cases**:
+- Anonymize real people (if not public figures)
+- Format: story → analysis → takeaway
 
-### Для Fiction
+### For Fiction
 
-**Диалоги**:
+**Dialogue**:
 ```
-— Привет, — сказал он.
-— Привет, — ответила она с улыбкой.
+“Hello,” he said.
+“Hello,” she replied with a smile.
 ```
 
-**Внутренний монолог**:
-- Курсивом: *Почему я это делаю?*
-- Или без выделения, но ясно из контекста
+**Internal monologue**:
+- Use italics: *Why am I doing this?*
+- Or leave unformatted but make it clear from context
 
-**Описания**:
-- Не более 2-3 деталей за раз
-- Через действие, не статично
-- Сенсорные, не только визуальные
-
----
-
-## Табу
-
-### Никогда не использовать
-1. [Клише или фразу]
-2. [Клише или фразу]
-3. [Клише или фразу]
-
-### Использовать с осторожностью
-1. [Слово/приём] — только когда ___
-2. [Слово/приём] — не чаще ___ на главу
+**Descriptions**:
+- No more than 2–3 details at a time
+- Show through action, not static lists
+- Sensory, not only visual
 
 ---
 
-## Чек-лист стиля
+## Taboos
 
-### При написании
-- [ ] Тон соответствует голосу книги
-- [ ] Лексика консистентна
-- [ ] Нет слов-паразитов из списка
+### Never Use
+1. [Cliché or phrase]
+2. [Cliché or phrase]
+3. [Cliché or phrase]
 
-### При редактуре
-- [ ] Форматирование единообразно
-- [ ] Пунктуация по правилам
-- [ ] Термины используются правильно
-
----
-
-## Примеры и образцы
-
-### Образец абзаца (правильный стиль)
-
-[Написать эталонный абзац для книги]
-
-### Образец диалога (для fiction)
-
-[Написать эталонный диалог]
-
-### Образец технического объяснения (для non-fiction)
-
-[Написать эталонное объяснение]
+### Use Sparingly
+1. [Word/device] — only when ___
+2. [Word/device] — no more than ___ per chapter
 
 ---
 
-## Заметки
+## Style Checklist
 
-[Дополнительные указания, исключения, эволюция стиля]
+### While Writing
+- [ ] Tone matches the book’s voice
+- [ ] Word choice is consistent
+- [ ] No filler words from the avoid list
+
+### While Editing
+- [ ] Formatting is consistent
+- [ ] Punctuation follows the rules
+- [ ] Terms are used correctly
+
+---
+
+## Examples and Samples
+
+### Sample Paragraph (correct style)
+
+[Write a benchmark paragraph for the book]
+
+### Sample Dialogue (for fiction)
+
+[Write a benchmark dialogue]
+
+### Sample Technical Explanation (for non-fiction)
+
+[Write a benchmark explanation]
+
+---
+
+## Notes
+
+[Additional guidance, exceptions, style evolution]
