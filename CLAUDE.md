@@ -37,6 +37,23 @@ book-pipeline/
         └── files/
 ```
 
+### Expanded tree for context
+
+```
+my-books/<book-name>/
+  config/                        # PROJECT.md, author-voice.md, style-guide.md, etc.
+  files/
+    import/                      # Optional imported source files
+    content/                     # Chapters (drafts, edited, copyedited)
+      chapters/
+    research/                    # Research notes and fact checks
+    edits/                       # Editing reports
+    reviews/                     # Critic reviews
+    proofread/                   # Proofreading reports
+    handoff/                     # Agent handoff logs
+    output/                      # Final exports (docx/pdf/epub/markdown)
+```
+
 ## Important Principles
 
 ### 1. Book Isolation
@@ -120,6 +137,50 @@ claude "Show project status for book in my-books/BOOK_NAME/"
 claude "Run import of materials from my-books/BOOK_NAME/files/import/"
 ```
 
+### Fast demos (ready-to-open files)
+
+```bash
+# Fiction demo (resets sample files)
+bash engine/demo.sh fiction --reset
+
+# Non-fiction demo
+bash engine/demo.sh non-fiction --reset
+
+# Populate both samples
+bash engine/demo.sh all --reset
+
+# Send demo output to a specific book directory
+bash engine/demo.sh non-fiction --reset --book my-books/my-first-book
+```
+
+### Command-line helper (Python CLI)
+
+```bash
+# Create structure and copy templates
+python -m engine.cli init my-new-book --type fiction  # or non-fiction
+
+# Check required files and directories
+python -m engine.cli status my-new-book
+
+# Show workflow guidance for a specific phase (0-5 or alias)
+python -m engine.cli phase my-new-book 2     # Writing Drafts
+python -m engine.cli phase my-new-book edit  # Editing
+
+# View sample-book generation steps tied to author voice
+python -m engine.cli samples my-new-book
+```
+
+## Agent Flow (concise)
+
+1. **Orchestrator** → plans and coordinates.
+2. **Researcher** → gathers facts (especially for non-fiction).
+3. **Writer** → drafts chapters.
+4. **Editor** → developmental → line → copy edits.
+5. **Critic** → quality and consistency review.
+6. **Author review** → human approval/changes.
+7. **Proofreader** → typography, grammar, consistency, voice protection.
+8. **Publisher** → assembly and export (docx/pdf/epub/markdown).
+
 ## Key Files to Read
 
 When working with book-pipeline, first read:
@@ -166,6 +227,13 @@ In `my-books/sample-fiction-book/` and `my-books/sample-non-fiction-book/` are e
 3. Check book type (fiction/non-fiction) matches configuration
 4. Read engine/STRUCTURE.md to understand new structure
 5. Refer to WORKFLOW.md to understand current phase
+
+## Helpful reminders from prior README content
+
+- **Import existing materials (Phase 0):** Place source files under `files/import/` and trigger the IMPORTER to classify, map, and extract author voice automatically.
+- **Author voice protection:** `config/author-voice.md` is the reference for style; PROOFREADER must preserve it and flag uncertain changes.
+- **Final author review:** Before publication, ensure author review, edits applied, proofreader passes complete, and only then publish.
+- **Working principles:** Keep work incremental, follow the style guide, version with Git, and route every chapter through edit and review steps.
 
 ---
 
