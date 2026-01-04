@@ -146,6 +146,10 @@ The framework works through the Claude Code agent system:
 - 🤖 `engine/agents/AGENTS.md` — Description of agents and their roles
 - 🎨 `engine/book-templates/author-voice.md` — Template for describing author voice
 
+### Agent quick references
+- `CLAUDE.md` — Claude Code quick-start aligned with the current workflow and file naming
+- `CODEX.md` — Codex counterpart that mirrors the same workflow expectations and commands
+
 ## Command-Line Helper
 
 You can drive common workflow steps without memorizing every path:
