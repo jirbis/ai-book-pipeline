@@ -2,18 +2,24 @@
 """Validate that every chapter has a canonical final file before publication.
 
 Outputs a machine-readable JSON summary and, when finals are missing, a Markdown
-report plus a handoff file under `my-books/<book>/files/handoff/` for
+report plus a handoff file under `<books-root>/<book>/files/handoff/` for
 ORCHESTRATOR.
 """
 
 from __future__ import annotations
 
+import argparse
 import json
+import os
 import re
-import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
+
+
+DEFAULT_BOOKS_DIRNAME = "my-books"
+BOOKS_ROOT_ENV = "BOOKS_ROOT"
+REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 def collect_chapter_numbers(chapters_dir: Path) -> set[int]:
@@ -131,12 +137,48 @@ HIGH
     return handoff_path
 
 
-def main() -> int:
-    if len(sys.argv) != 2:
-        print("Usage: validate_final_chapters.py my-books/<book-short-name>")
-        return 2
+def resolve_books_root(explicit_root: str | None) -> Path:
+    raw_root = explicit_root or os.getenv(BOOKS_ROOT_ENV) or DEFAULT_BOOKS_DIRNAME
+    books_root = Path(raw_root).expanduser()
+    if not books_root.is_absolute():
+        books_root = REPO_ROOT / books_root
+    return books_root
 
-    book_root = Path(sys.argv[1]).resolve()
+
+def resolve_book_root(book: str, books_root: Path) -> Path:
+    candidate = Path(book)
+    if candidate.is_absolute():
+        return candidate
+    return books_root / candidate
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Validate that all chapters have a chapter-N-final.md. Defaults to BOOKS_ROOT or"
+            f" '{DEFAULT_BOOKS_DIRNAME}' under the repo root."
+        )
+    )
+    parser.add_argument(
+        "book",
+        help="Book short name (relative to the books root) or an absolute path to the book directory.",
+    )
+    parser.add_argument(
+        "--books-root",
+        help=(
+            "Path to the books root. Uses $BOOKS_ROOT if set or defaults to"
+            f" '{DEFAULT_BOOKS_DIRNAME}' relative to the repository."
+        ),
+    )
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+
+    books_root = resolve_books_root(args.books_root)
+    book_root = resolve_book_root(args.book, books_root)
     chapters_dir = book_root / "files" / "content" / "chapters"
 
     if not chapters_dir.is_dir():

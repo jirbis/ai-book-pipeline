@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import re
 import shutil
 from pathlib import Path
@@ -8,10 +9,11 @@ from typing import Dict, Iterable, List, Optional
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-BOOKS_ROOT = REPO_ROOT / "my-books"
 ENGINE_ROOT = Path(__file__).resolve().parent
 TEMPLATE_ROOT = ENGINE_ROOT / "book-templates"
 WORKFLOW_PATH = ENGINE_ROOT / "agents" / "WORKFLOW.md"
+DEFAULT_BOOKS_DIRNAME = "my-books"
+BOOKS_ROOT_ENV = "BOOKS_ROOT"
 
 PHASE_HEADINGS: Dict[str, str] = {
     "0": "PHASE 0: Import (optional)",
@@ -67,8 +69,19 @@ def require_project_config(book_root: Path) -> Path:
     return project_path
 
 
-def resolve_book_root(book: str) -> Path:
-    return BOOKS_ROOT / book
+def resolve_books_root(explicit_root: Optional[str]) -> Path:
+    raw_root = explicit_root or os.getenv(BOOKS_ROOT_ENV) or DEFAULT_BOOKS_DIRNAME
+    books_root = Path(raw_root).expanduser()
+    if not books_root.is_absolute():
+        books_root = REPO_ROOT / books_root
+    return books_root
+
+
+def resolve_book_root(book: str, books_root: Path) -> Path:
+    candidate = Path(book)
+    if candidate.is_absolute():
+        return candidate
+    return books_root / candidate
 
 
 def resolve_book_type(explicit_type: Optional[str], project_fields: Dict[str, str]) -> str:
@@ -149,8 +162,15 @@ def ensure_file_structure(book_root: Path, book_type: str) -> List[Path]:
     return created
 
 
+def format_repo_relative(path: Path) -> str:
+    try:
+        return str(path.relative_to(REPO_ROOT))
+    except ValueError:
+        return str(path)
+
+
 def init_project(args: argparse.Namespace) -> None:
-    book_root = resolve_book_root(args.book)
+    book_root = resolve_book_root(args.book, args.books_root)
     project_path = book_root / "config" / "PROJECT.md"
     book_root.mkdir(parents=True, exist_ok=True)
     project_fields: Dict[str, str] = {}
@@ -168,11 +188,11 @@ def init_project(args: argparse.Namespace) -> None:
     print(f"- Book type: {book_type}")
     print(f"- Templates copied ({len(copied)}):")
     for path in copied:
-        print(f"  • {path.relative_to(REPO_ROOT)}")
+        print(f"  • {format_repo_relative(path)}")
     if created:
         print(f"- Created directories ({len(created)}):")
         for path in created:
-            print(f"  • {path.relative_to(REPO_ROOT)}")
+            print(f"  • {format_repo_relative(path)}")
     else:
         print("- No new directories created (already present).")
     print("\nNext steps (see engine/agents/WORKFLOW.md Phase 1):")
@@ -228,19 +248,19 @@ def resolve_phase_heading(phase: str) -> str:
 
 
 def run_phase(args: argparse.Namespace) -> None:
-    book_root = resolve_book_root(args.book)
+    book_root = resolve_book_root(args.book, args.books_root)
     project_path = require_project_config(book_root)
     project_fields = parse_project_fields(project_path)
     book_type = resolve_book_type(None, project_fields)
 
     heading = resolve_phase_heading(args.phase)
-    print(f"Book: {book_root.relative_to(REPO_ROOT)} ({book_type})")
+    print(f"Book: {format_repo_relative(book_root)} ({book_type})")
     print(f"Workflow excerpt for {heading}:\n")
     print(render_workflow_section(heading))
 
 
 def summarize_status(args: argparse.Namespace) -> None:
-    book_root = resolve_book_root(args.book)
+    book_root = resolve_book_root(args.book, args.books_root)
     project_path = require_project_config(book_root)
     fields = parse_project_fields(project_path)
     book_type = resolve_book_type(None, fields)
@@ -256,12 +276,12 @@ def summarize_status(args: argparse.Namespace) -> None:
         if not path.exists():
             missing.append(str(path.relative_to(REPO_ROOT)))
 
-    print(f"Book: {book_root.relative_to(REPO_ROOT)}")
+    print(f"Book: {format_repo_relative(book_root)}")
     print(f"Title: {fields.get('title', 'Unknown')} — Type: {book_type}")
     if "status" in fields:
         print(f"Status: {fields['status']}")
-    print(f"Config present at: {project_path.relative_to(REPO_ROOT)}")
-    print(f"Progress file: {progress_path.relative_to(REPO_ROOT)} ({'found' if progress_path.exists() else 'missing'})")
+    print(f"Config present at: {format_repo_relative(project_path)}")
+    print(f"Progress file: {format_repo_relative(progress_path)} ({'found' if progress_path.exists() else 'missing'})")
 
     files_root = book_root / "files"
     print("Working directories:")
@@ -275,7 +295,7 @@ def summarize_status(args: argparse.Namespace) -> None:
         files_root / "output",
     ]
     for path in expected_dirs:
-        print(f"  • {path.relative_to(REPO_ROOT)} ({'ok' if path.exists() else 'missing'})")
+        print(f"  • {format_repo_relative(path)} ({'ok' if path.exists() else 'missing'})")
 
     if missing:
         print("\nMissing recommended files:")
@@ -284,7 +304,7 @@ def summarize_status(args: argparse.Namespace) -> None:
 
 
 def generate_samples(args: argparse.Namespace) -> None:
-    book_root = resolve_book_root(args.book)
+    book_root = resolve_book_root(args.book, args.books_root)
     project_path = require_project_config(book_root)
     project_fields = parse_project_fields(project_path)
     book_type = resolve_book_type(None, project_fields)
@@ -293,8 +313,8 @@ def generate_samples(args: argparse.Namespace) -> None:
     if not author_voice_path.exists():
         raise SystemExit(f"Author voice file not found at {author_voice_path}")
 
-    print(f"Book: {book_root.relative_to(REPO_ROOT)} ({book_type})")
-    print(f"Author voice file: {author_voice_path.relative_to(REPO_ROOT)}")
+    print(f"Book: {format_repo_relative(book_root)} ({book_type})")
+    print(f"Author voice file: {format_repo_relative(author_voice_path)}")
     print("\nFollow the sample generation steps from WORKFLOW.md:\n")
     print(render_workflow_section("Sample Book Generation (author voice demonstration)"))
     print("\nIf you already generated samples, see also:")
@@ -307,11 +327,24 @@ def build_parser() -> argparse.ArgumentParser:
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
+    root_parser = argparse.ArgumentParser(add_help=False)
+    root_parser.add_argument(
+        "--books-root",
+        help=(
+            "Path to the books root. Defaults to $BOOKS_ROOT or"
+            f" '{DEFAULT_BOOKS_DIRNAME}' relative to the repository root."
+        ),
+    )
+
     init_parser = subparsers.add_parser(
         "init",
         help="Create per-book directories and copy templates.",
+        parents=[root_parser],
     )
-    init_parser.add_argument("book", help="Short name of the book under my-books/")
+    init_parser.add_argument(
+        "book",
+        help="Short name of the book under the configured books root.",
+    )
     init_parser.add_argument(
         "--type",
         choices=["fiction", "non-fiction", "nonfiction"],
@@ -327,23 +360,26 @@ def build_parser() -> argparse.ArgumentParser:
     phase_parser = subparsers.add_parser(
         "phase",
         help="Show workflow guidance for a specific phase (0-5 or name).",
+        parents=[root_parser],
     )
-    phase_parser.add_argument("book", help="Short name of the book under my-books/")
+    phase_parser.add_argument("book", help="Short name of the book under the configured books root.")
     phase_parser.add_argument("phase", help="Phase number or alias (import, init, draft, edit, review, publish).")
     phase_parser.set_defaults(func=run_phase)
 
     status_parser = subparsers.add_parser(
         "status",
         help="Summarize configuration and directory readiness.",
+        parents=[root_parser],
     )
-    status_parser.add_argument("book", help="Short name of the book under my-books/")
+    status_parser.add_argument("book", help="Short name of the book under the configured books root.")
     status_parser.set_defaults(func=summarize_status)
 
     samples_parser = subparsers.add_parser(
         "samples",
         help="Show steps for generating sample chapters based on author voice.",
+        parents=[root_parser],
     )
-    samples_parser.add_argument("book", help="Short name of the book under my-books/")
+    samples_parser.add_argument("book", help="Short name of the book under the configured books root.")
     samples_parser.set_defaults(func=generate_samples)
 
     return parser
@@ -352,6 +388,7 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: Optional[List[str]] = None) -> None:
     parser = build_parser()
     args = parser.parse_args(argv)
+    args.books_root = resolve_books_root(getattr(args, "books_root", None))
     args.func(args)
 
 
