@@ -1234,26 +1234,76 @@ fi
 
 ## Implementation Roadmap
 
-### Sprint 1 (Week 1): Critical Validation [P0]
+### Sprint 1 (Week 1): Critical Validation [P0] ✅ COMPLETE
 **Goal**: Prevent workflow violations
+**Status**: ✅ **COMPLETED** on 2026-01-04
+**Actual effort**: 1 day (vs estimated 5 days)
 
-- [ ] A.1: Phase validators (validate_phase_0-5.py) - 3 days
-- [ ] B.1: Research file validator - 2 days
+- [x] A.1: Phase validators (validate_phase_0-5.py) - 3 days ✅ DONE
+- [x] B.1: Research file validator - 2 days ✅ DONE
 
-**Deliverables**:
+**Deliverables** ✅:
 - ✅ validate_phase_2.py blocks Phase 3 without research
 - ✅ validate_research.py ensures research quality
 - ✅ Can detect current workflow violations
+- ✅ **BONUS**: All 6 phase validators created (0-5)
+- ✅ **BONUS**: validation_utils.py infrastructure
 
-**Success criteria**:
+**Success criteria**: ✅ **ALL MET**
+
+**Test Results** (validated on sample-non-fiction-book):
 ```bash
 $ python engine/agents/tools/validate_phase_2.py my-books/sample-non-fiction-book/
 🚫 PHASE 2 INCOMPLETE - CANNOT PROCEED TO PHASE 3
 
-❌ MISSING: files/research/chapter-0-research.md
-❌ MISSING: files/research/chapter-2-research.md
-❌ MISSING: files/research/chapter-3-research.md
+❌ CRITICAL ERRORS:
+  1. CRITICAL: Missing research files for chapters: [0, 2, 3, 4, 5, ...]
+  2. CRITICAL: Invalid research files for chapters: [1]
+  3. Missing draft files for chapters: [0, 4, 5, 6, ...]
+  4. Missing directory required for Phase 3: files/edits
+  5. Missing directory required for Phase 3: files/reviews
+  6. Missing directory required for Phase 3: files/proofread
+
+⚠️  WARNINGS:
+  1. Missing handoff logs for chapters: [0, 1, 2, 3, ...]
+  2. progress.md appears to be template
+
+📌 For non-fiction books:
+  1. Create research files: python -m engine.cli generate-research <book> --chapter N
+  2. Fill research with actual data (min 3 sources, 300 words)
+  3. Validate research: python engine/agents/tools/validate_research.py <file>
+  4. Create handoff logs: files/handoff/researcher-to-writer-ch-N.md
+  5. Create missing directories: mkdir -p files/edits files/reviews files/proofread
+
+$ python engine/agents/tools/validate_research.py my-books/sample-non-fiction-book/files/research/chapter-1-research.md
+🚫 Research validation FAILED
+
+❌ CRITICAL ERRORS:
+  1. Research too short: 81 words (minimum: 300)
+  2. Research file appears to be template
+  3. Insufficient sources: 0 found (minimum: 3)
 ```
+
+**Files Created**:
+```
+engine/agents/tools/
+├── __init__.py               ← Package initialization
+├── validation_utils.py       ← Common validation utilities
+├── validate_research.py      ← Research quality validator ⭐
+├── validate_phase_0.py       ← Import phase validator
+├── validate_phase_1.py       ← Init phase validator
+├── validate_phase_2.py       ← Draft phase validator ⭐ CRITICAL
+├── validate_phase_3.py       ← Edit phase validator
+├── validate_phase_4.py       ← Review phase validator
+└── validate_phase_5.py       ← Publish phase validator
+```
+
+**Impact**:
+- ✅ Workflow violations NOW DETECTED automatically
+- ✅ Research requirement ENFORCED for non-fiction
+- ✅ Phase transitions BLOCKED when validation fails
+- ✅ Clear error messages with remediation steps
+- ✅ Exit codes for automation (0=pass, 1=critical, 2=warnings)
 
 ---
 
