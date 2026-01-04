@@ -1,7 +1,7 @@
 # AGENTS.md — Agent System for Book Writing
 
 > **IMPORTANT:** The project structure has been updated! All references to `engine/files/` in this document
-> should be understood as `my-books/<book-short-name>/files/`.
+> should be understood as `$BOOKS_ROOT/<book-short-name>/files/` (default root: `my-books/`).
 > See [STRUCTURE.md](../STRUCTURE.md) for details
 
 ## System Overview
@@ -73,7 +73,7 @@ Main project coordinator. Plans work, assigns tasks, controls quality, makes rea
    - Determine book type (fiction/non-fiction)
    - Create directory structure
    - Generate work plan
-   OUTPUT: my-books/<book-short-name>/config/plan.md, folder structure
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/config/plan.md, folder structure
    ```
 
 2. **Planning**
@@ -83,7 +83,7 @@ Main project coordinator. Plans work, assigns tasks, controls quality, makes rea
    - Break into stages
    - Determine chapter order
    - Assign agents to tasks
-   OUTPUT: my-books/<book-short-name>/config/progress.md (initialized, per book)
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/config/progress.md (initialized, per book)
    ```
 
 3. **Coordination**
@@ -92,7 +92,7 @@ Main project coordinator. Plans work, assigns tasks, controls quality, makes rea
    ACTIONS:
    - Check previous stage readiness
    - Launch next agent
-   - Update my-books/<book-short-name>/config/progress.md
+   - Update $BOOKS_ROOT/<book-short-name>/config/progress.md
    OUTPUT: Instructions for next agent
    ```
 
@@ -106,7 +106,7 @@ Main project coordinator. Plans work, assigns tasks, controls quality, makes rea
    OUTPUT: Chapter/book status
    ```
 
-Progress tracking is per book: always read and write `my-books/<book-short-name>/config/progress.md` for the active title; avoid any legacy shared progress files.
+Progress tracking is per book: always read and write `$BOOKS_ROOT/<book-short-name>/config/progress.md` for the active title; avoid any legacy shared progress files.
 
 ### Details
 See full system prompt and instructions in `engine/agents/orchestrator.md`
@@ -136,7 +136,7 @@ Gathers information, checks facts, finds sources. Critical for non-fiction, opti
    - Systematize findings
    - Extract key facts
    - Save sources
-   OUTPUT: my-books/<book-short-name>/files/research/chapter-N-research.md
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/files/research/chapter-N-research.md
    ```
 
 2. **Fact-checking**
@@ -147,7 +147,7 @@ Gathers information, checks facts, finds sources. Critical for non-fiction, opti
    - Verify each claim
    - Find supporting sources
    - Mark unverifiable items
-   OUTPUT: my-books/<book-short-name>/files/research/chapter-N-factcheck.md
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/files/research/chapter-N-factcheck.md
    ```
 
 3. **Finding Quotes and Examples**
@@ -157,7 +157,7 @@ Gathers information, checks facts, finds sources. Critical for non-fiction, opti
    - Find relevant quotes
    - Find cases/examples
    - Verify authorship
-   OUTPUT: Additions to my-books/<book-short-name>/files/research/chapter-N-research.md
+   OUTPUT: Additions to $BOOKS_ROOT/<book-short-name>/files/research/chapter-N-research.md
    ```
 
 ### Output File Format
@@ -235,7 +235,7 @@ Writes chapter drafts based on plan, research and guidance. Main content generat
    - Follow style-guide
    - Save with metadata
 
-   OUTPUT: my-books/<book-short-name>/files/content/chapters/chapter-N-draft-v1.md
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-N-draft-v1.md
    ```
 
 2. **Revision Based on Feedback**
@@ -249,7 +249,7 @@ Writes chapter drafts based on plan, research and guidance. Main content generat
    - Make corrections
    - Increment version
 
-   OUTPUT: my-books/<book-short-name>/files/content/chapters/chapter-N-draft-v2.md
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-N-draft-v2.md
    ```
 
 ### Output File Format
@@ -307,7 +307,7 @@ Edits drafts: improves structure, style, clarity. Works on prose quality.
    - Check logic of argumentation
    - Assess pacing
    - Mark weak spots
-   OUTPUT: my-books/<book-short-name>/files/edits/chapter-N-dev-edit.md
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/files/edits/chapter-N-dev-edit.md
    ```
 
 2. **Line Edit**
@@ -318,7 +318,7 @@ Edits drafts: improves structure, style, clarity. Works on prose quality.
    - Remove repetition
    - Strengthen voice
    - Check transitions
-   OUTPUT: my-books/<book-short-name>/files/content/chapters/chapter-N-edited.md
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-N-edited.md
    ```
 
 3. **Copy Edit**
@@ -328,7 +328,7 @@ Edits drafts: improves structure, style, clarity. Works on prose quality.
    - Grammar and punctuation
    - Term consistency
    - Formatting
-   OUTPUT: my-books/<book-short-name>/files/content/chapters/chapter-N-copyedited.md
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-N-copyedited.md
    ```
 
 ### Comment Format
@@ -400,7 +400,7 @@ Critical quality assessment. Finds issues that other agents missed. Last line be
    - Find issues
    - Check consistency with other chapters
    - Give verdict
-   OUTPUT: my-books/<book-short-name>/files/reviews/chapter-N-review.md
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/files/reviews/chapter-N-review.md
    ```
 
 2. **Full Book Review**
@@ -411,7 +411,7 @@ Critical quality assessment. Finds issues that other agents missed. Last line be
    - Check arcs and threads
    - Assess integrity
    - Final recommendations
-   OUTPUT: my-books/<book-short-name>/files/reviews/book-review.md
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/files/reviews/book-review.md
    ```
 
 ### Review Format
@@ -501,7 +501,7 @@ Final book preparation for publication. Assembly, formatting, export.
    - Export to DOCX
    - Export to PDF (optional)
    - Export to EPUB (optional)
-   OUTPUT: my-books/<book-short-name>/files/output/book.[format]
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/files/output/book.[format]
    ```
 
 ### Details
@@ -518,7 +518,7 @@ Organizes author's existing materials into book-writer framework structure. Work
 `engine/agents/importer.md`
 
 ### Triggers
-- Files detected in `my-books/<book-short-name>/files/import/`
+- Files detected in `$BOOKS_ROOT/<book-short-name>/files/import/`
 - Migration from other tools (Scrivener, Google Docs)
 - Consolidation of scattered materials
 - Author request to import existing drafts
@@ -527,7 +527,7 @@ Organizes author's existing materials into book-writer framework structure. Work
 
 1. **Scanning and Cataloging**
    ```
-   INPUT: my-books/<book-short-name>/files/import/**/*.{md,txt,docx}
+   INPUT: $BOOKS_ROOT/<book-short-name>/files/import/**/*.{md,txt,docx}
    ACTIONS:
    - Find all files
    - Read contents
@@ -564,12 +564,12 @@ Organizes author's existing materials into book-writer framework structure. Work
    ```
    INPUT: All imported files
    ACTIONS:
-   - CHAPTERS → my-books/<book-short-name>/files/content/chapters/chapter-N-draft-v1.md
-   - RESEARCH → my-books/<book-short-name>/files/research/chapter-N-research.md
-   - NOTES → my-books/<book-short-name>/files/notes/ideas.md
-   - CHARACTERS → my-books/<book-short-name>/config/fiction/characters.md (for fiction)
-   - WORLD → my-books/<book-short-name>/config/fiction/world.md (for fiction)
-   - Save originals → my-books/<book-short-name>/files/import/original/
+   - CHAPTERS → $BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-N-draft-v1.md
+   - RESEARCH → $BOOKS_ROOT/<book-short-name>/files/research/chapter-N-research.md
+   - NOTES → $BOOKS_ROOT/<book-short-name>/files/notes/ideas.md
+   - CHARACTERS → $BOOKS_ROOT/<book-short-name>/config/fiction/characters.md (for fiction)
+   - WORLD → $BOOKS_ROOT/<book-short-name>/config/fiction/world.md (for fiction)
+   - Save originals → $BOOKS_ROOT/<book-short-name>/files/import/original/
    OUTPUT: Organized project structure
    ```
 
@@ -581,7 +581,7 @@ Organizes author's existing materials into book-writer framework structure. Work
    - Mark conflicts/duplicates
    - Identify issues
    - Create file mapping
-   OUTPUT: my-books/<book-short-name>/files/import/import-report.md
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/files/import/import-report.md
    ```
 
 6. **Extracting Author Voice**
@@ -592,7 +592,7 @@ Organizes author's existing materials into book-writer framework structure. Work
    - Determine sentence length
    - Identify lexical features
    - Extract reference text examples
-   OUTPUT: my-books/<book-short-name>/config/author-voice.md (partially filled)
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/config/author-voice.md (partially filled)
    ```
 
 ### Special Cases
@@ -603,7 +603,7 @@ Organizes author's existing materials into book-writer framework structure. Work
 - Ask author which version to use
 
 **Uncertain Content**:
-- Save in my-books/<book-short-name>/files/import/unclassified/
+- Save in $BOOKS_ROOT/<book-short-name>/files/import/unclassified/
 - Request clarification from author
 
 **Partially Completed Book**:
@@ -699,7 +699,7 @@ Final proofreading before publication. Last line of defense against errors. Work
    ```
    INPUT:
    - Chapter text
-   - my-books/<book-short-name>/config/author-voice.md (reference)
+   - $BOOKS_ROOT/<book-short-name>/config/author-voice.md (reference)
 
    ACTIONS:
    - Read author-voice.md BEFORE corrections
@@ -767,7 +767,7 @@ See full system prompt and instructions in `engine/agents/proofreader.md`
 Agents communicate through files:
 
 ```
-my-books/<book-short-name>/files/handoff/
+$BOOKS_ROOT/<book-short-name>/files/handoff/
 ├── orchestrator-to-[agent].md    # Tasks from coordinator
 ├── [agent]-to-orchestrator.md    # Reports to coordinator
 └── [agent]-notes.md              # Notes for self

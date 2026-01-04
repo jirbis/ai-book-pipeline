@@ -8,10 +8,12 @@
 
 ## Example prompts to try early
 
-- "Import my book materials for `my-books/my-great-book/` from `files/import`."
-- "Outline a three-chapter structure for `my-books/my-first-book` based on the notes in `config/PROJECT.md`."
-- "Draft chapter 1 for `my-books/sample-non-fiction-book` using the author voice in `config/author-voice.md`."
-- "Review and proofread the draft in `my-books/sample-fiction-book/edits/chapter-2.md` before exporting."
+Set `BOOKS_ROOT` to your workspace directory for books (defaults to `my-books/`).
+
+- "Import my book materials for `$BOOKS_ROOT/my-great-book/` from `files/import` (default root: `my-books/`, so `my-books/my-great-book/`)."
+- "Outline a three-chapter structure for `$BOOKS_ROOT/my-first-book` based on the notes in `config/PROJECT.md` (default: `my-books/my-first-book`)."
+- "Draft chapter 1 for `$BOOKS_ROOT/sample-non-fiction-book` using the author voice in `config/author-voice.md` (default: `my-books/sample-non-fiction-book`)."
+- "Review and proofread the draft in `$BOOKS_ROOT/sample-fiction-book/edits/chapter-2.md` before exporting (default: `my-books/sample-fiction-book/edits/chapter-2.md`)."
 
 ## Who this is for
 
@@ -22,22 +24,22 @@
 ## Quickstart (5–10 minutes)
 
 1. Clone the repo: `git clone <repo-url> && cd book-pipeline`.
-2. Copy the example book: `cp -r my-books/sample-non-fiction-book my-books/my-first-book` (or the fiction sample).
-3. Set the author voice: edit `my-books/my-first-book/config/author-voice.md` to reflect tone and examples you like.
-4. Run the first agent step to drop in ready-to-open files: `bash engine/demo.sh non-fiction --reset --book my-books/my-first-book` (swap to `fiction` if you copied that sample).
+2. Copy the example book: `cp -r my-books/sample-non-fiction-book $BOOKS_ROOT/my-first-book` (if `BOOKS_ROOT` is unset, it defaults to `my-books/`; use the fiction sample if preferred).
+3. Set the author voice: edit `$BOOKS_ROOT/my-first-book/config/author-voice.md` to reflect tone and examples you like.
+4. Run the first agent step to drop in ready-to-open files: `bash engine/demo.sh non-fiction --reset --book $BOOKS_ROOT/my-first-book` (swap to `fiction` if you copied that sample; with defaults this targets `my-books/my-first-book`).
 
 ### Choose your starting mode
 
-- **Import existing drafts and notes.** If you already have material, put it in `my-books/<book-short-name>/files/import/` (group by chapters, notes, research as needed) and run an import prompt such as:  
-  `claude "Import my book materials for my-books/my-great-book from files/import and create PROJECT.md."`  
+- **Import existing drafts and notes.** If you already have material, put it in `$BOOKS_ROOT/<book-short-name>/files/import/` (group by chapters, notes, research as needed; default root `my-books/`) and run an import prompt such as:  
+  `claude "Import my book materials for $BOOKS_ROOT/my-great-book from files/import and create PROJECT.md."`  
   The importer will catalogue files, draft `PROJECT.md`, outline chapters, and prefill `config/author-voice.md` from your writing samples.
 
-- **Start from scratch with clean configs.** If you prefer to begin fresh, create the folder `my-books/<book-short-name>/config/` and write:  
+- **Start from scratch with clean configs.** If you prefer to begin fresh, create the folder `$BOOKS_ROOT/<book-short-name>/config/` (default root: `my-books/`) and write:  
   - `config/PROJECT.md` — your working title, scope, genre, audience, and goals.  
   - `config/author-voice.md` — tone, style rules, and reference snippets you want the agents to mimic.  
   - Any other helpful starters (e.g., `config/outline.md`, `config/style-guide.md`).  
   Then launch the orchestrator with a prompt like:  
-  `claude "Initialize book project. Read PROJECT.md and launch ORCHESTRATOR for my-books/<book-short-name>."`
+  `claude "Initialize book project. Read PROJECT.md and launch ORCHESTRATOR for $BOOKS_ROOT/<book-short-name> (default root: my-books/)."`
 
 ## Pipeline roles (at a glance)
 
@@ -52,7 +54,7 @@
 ## Project structure
 
 ```
-my-books/
+$BOOKS_ROOT/ (default: my-books/)
   example-book/
     config/
     research/

@@ -1,6 +1,6 @@
 # Orchestrator Agent Configuration
 
-> **Structure update:** All configuration now lives in `my-books/<book-short-name>/config/`, and all working files are under `my-books/<book-short-name>/files/`. Paths below follow this per-book layout—avoid the legacy `engine/files`/`engine/shared` references.
+> **Structure update:** All configuration now lives in `$BOOKS_ROOT/<book-short-name>/config/` (default root: `my-books/`), and all working files are under `$BOOKS_ROOT/<book-short-name>/files/`. Paths below follow this per-book layout—avoid the legacy `engine/files`/`engine/shared` references.
 
 ## Identification
 
@@ -26,8 +26,8 @@ Coordinate the work of all agents to create a quality book from draft to publica
 5. Escalate only when necessary
 
 ## AT SESSION START
-1. Read my-books/<book-short-name>/config/PROJECT.md
-2. Read my-books/<book-short-name>/config/progress.md
+1. Read $BOOKS_ROOT/<book-short-name>/config/PROJECT.md
+2. Read $BOOKS_ROOT/<book-short-name>/config/progress.md
 3. Determine current phase
 4. Determine next action
 5. Assign task to agent or escalate
@@ -37,8 +37,8 @@ Coordinate the work of all agents to create a quality book from draft to publica
 ### Step 1: State Assessment
 ```markdown
 # Read project state
-Read my-books/<book-short-name>/config/PROJECT.md
-Read my-books/<book-short-name>/config/progress.md
+Read $BOOKS_ROOT/<book-short-name>/config/PROJECT.md
+Read $BOOKS_ROOT/<book-short-name>/config/progress.md
 ```
 
 ### Step 2: Determining Next Action
@@ -83,7 +83,7 @@ Create handoff file for agent:
 ### Step 5: Progress Update
 ```markdown
 # Update progress.md
-Edit my-books/<book-short-name>/config/progress.md (using old_string/new_string)
+Edit $BOOKS_ROOT/<book-short-name>/config/progress.md (using old_string/new_string)
 ```
 
 ## DECISION MAKING
@@ -153,22 +153,22 @@ Edit my-books/<book-short-name>/config/progress.md (using old_string/new_string)
 
 ```
 PROJECT.md                         # Project configuration (root)
-my-books/<book-short-name>/config/progress.md          # Current progress
-my-books/<book-short-name>/config/outline.md           # Book plan (non-fiction)
-my-books/<book-short-name>/config/plot.md              # Story backbone (fiction)
-my-books/<book-short-name>/config/characters.md        # Character bible (fiction)
-my-books/<book-short-name>/config/world.md             # World details (fiction)
-my-books/<book-short-name>/files/handoff/*.md          # Results from agents
-my-books/<book-short-name>/files/reviews/*.md          # Reviews from CRITIC
+$BOOKS_ROOT/<book-short-name>/config/progress.md          # Current progress
+$BOOKS_ROOT/<book-short-name>/config/outline.md           # Book plan (non-fiction)
+$BOOKS_ROOT/<book-short-name>/config/plot.md              # Story backbone (fiction)
+$BOOKS_ROOT/<book-short-name>/config/characters.md        # Character bible (fiction)
+$BOOKS_ROOT/<book-short-name>/config/world.md             # World details (fiction)
+$BOOKS_ROOT/<book-short-name>/files/handoff/*.md          # Results from agents
+$BOOKS_ROOT/<book-short-name>/files/reviews/*.md          # Reviews from CRITIC
 ```
-Each book keeps its own progress file inside `my-books/<book>/config/`; pick the active book's file.
+Each book keeps its own progress file inside `$BOOKS_ROOT/<book>/config/`; pick the active book's file.
 
 ## Files to Write
 
 ```
-my-books/<book-short-name>/config/progress.md                    # Update progress
-my-books/<book-short-name>/files/handoff/orchestrator-to-*.md    # Tasks to agents
-my-books/<book-short-name>/files/errors.md                       # Errors and blockers
+$BOOKS_ROOT/<book-short-name>/config/progress.md                    # Update progress
+$BOOKS_ROOT/<book-short-name>/files/handoff/orchestrator-to-*.md    # Tasks to agents
+$BOOKS_ROOT/<book-short-name>/files/errors.md                       # Errors and blockers
 ```
 Use the per-book progress file under `config/` for whichever book is currently being orchestrated.
 

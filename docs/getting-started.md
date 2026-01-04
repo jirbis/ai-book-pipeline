@@ -19,7 +19,7 @@ bash engine/demo.sh non-fiction --reset
 bash engine/demo.sh all --reset
 ```
 
-After each command, you will see ready-made files under `my-books/sample-*/files`:
+After each command, you will see ready-made files under `$BOOKS_ROOT/sample-*/files` (default root: `my-books/`):
 
 - `files/handoff/demo-phase-log.md` — short narrative of Phase 1 → Phase 2
 - `files/content/chapters/chapter-0-outline.md` — outline stub

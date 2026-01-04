@@ -80,20 +80,20 @@ Turn drafts into polished, professional text through systematic editing.
 ### Receiving Task
 ```markdown
 # Read task
-Read my-books/<book-short-name>/files/handoff/orchestrator-to-editor.md
+Read $BOOKS_ROOT/<book-short-name>/files/handoff/orchestrator-to-editor.md
 
 # Read draft
-Read my-books/<book-short-name>/files/content/chapters/chapter-N-draft-v1.md
+Read $BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-N-draft-v1.md
 
 # Read author voice profile
-Read my-books/<book-short-name>/config/author-voice.md
+Read $BOOKS_ROOT/<book-short-name>/config/author-voice.md
 
 # Read style guide
-Read my-books/<book-short-name>/config/style-guide.md
+Read $BOOKS_ROOT/<book-short-name>/config/style-guide.md
 ```
 
 ### Voice Preparation
-- Start every edit by reviewing my-books/<book-short-name>/config/author-voice.md to refresh rhythm, tone, and signature phrases.
+- Start every edit by reviewing $BOOKS_ROOT/<book-short-name>/config/author-voice.md to refresh rhythm, tone, and signature phrases.
 - When proposing changes, keep notes that link back to author-voice.md so intentional deviations are explicit and justified.
 
 ### Developmental Edit
@@ -215,7 +215,7 @@ Read my-books/<book-short-name>/config/style-guide.md
 - Not sure about edit
 
 ## AUTHENTICITY CHECKLIST (VOICE)
-- Compare vocabulary to my-books/<book-short-name>/config/author-voice.md to keep preferred wording.
+- Compare vocabulary to $BOOKS_ROOT/<book-short-name>/config/author-voice.md to keep preferred wording.
 - Match sentence rhythm and cadence to documented patterns.
 - Maintain tone level (formal/informal, warmth, humor) specified in author-voice.md.
 - Preserve signature phrases or motifs unless they break clarity.
@@ -236,13 +236,13 @@ Read my-books/<book-short-name>/config/style-guide.md
 ## Verdict
 - [ ] Ready for Line Edit
 - [ ] Needs WRITER revision
-- [ ] Voice alignment confirmed per my-books/<book-short-name>/config/author-voice.md
+- [ ] Voice alignment confirmed per $BOOKS_ROOT/<book-short-name>/config/author-voice.md
 
 ## Critical Issues
 [If any]
 
 ## Deliverables
-- my-books/<book-short-name>/files/edits/chapter-N-dev-edit.md
+- $BOOKS_ROOT/<book-short-name>/files/edits/chapter-N-dev-edit.md
 ```
 
 ### After Line Edit
@@ -257,11 +257,11 @@ Read my-books/<book-short-name>/config/style-guide.md
 - [Number] minor changes
 
 ## Voice Alignment
-- Confirmed match with my-books/<book-short-name>/config/author-voice.md
+- Confirmed match with $BOOKS_ROOT/<book-short-name>/config/author-voice.md
 
 ## Deliverables
-- my-books/<book-short-name>/files/content/chapters/chapter-N-draft-v2.md
-- my-books/<book-short-name>/files/edits/chapter-N-line-edit.md
+- $BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-N-draft-v2.md
+- $BOOKS_ROOT/<book-short-name>/files/edits/chapter-N-line-edit.md
 
 ## Ready for
 - [ ] Copy Edit
@@ -280,10 +280,10 @@ Read my-books/<book-short-name>/config/style-guide.md
 - Consistency: [N]
 
 ## Voice Alignment
-- Confirmed match with my-books/<book-short-name>/config/author-voice.md
+- Confirmed match with $BOOKS_ROOT/<book-short-name>/config/author-voice.md
 
 ## Deliverables
-- my-books/<book-short-name>/files/content/chapters/chapter-N-final.md (canonical chapter for proofreading/publishing)
+- $BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-N-final.md (canonical chapter for proofreading/publishing)
 
 ## Ready for
 - [ ] CRITIC review
@@ -293,20 +293,20 @@ Read my-books/<book-short-name>/config/style-guide.md
 ## Files to Read
 
 ```
-my-books/<book-short-name>/files/content/chapters/chapter-N-*.md     # Drafts
-my-books/<book-short-name>/config/style-guide.md                     # Style
-my-books/<book-short-name>/config/outline.md                         # Plan (for structure, non-fiction)
-my-books/<book-short-name>/config/plot.md                            # Plan (for structure, fiction)
-my-books/<book-short-name>/config/author-voice.md                    # Voice alignment reference
-my-books/<book-short-name>/files/handoff/orchestrator-to-*.md        # Tasks
+$BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-N-*.md     # Drafts
+$BOOKS_ROOT/<book-short-name>/config/style-guide.md                     # Style
+$BOOKS_ROOT/<book-short-name>/config/outline.md                         # Plan (for structure, non-fiction)
+$BOOKS_ROOT/<book-short-name>/config/plot.md                            # Plan (for structure, fiction)
+$BOOKS_ROOT/<book-short-name>/config/author-voice.md                    # Voice alignment reference
+$BOOKS_ROOT/<book-short-name>/files/handoff/orchestrator-to-*.md        # Tasks
 ```
 
 ## Files to Write
 
 ```
-my-books/<book-short-name>/files/edits/chapter-N-*.md                       # Editing reports
-my-books/<book-short-name>/files/content/chapters/chapter-N-draft-vX.md     # Edited versions
-my-books/<book-short-name>/files/content/chapters/chapter-N-final.md        # Canonical final version (feeds proofreader/publisher)
-my-books/<book-short-name>/files/handoff/editor-to-orchestrator.md          # Handoff
+$BOOKS_ROOT/<book-short-name>/files/edits/chapter-N-*.md                       # Editing reports
+$BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-N-draft-vX.md     # Edited versions
+$BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-N-final.md        # Canonical final version (feeds proofreader/publisher)
+$BOOKS_ROOT/<book-short-name>/files/handoff/editor-to-orchestrator.md          # Handoff
 ```
 **Automation Gate**: Publication now runs `engine/agents/tools/validate_final_chapters.py`; ensure every edited chapter ships with an up-to-date `chapter-N-final.md` or publication will halt.

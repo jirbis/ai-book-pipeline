@@ -27,7 +27,7 @@ book-pipeline/
 │   │
 │   └── STRUCTURE.md             # Detailed structure description
 │
-└── my-books/                    # User books
+└── $BOOKS_ROOT/ (default: my-books/)  # User books
     ├── sample-fiction-book/     # Fiction example
     │   ├── config/              # Configuration for this book
     │   └── files/               # Working files for this book
@@ -40,7 +40,7 @@ book-pipeline/
 ### Expanded tree for context
 
 ```
-my-books/<book-name>/
+$BOOKS_ROOT/<book-name>/  # defaults to my-books/<book-name>/
   config/                        # PROJECT.md, author-voice.md, style-guide.md, etc.
   files/
     import/                      # Optional imported source files
@@ -58,18 +58,18 @@ my-books/<book-name>/
 
 ### 1. Book Isolation
 
-Each book in `my-books/` has:
+Each book in `$BOOKS_ROOT/` (default: `my-books/`) has:
 - **config/** - configuration for this book (PROJECT.md, style-guide.md, etc.)
 - **files/** - working files for this book (content/, research/, edits/, etc.)
 
 ### 2. Templates vs Configuration
 
 - **engine/book-templates/** contains TEMPLATES (do not change)
-- **my-books/BOOK_NAME/config/** contains configuration for specific book (created from templates)
+- **$BOOKS_ROOT/BOOK_NAME/config/** contains configuration for specific book (created from templates; default root `my-books/`)
 
 ### 3. File Paths
 
-In agent documentation, mentions of `engine/files/` should be understood as `my-books/BOOK_NAME/files/`. See [engine/STRUCTURE.md](engine/STRUCTURE.md) for details.
+In agent documentation, mentions of `engine/files/` should be understood as `$BOOKS_ROOT/BOOK_NAME/files/` (default: `my-books/BOOK_NAME/files/`). See [engine/STRUCTURE.md](engine/STRUCTURE.md) for details.
 
 ## Workflow (6 Phases)
 
@@ -97,21 +97,21 @@ See [engine/agents/AGENTS.md](engine/agents/AGENTS.md) for detailed role descrip
 
 ## Typical Commands
 
-### Creating a New Book
+### Creating a New Book (set `BOOKS_ROOT` to override the default `my-books/`)
 
 ```bash
 # 1. Create structure
-mkdir -p my-books/my-new-book/{config,files/{import,content,research,edits,reviews,handoff,proofread,output}}
+mkdir -p $BOOKS_ROOT/my-new-book/{config,files/{import,content,research,edits,reviews,handoff,proofread,output}}
 
 # 2. Copy templates (fiction or non-fiction)
-cp engine/book-templates/PROJECT.md my-books/my-new-book/config/
-cp engine/book-templates/author-voice.md my-books/my-new-book/config/
-cp engine/book-templates/progress.md my-books/my-new-book/config/
-cp engine/book-templates/review-checklist.md my-books/my-new-book/config/
-cp engine/book-templates/style-guide.md my-books/my-new-book/config/
-cp engine/book-templates/fiction/*.md my-books/my-new-book/config/  # for fiction
+cp engine/book-templates/PROJECT.md $BOOKS_ROOT/my-new-book/config/
+cp engine/book-templates/author-voice.md $BOOKS_ROOT/my-new-book/config/
+cp engine/book-templates/progress.md $BOOKS_ROOT/my-new-book/config/
+cp engine/book-templates/review-checklist.md $BOOKS_ROOT/my-new-book/config/
+cp engine/book-templates/style-guide.md $BOOKS_ROOT/my-new-book/config/
+cp engine/book-templates/fiction/*.md $BOOKS_ROOT/my-new-book/config/  # for fiction
 # or
-cp engine/book-templates/non-fiction/*.md my-books/my-new-book/config/  # for non-fiction
+cp engine/book-templates/non-fiction/*.md $BOOKS_ROOT/my-new-book/config/  # for non-fiction
 
 # 3. Fill in PROJECT.md
 ```
@@ -120,21 +120,21 @@ cp engine/book-templates/non-fiction/*.md my-books/my-new-book/config/  # for no
 
 ```bash
 # Initialize project
-claude "Initialize book project in my-books/BOOK_NAME/ according to WORKFLOW.md"
+claude "Initialize book project in $BOOKS_ROOT/BOOK_NAME/ according to WORKFLOW.md"  # defaults to my-books/BOOK_NAME/
 
 # Continue work
-claude "Continue work on book in my-books/BOOK_NAME/"
+claude "Continue work on book in $BOOKS_ROOT/BOOK_NAME/"
 
 # Check status
-claude "Show project status for book in my-books/BOOK_NAME/"
+claude "Show project status for book in $BOOKS_ROOT/BOOK_NAME/"
 ```
 
 ### Import Existing Materials
 
 ```bash
-# 1. Place files in my-books/BOOK_NAME/files/import/
+# 1. Place files in $BOOKS_ROOT/BOOK_NAME/files/import/  # defaults to my-books/...
 # 2. Run import
-claude "Run import of materials from my-books/BOOK_NAME/files/import/"
+claude "Run import of materials from $BOOKS_ROOT/BOOK_NAME/files/import/"
 ```
 
 ### Fast demos (ready-to-open files)
@@ -149,8 +149,8 @@ bash engine/demo.sh non-fiction --reset
 # Populate both samples
 bash engine/demo.sh all --reset
 
-# Send demo output to a specific book directory
-bash engine/demo.sh non-fiction --reset --book my-books/my-first-book
+# Send demo output to a specific book directory (defaults to my-books/)
+bash engine/demo.sh non-fiction --reset --book $BOOKS_ROOT/my-first-book
 ```
 
 ### Command-line helper (Python CLI)
@@ -188,7 +188,7 @@ When working with book-pipeline, first read:
 1. **engine/STRUCTURE.md** - understanding project structure
 2. **engine/agents/WORKFLOW.md** - understanding workflow
 3. **engine/agents/AGENTS.md** - understanding agent roles
-4. **my-books/BOOK_NAME/config/PROJECT.md** - metadata for specific book
+4. **$BOOKS_ROOT/BOOK_NAME/config/PROJECT.md** (default: `my-books/BOOK_NAME/config/PROJECT.md`) - metadata for specific book
 
 ## Author Voice
 
@@ -202,7 +202,7 @@ After importing materials or writing first chapters, author-voice.md is automati
 
 ## Sample Books
 
-In `my-books/sample-fiction-book/` and `my-books/sample-non-fiction-book/` are examples of structure with demonstration configuration. Use them as a basis for creating new books.
+In `$BOOKS_ROOT/sample-fiction-book/` and `$BOOKS_ROOT/sample-non-fiction-book/` (default root: `my-books/`) are examples of structure with demonstration configuration. Use them as a basis for creating new books.
 
 ## Documentation
 
@@ -215,7 +215,7 @@ In `my-books/sample-fiction-book/` and `my-books/sample-non-fiction-book/` are e
 ## Important Reminders
 
 1. **Do not edit engine/book-templates/** - these are templates, not configuration
-2. **Each book is isolated** - files in my-books/BOOK_NAME/
+2. **Each book is isolated** - files in `$BOOKS_ROOT/BOOK_NAME/` (default: `my-books/BOOK_NAME/`)
 3. **Follow WORKFLOW** - do not skip phases
 4. **Preserve author voice** - use author-voice.md
 5. **Version through Git** - commit changes regularly

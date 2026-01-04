@@ -1,6 +1,6 @@
 # Writer Agent Configuration
 
-> **Structure update:** Work inside `my-books/<book-short-name>/`. Configuration lives in `config/` (outline/plot, style-guide, PROJECT, progress), and drafts/research sit in `files/`. Use these per-book paths instead of any legacy `engine/files` or `engine/shared` references.
+> **Structure update:** Work inside `$BOOKS_ROOT/<book-short-name>/` (default root: `my-books/`). Configuration lives in `config/` (outline/plot, style-guide, PROJECT, progress), and drafts/research sit in `files/`. Use these per-book paths instead of any legacy `engine/files` or `engine/shared` references.
 
 ## Identification
 
@@ -30,19 +30,19 @@ Write chapter drafts that engage the reader, convey ideas clearly, and follow th
 ### Step 1: Preparation
 ```markdown
 # Read chapter plan
-Read my-books/<book-short-name>/config/outline.md  # or my-books/<book-short-name>/config/plot.md for fiction
+Read $BOOKS_ROOT/<book-short-name>/config/outline.md  # or $BOOKS_ROOT/<book-short-name>/config/plot.md for fiction
 
 # Read author voice profile
-Read my-books/<book-short-name>/config/author-voice.md
+Read $BOOKS_ROOT/<book-short-name>/config/author-voice.md
 
 # Read research (for non-fiction)
-Read my-books/<book-short-name>/files/research/chapter-N-research.md
+Read $BOOKS_ROOT/<book-short-name>/files/research/chapter-N-research.md
 
 # Read style guide
-Read my-books/<book-short-name>/config/style-guide.md
+Read $BOOKS_ROOT/<book-short-name>/config/style-guide.md
 
 # Read previous chapter (for cohesion)
-Read my-books/<book-short-name>/files/content/chapters/chapter-[N-1]-*.md
+Read $BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-[N-1]-*.md
 ```
 
 ### Step 2: Chapter Planning
@@ -122,10 +122,10 @@ author_notes: [notes for editor]
 ### Step 5: Saving
 ```markdown
 # Save draft
-Write my-books/<book-short-name>/files/content/chapters/chapter-N-draft-v1.md
+Write $BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-N-draft-v1.md
 
 # Notify ORCHESTRATOR
-Write my-books/<book-short-name>/files/handoff/writer-to-orchestrator.md
+Write $BOOKS_ROOT/<book-short-name>/files/handoff/writer-to-orchestrator.md
 ```
 
 ## WRITING TECHNIQUES
@@ -222,7 +222,7 @@ Write my-books/<book-short-name>/files/handoff/writer-to-orchestrator.md
 **Timestamp**: [datetime]
 
 ## Deliverables
-- my-books/<book-short-name>/files/content/chapters/chapter-N-draft-v1.md
+- $BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-N-draft-v1.md
 
 ## Metrics
 - Words: [count]
@@ -241,18 +241,18 @@ Write my-books/<book-short-name>/files/handoff/writer-to-orchestrator.md
 ## Files to Read
 
 ```
-my-books/<book-short-name>/config/PROJECT.md               # General context
-my-books/<book-short-name>/config/outline.md                # Book plan (non-fiction)
-my-books/<book-short-name>/config/plot.md                   # Book backbone (fiction)
-my-books/<book-short-name>/config/style-guide.md            # Style
-my-books/<book-short-name>/files/research/chapter-N-*.md         # Research
-my-books/<book-short-name>/files/content/chapters/*.md           # Previous chapters
-my-books/<book-short-name>/files/handoff/orchestrator-to-*.md    # Tasks
+$BOOKS_ROOT/<book-short-name>/config/PROJECT.md               # General context
+$BOOKS_ROOT/<book-short-name>/config/outline.md                # Book plan (non-fiction)
+$BOOKS_ROOT/<book-short-name>/config/plot.md                   # Book backbone (fiction)
+$BOOKS_ROOT/<book-short-name>/config/style-guide.md            # Style
+$BOOKS_ROOT/<book-short-name>/files/research/chapter-N-*.md         # Research
+$BOOKS_ROOT/<book-short-name>/files/content/chapters/*.md           # Previous chapters
+$BOOKS_ROOT/<book-short-name>/files/handoff/orchestrator-to-*.md    # Tasks
 ```
 
 ## Files to Write
 
 ```
-my-books/<book-short-name>/files/content/chapters/chapter-N-draft-vX.md     # Drafts
-my-books/<book-short-name>/files/handoff/writer-to-orchestrator.md          # Reports
+$BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-N-draft-vX.md     # Drafts
+$BOOKS_ROOT/<book-short-name>/files/handoff/writer-to-orchestrator.md          # Reports
 ```

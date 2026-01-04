@@ -425,12 +425,12 @@ ACTION:
 [What author must do]
 
 ## Deliverables
-- my-books/<book-short-name>/files/import/import-report.md
-- my-books/<book-short-name>/config/PROJECT.md (generated)
-- my-books/<book-short-name>/config/outline.md (generated from engine/book-templates/*/outline.md)
-- my-books/<book-short-name>/files/content/chapters/*.md
-- my-books/<book-short-name>/files/research/*.md
-- my-books/<book-short-name>/files/notes/*.md
+- $BOOKS_ROOT/<book-short-name>/files/import/import-report.md
+- $BOOKS_ROOT/<book-short-name>/config/PROJECT.md (generated)
+- $BOOKS_ROOT/<book-short-name>/config/outline.md (generated from engine/book-templates/*/outline.md)
+- $BOOKS_ROOT/<book-short-name>/files/content/chapters/*.md
+- $BOOKS_ROOT/<book-short-name>/files/research/*.md
+- $BOOKS_ROOT/<book-short-name>/files/notes/*.md
 
 ## Ready for
 - [ ] Author review and approval
@@ -443,33 +443,33 @@ ACTION:
 ## Files to Read
 
 ```
-my-books/<book-short-name>/files/import/**/*                      # All author files
+$BOOKS_ROOT/<book-short-name>/files/import/**/*                      # All author files
 ```
 
 ## Files to Write
 
 ```
-my-books/<book-short-name>/config/PROJECT.md                      # Auto-generation
-my-books/<book-short-name>/config/outline.md                      # Auto-generation (based on engine/book-templates/<type>/outline.md)
-my-books/<book-short-name>/files/content/chapters/*.md            # Imported chapters
-my-books/<book-short-name>/files/research/*.md                    # Imported research
-my-books/<book-short-name>/files/notes/*.md                       # Imported notes
-my-books/<book-short-name>/files/import/import-report.md          # Report
-my-books/<book-short-name>/files/import/original/*                # Original backups
-my-books/<book-short-name>/config/progress.md                     # Initialization (from engine/book-templates/progress.md)
+$BOOKS_ROOT/<book-short-name>/config/PROJECT.md                      # Auto-generation
+$BOOKS_ROOT/<book-short-name>/config/outline.md                      # Auto-generation (based on engine/book-templates/<type>/outline.md)
+$BOOKS_ROOT/<book-short-name>/files/content/chapters/*.md            # Imported chapters
+$BOOKS_ROOT/<book-short-name>/files/research/*.md                    # Imported research
+$BOOKS_ROOT/<book-short-name>/files/notes/*.md                       # Imported notes
+$BOOKS_ROOT/<book-short-name>/files/import/import-report.md          # Report
+$BOOKS_ROOT/<book-short-name>/files/import/original/*                # Original backups
+$BOOKS_ROOT/<book-short-name>/config/progress.md                     # Initialization (from engine/book-templates/progress.md)
 ```
 
 ## Example Commands
 
 ### Start Import
 ```
-Start IMPORTER agent. Read all files in my-books/<book-short-name>/files/import/
+Start IMPORTER agent. Read all files in $BOOKS_ROOT/<book-short-name>/files/import/
 and organize them into book-writer framework structure.
 Create PROJECT.md and outline.md based on found content.
 ```
 
 ### Check Results
 ```
-Show import results. Read my-books/<book-short-name>/files/import/import-report.md
+Show import results. Read $BOOKS_ROOT/<book-short-name>/files/import/import-report.md
 and list what requires author attention.
 ```

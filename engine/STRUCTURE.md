@@ -27,7 +27,7 @@
     ├── WORKFLOW.md
     └── *.md
 
-/my-books/
+$BOOKS_ROOT/ (default: /my-books/)
 ├── sample-fiction-book/
 │   ├── config/              # Configuration for THIS book
 │   │   ├── PROJECT.md       # Project metadata
@@ -75,14 +75,14 @@
 - Used as basis for creating config files
 - Copied to config/ of each new book during initialization
 
-**my-books/\<book-name\>/config/** contains BOOK CONFIGURATION:
+**$BOOKS_ROOT/\<book-name\>/config/** (default: `my-books/<book-name>/config/`) contains BOOK CONFIGURATION:
 - Unique for each book
 - Created from templates or automatically during import
 - Choice of fiction/non-fiction files determined by book type in PROJECT.md
 
 ### 2. Working Files Now in Each Book
 
-**my-books/\<book-name\>/files/** contains ALL working files:
+**$BOOKS_ROOT/\<book-name\>/files/** (default: `my-books/<book-name>/files/`) contains ALL working files:
 - `import/` - imported author materials
 - `content/` - drafts and final chapters
 - `research/` - research and fact-checking
@@ -101,7 +101,7 @@ Read engine/files/content/chapters/chapter-1.md
 
 **Now use:**
 ```bash
-Read my-books/<book-short-name>/files/content/chapters/chapter-1.md
+Read $BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-1.md  # default root: my-books/
 ```
 
 **Where `<book-short-name>`:**
@@ -113,37 +113,37 @@ Read my-books/<book-short-name>/files/content/chapters/chapter-1.md
 
 ```bash
 # Step 1: Create directory
-mkdir -p my-books/my-new-book/{config,files/{import,content,research,edits,reviews,handoff,proofread,output}}
+mkdir -p $BOOKS_ROOT/my-new-book/{config,files/{import,content,research,edits,reviews,handoff,proofread,output}}  # defaults to my-books/
 
 # Step 2: Copy templates
 # For fiction:
-cp engine/book-templates/PROJECT.md my-books/my-new-book/config/
-cp engine/book-templates/author-voice.md my-books/my-new-book/config/
-cp engine/book-templates/progress.md my-books/my-new-book/config/
-cp engine/book-templates/review-checklist.md my-books/my-new-book/config/
-cp engine/book-templates/style-guide.md my-books/my-new-book/config/
-cp engine/book-templates/fiction/*.md my-books/my-new-book/config/
+cp engine/book-templates/PROJECT.md $BOOKS_ROOT/my-new-book/config/
+cp engine/book-templates/author-voice.md $BOOKS_ROOT/my-new-book/config/
+cp engine/book-templates/progress.md $BOOKS_ROOT/my-new-book/config/
+cp engine/book-templates/review-checklist.md $BOOKS_ROOT/my-new-book/config/
+cp engine/book-templates/style-guide.md $BOOKS_ROOT/my-new-book/config/
+cp engine/book-templates/fiction/*.md $BOOKS_ROOT/my-new-book/config/
 
 # For non-fiction:
-cp engine/book-templates/PROJECT.md my-books/my-new-book/config/
-cp engine/book-templates/author-voice.md my-books/my-new-book/config/
-cp engine/book-templates/progress.md my-books/my-new-book/config/
-cp engine/book-templates/review-checklist.md my-books/my-new-book/config/
-cp engine/book-templates/style-guide.md my-books/my-new-book/config/
-cp engine/book-templates/non-fiction/*.md my-books/my-new-book/config/
+cp engine/book-templates/PROJECT.md $BOOKS_ROOT/my-new-book/config/
+cp engine/book-templates/author-voice.md $BOOKS_ROOT/my-new-book/config/
+cp engine/book-templates/progress.md $BOOKS_ROOT/my-new-book/config/
+cp engine/book-templates/review-checklist.md $BOOKS_ROOT/my-new-book/config/
+cp engine/book-templates/style-guide.md $BOOKS_ROOT/my-new-book/config/
+cp engine/book-templates/non-fiction/*.md $BOOKS_ROOT/my-new-book/config/
 
 # Step 3: Fill in PROJECT.md
-# Edit my-books/my-new-book/config/PROJECT.md
+# Edit $BOOKS_ROOT/my-new-book/config/PROJECT.md  # default: my-books/...
 ```
 
 ### 5. Import Existing Materials
 
 ```bash
 # Step 1: Place files
-cp /path/to/drafts/* my-books/my-new-book/files/import/
+cp /path/to/drafts/* $BOOKS_ROOT/my-new-book/files/import/
 
 # Step 2: Run IMPORTER agent
-claude "Import materials from my-books/my-new-book/files/import/"
+claude "Import materials from $BOOKS_ROOT/my-new-book/files/import/"  # defaults to my-books/
 
 # Agent will automatically:
 # - Create config/PROJECT.md (if doesn't exist)
@@ -155,6 +155,6 @@ claude "Import materials from my-books/my-new-book/files/import/"
 ## Migration for Existing Documents
 
 All mentions of `engine/files/` in AGENTS.md, WORKFLOW.md and other agent files
-should be understood as `my-books/<book-short-name>/files/`.
+should be understood as `$BOOKS_ROOT/<book-short-name>/files/` (default: `my-books/<book-short-name>/files/`).
 
 Documentation will be updated to reflect the new structure.

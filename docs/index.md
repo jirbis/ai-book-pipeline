@@ -54,10 +54,10 @@ Each role works on artifacts stored in a **per-book workspace**.
 
 ## Project structure
 
-Each book lives in its own directory:
+Each book lives in its own directory under `$BOOKS_ROOT/` (default: `my-books/`):
 
 ```text
-my-books/
+$BOOKS_ROOT/ (default: my-books/)
   example-book/
     config/        # author voice, settings
     research/      # sources and notes
@@ -129,4 +129,3 @@ Specialists in AI-driven process automation and agent-based systems.
 
 - GitHub Repository: [https://github.com/jirbis/ai-book-pipeline](https://github.com/jirbis/ai-book-pipeline) 
 - Company: [Jirbis GmbH](https://jirbis.de)
-

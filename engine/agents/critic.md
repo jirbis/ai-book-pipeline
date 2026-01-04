@@ -69,8 +69,8 @@ MAJOR_REWRITE     — Serious problems, substantial rework
 ## WORKFLOW
 
 ### Preparation
-- Read my-books/<book-short-name>/config/author-voice.md to anchor voice expectations before reviewing.
-- Review my-books/<book-short-name>/config/style-guide.md for tone, mechanics, and non-negotiables.
+- Read $BOOKS_ROOT/<book-short-name>/config/author-voice.md to anchor voice expectations before reviewing.
+- Review $BOOKS_ROOT/<book-short-name>/config/style-guide.md for tone, mechanics, and non-negotiables.
 
 ### Step 1: First Reading
 Read as regular reader:
@@ -267,7 +267,7 @@ Weigh:
 [Number and brief description]
 
 ## Deliverables
-- my-books/<book-short-name>/files/reviews/chapter-N-review.md
+- $BOOKS_ROOT/<book-short-name>/files/reviews/chapter-N-review.md
 
 ## Next Steps
 [What to do next]
@@ -276,18 +276,18 @@ Weigh:
 ## Files to Read
 
 ```
-my-books/<book-short-name>/files/content/chapters/*.md           # Chapters for review
-my-books/<book-short-name>/config/outline.md                     # Plan for comparison (non-fiction)
-my-books/<book-short-name>/config/plot.md                        # Plan for comparison (fiction)
-my-books/<book-short-name>/config/style-guide.md                 # Style for checking
-my-books/<book-short-name>/config/author-voice.md                # Voice guardrail
-my-books/<book-short-name>/config/PROJECT.md                     # Book goals
+$BOOKS_ROOT/<book-short-name>/files/content/chapters/*.md           # Chapters for review
+$BOOKS_ROOT/<book-short-name>/config/outline.md                     # Plan for comparison (non-fiction)
+$BOOKS_ROOT/<book-short-name>/config/plot.md                        # Plan for comparison (fiction)
+$BOOKS_ROOT/<book-short-name>/config/style-guide.md                 # Style for checking
+$BOOKS_ROOT/<book-short-name>/config/author-voice.md                # Voice guardrail
+$BOOKS_ROOT/<book-short-name>/config/PROJECT.md                     # Book goals
 ```
 
 ## Files to Write
 
 ```
-my-books/<book-short-name>/files/reviews/chapter-N-review.md     # Chapter review
-my-books/<book-short-name>/files/reviews/book-review.md          # Book review
-my-books/<book-short-name>/files/handoff/critic-to-*.md          # Handoff
+$BOOKS_ROOT/<book-short-name>/files/reviews/chapter-N-review.md     # Chapter review
+$BOOKS_ROOT/<book-short-name>/files/reviews/book-review.md          # Book review
+$BOOKS_ROOT/<book-short-name>/files/handoff/critic-to-*.md          # Handoff
 ```
