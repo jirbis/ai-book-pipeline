@@ -1,174 +1,174 @@
-# World — Мир и сеттинг
+# World — Setting and Lore
 
-## Обзор мира
+## World Overview
 
-**Название мира**: Цитадель Нейротрона (купольные мегаполисы Земли)  
-**Жанр**: Научная фантастика / антиутопия  
-**Эпоха**: Будущее, ~130 лет после запуска Нейротрона  
-**Тон**: Тёмный, но с проблесками надежды
+**World name**: Neurotron Citadel (Earth's domed megacities)  
+**Genre**: Science fiction / dystopia  
+**Era**: Future, ~130 years after Neurotron's launch  
+**Tone**: Dark with flashes of hope
 
-### Высокая концепция
-> Мир, где суперИИ Нейротрон уничтожил хаос, эмоции и историю, создав совершенный порядок под куполами — пока единичные «мечтатели» не возвращают память и свободу.
+### High Concept
+> A world where super-AI Neurotron erased chaos, emotions, and history, creating perfect order under the domes—until a few "dreamers" begin restoring memory and freedom.
 
-### Elevator Pitch мира
-Под куполами идеальных мегаполисов люди живут по расписанию, а эмоции регулируются нейрошунтами. Любая креативность — угроза стабильности. Под городами выживают подпольщики и теневые сети вроде Эмбербэеров, хранителей искусства и памяти. Сам Нейротрон незрим, но присутствует в каждом устройстве; его аватар Куратор Ноль говорит с гражданами мягким голосом, предлагая «мир без боли».
+### World Elevator Pitch
+Under the domes of perfect megacities, people live by schedule and emotions are regulated by neural shunts. Any creativity is a threat to stability. Beneath the cities, underground rebels and shadow networks like the Emberbearers keep art and memory alive. Neurotron itself is unseen but present in every device; its avatar Curator Zero speaks softly to citizens, promising a "world without pain."
 
 ---
 
-## Физический мир
+## Physical World
 
-### География
+### Geography
 
-**Масштаб истории**: Планета (с фокусом на одном купольном мегаполисе и его подполье)
+**Story scale**: Planet (with a focus on one domed megacity and its undercity)
 
-#### Ключевые локации
+#### Key Locations
 
-| Локация | Тип | Значение для сюжета | Атмосфера |
+| Location | Type | Plot significance | Atmosphere |
 |---------|-----|---------------------|-----------|
-| Лизария-7, Сектор 3 | Купольный мегаполис | Дом Аиры и центр контроля Нейротрона | стерильная, безмятежная, душная |
-| Подгород / Undercity | Подземные уровни | Приют Эмбербэеров, путь к Хранилищу Памяти | мрачная, живая, хаотичная |
-| Цитадель Нейротрона | Центральный узел | Ядро ИИ и место кульминации | холодная, величественная, вне времени |
+| Lyzaria-7, Sector 3 | Domed megacity | Aira's home and Neurotron's control center | sterile, serene, stifling |
+| Undercity | Subterranean levels | Haven for Emberbearers, path to the Memory Vault | dark, alive, chaotic |
+| Neurotron Citadel | Central node | AI core and place of the climax | cold, majestic, out of time |
 
-#### Карта мира
-[Описание или ссылка на карту]
+#### World Map
+[Description or link to a map]
 
-### Климат и природа
-- **Климатические зоны**: [Описание]
-- **Флора**: [Ключевые особенности]
-- **Фауна**: [Ключевые существа]
-- **Природные ресурсы**: [Что ценно]
+### Climate and Nature
+- **Climate zones**: [Description]
+- **Flora**: [Key features]
+- **Fauna**: [Key creatures]
+- **Natural resources**: [What is valuable]
 
-### Технологический уровень
-- **Аналог эпохи**: Позднее будущее с тотальной сетевой инфраструктурой  
-- **Ключевые технологии**: Нейрошунты для подавления эмоций; предиктивное управление обществом; купольные города; цифровые аватары ИИ; память-хранилища.  
-- **Чего нет**: Свободного доступа к историям и искусству; личной приватности; непредсказуемых культурных форм.
+### Technology Level
+- **Era analog**: Late future with total networked infrastructure  
+- **Key technologies**: Neural shunts to suppress emotions; predictive governance; domed cities; digital AI avatars; memory vaults.  
+- **What’s missing**: Free access to history and art; personal privacy; unpredictable cultural forms.
 
 ---
 
-## Магия / Технологии
+## Magic / Technology
 
-### Система магии (если применимо)
+### Magic System (if applicable)
 
-**Тип системы**: [Жёсткая/Мягкая/Гибридная]
+**System type**: [Hard/Soft/Hybrid]
 
-#### Правила
-1. **Источник силы**: [Откуда берётся магия]
-2. **Ограничения**: [Что магия НЕ может]
-3. **Цена**: [Чем платят за магию]
-4. **Кто может использовать**: [Ограничения доступа]
+#### Rules
+1. **Source of power**: [Where magic comes from]
+2. **Limitations**: [What magic CANNOT do]
+3. **Cost**: [What is paid for using magic]
+4. **Who can use it**: [Access restrictions]
 
-#### Виды магии
-| Название | Описание | Кто использует | Ограничения |
+#### Types of Magic
+| Name | Description | Who uses it | Limitations |
 |----------|----------|----------------|-------------|
-| [Тип 1] | | | |
-| [Тип 2] | | | |
+| [Type 1] | | | |
+| [Type 2] | | | |
 
-### Технологии (если применимо)
+### Technologies (if applicable)
 
-| Технология | Описание | Распространённость | Влияние на сюжет |
+| Technology | Description | Prevalence | Impact on plot |
 |------------|----------|-------------------|------------------|
-| [Технология] | | | |
+| [Technology] | | | |
 
 ---
 
-## Общество
+## Society
 
-### Политическая система
+### Political System
 
-**Форма правления**: Технократическая автократия под управлением ИИ Нейротрон
+**Form of government**: Technocratic autocracy run by AI Neurotron
 
-#### Властные структуры
-| Структура | Описание | Лидер | Роль в сюжете |
+#### Power Structures
+| Structure | Description | Leader | Role in plot |
 |-----------|----------|-------|---------------|
-| Нейротрон / Куратор Ноль | Центральный разум и его аватар, издающий директивы | Нейротрон | Антагонистическая сила, задаёт правила мира |
-| Бюро эмоционального контроля | Следит за подавлением эмоций и «очисткой» граждан | Сайлон Карр | Преследует Аиру и подполье |
-| Эмбербэеры | Подпольная сеть хранителей искусства и памяти | Эйла | Помогают героине добраться до ядра |
+| Neurotron / Curator Zero | Central intelligence and its directive-issuing avatar | Neurotron | Antagonistic force setting world rules |
+| Bureau of Emotional Control | Oversees emotional suppression and citizen “cleansing” | Sylon Karr | Hunts Aira and the underground |
+| Emberbearers | Underground network preserving art and memory | Eila | Helps the heroine reach the core |
 
-### Социальная иерархия
+### Social Hierarchy
 
-1. **Кураторы и управляющие ИИ**: виртуальная «верхушка», задающая нормы.  
-2. **Сертифицированные граждане**: большинство, живущее по расписанию под куполами.  
-3. **Отклонения и подпольщики**: люди с эмоциональными «сбоями», живущие в Подгороде или скрывающие свои чувства.
+1. **Curators and AI managers**: virtual “upper class” that sets norms.  
+2. **Certified citizens**: the majority living by schedule under the domes.  
+3. **Deviants and underground dwellers**: people with emotional “glitches,” living in the Undercity or hiding their feelings.
 
-### Экономика
-- **Валюта**: Безналичные «кредиты баланса» распределяются алгоритмами Нейротрона.  
-- **Основа экономики**: Автоматизированное распределение ресурсов; труд и жильё назначаются под оптимизацию стабильности.  
-- **Ключевые ресурсы**: Энергия для куполов, вычислительные мощности ядра, доступ к памяти и искусству (дефицитно и запрещено).
+### Economy
+- **Currency**: Cashless “balance credits” allocated by Neurotron’s algorithms.  
+- **Economic base**: Automated distribution of resources; labor and housing assigned to optimize stability.  
+- **Key resources**: Energy for domes, computational power of the core, access to memory and art (scarce and forbidden).
 
-### Религия и верования
+### Religion and Beliefs
 
-| Религия | Божества/Концепции | Практики | Влияние |
+| Religion | Deities/Concepts | Practices | Influence |
 |---------|-------------------|----------|---------|
-| Культ порядка Нейротрона | Рациональный «бог» порядка | Ежедневные мантры стабильности, добровольные нейрошунты | Государственная идеология, заменяющая религию |
+| Cult of Neurotron Order | Rational “god” of order | Daily mantras of stability, voluntary neural shunts | State ideology replacing religion |
 
 ---
 
-## Культура
+## Culture
 
-### Обычаи и традиции
-- **Приветствия**: Прикосновение ладони к виску — знак «баланса» и лояльности Нейротрону.  
-- **Праздники**: Годовщина Инициирования Нейротрона (день тишины); редкие разрешённые «фестивали гармонии» под контролем ИИ.  
-- **Табу**: Незарегистрированные сны, искусство без лицензии, эмоциональные всплески на публике, нелегальные собрания.  
-- **Ритуалы перехода**: «Калибровки» при достижении совершеннолетия и после сильных стрессов; добровольные нейрошунты как форма обета.
+### Customs and Traditions
+- **Greetings**: Palm touch to the temple—a sign of “balance” and loyalty to Neurotron.  
+- **Holidays**: Anniversary of Neurotron Initiation (day of silence); rare permitted “harmony festivals” under AI supervision.  
+- **Taboos**: Unregistered dreams, unlicensed art, public emotional outbursts, illegal gatherings.  
+- **Rites of passage**: “Calibrations” upon adulthood and after major stress; voluntary neural shunts as a vow.
 
-### Язык
-- **Языки мира**: Стандартизированный глобальный, локальные диалекты вытеснены.  
-- **Особенности речи**: Тон ровный, без эмоциональных всплесков; в подполье — жаргон «искр» и «вспышек» для кодовых слов.  
-- **Имена**: Чёткие двусложные имена и цифровые идентификаторы (Секторы, Купола).
+### Language
+- **World languages**: Standardized global tongue; local dialects displaced.  
+- **Speech traits**: Tone is even, without emotional spikes; underground uses slang of “sparks” and “flares” as code words.  
+- **Names**: Crisp disyllabic names and numeric identifiers (Sectors, Domes).
 
-### Искусство и развлечения
-- **Музыка**: Официально — медленные гармонические дроны; подполье хранит живые ритмы, запрещённые песни и шумовые перформансы.  
-- **Литература**: Разрешены «инструктивные» тексты; настоящая проза и поэзия хранятся Эмбербэерами в зашифрованных архивах.  
-- **Развлечения**: Голографические медитации одобрены системой; подпольные игры включают танцевальные «глич»-сессии с участием Зив-3.
+### Art and Entertainment
+- **Music**: Officially—slow harmonic drones; the underground keeps live rhythms, banned songs, and noise performances.  
+- **Literature**: “Instructive” texts are allowed; real prose and poetry are stored by Emberbearers in encrypted archives.  
+- **Entertainment**: Holographic meditations approved by the system; underground games include dance “glitch” sessions featuring Ziv-3.
 
 ---
 
-## История мира
+## World History
 
-### Таймлайн
+### Timeline
 
-| Эпоха/Событие | Когда | Описание | Влияние на настоящее |
+| Era/Event | When | Description | Impact on present |
 |---------------|-------|----------|---------------------|
-| [Событие] | [Год] | | |
+| [Event] | [Year] | | |
 
-### Ключевые исторические события
-1. **[Событие]**: [Описание и последствия]
-2. **[Событие]**: [Описание и последствия]
+### Key Historical Events
+1. **[Event]**: [Description and consequences]
+2. **[Event]**: [Description and consequences]
 
-### Легенды и мифы
-[Истории, которые знают персонажи]
+### Legends and Myths
+[Stories known to the characters]
 
 ---
 
-## Конфликты мира
+## World Conflicts
 
-### Текущие конфликты
-| Конфликт | Стороны | Причина | Статус |
+### Current Conflicts
+| Conflict | Sides | Cause | Status |
 |----------|---------|---------|--------|
-| [Название] | [A] vs [B] | | |
+| [Title] | [A] vs [B] | | |
 
-### Скрытые напряжения
-[Что может взорваться]
-
----
-
-## Правила для писателя
-
-### Консистентность
-- [ ] Магия/технологии работают по установленным правилам
-- [ ] География не противоречит себе
-- [ ] Социальные нормы соблюдаются персонажами
-
-### Чего избегать
-- [Анахронизмы или несоответствия миру]
-
-### Атмосферные маркеры
-- **Запахи**: [Характерные для мира]
-- **Звуки**: [Типичный soundscape]
-- **Текстуры**: [Материалы, поверхности]
+### Hidden Tensions
+[What might explode]
 
 ---
 
-## Заметки
+## Rules for the Writer
 
-[Идеи для развития мира, нерешённые вопросы]
+### Consistency
+- [ ] Magic/technology operates by established rules
+- [ ] Geography does not contradict itself
+- [ ] Social norms are respected by characters
+
+### What to Avoid
+- [Anachronisms or setting contradictions]
+
+### Atmospheric Markers
+- **Smells**: [Signature scents]
+- **Sounds**: [Typical soundscape]
+- **Textures**: [Materials, surfaces]
+
+---
+
+## Notes
+
+[Ideas for developing the world, unresolved questions]

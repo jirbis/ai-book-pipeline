@@ -1,130 +1,130 @@
-# Bibliography — Библиография
+# Bibliography
 
-## Формат цитирования
+## Citation Format
 
-**Стиль**: [APA 7th / MLA 9th / Chicago / Harvard / ГОСТ]
+**Style**: [APA 7th / MLA 9th / Chicago / Harvard / GOST]
 
 ---
 
-## Книги
+## Books
 
-### Печатные издания
+### Print Editions
 
-[Фамилия, И. О.] ([Год]). *[Название книги]*. [Издательство].
+[Last name, Initials.] ([Year]). *[Book title]*. [Publisher].
 
 ```
-Пример APA:
+APA Example:
 Kahneman, D. (2011). Thinking, fast and slow. Farrar, Straus and Giroux.
 
-Пример на русском:
-Канеман, Д. (2014). Думай медленно... решай быстро. АСТ.
+Example in another language:
+Kahneman, D. (2014). Think Slowly... Decide Quickly. AST.
 ```
 
-### Электронные книги
+### Electronic Books
 
-[Фамилия, И. О.] ([Год]). *[Название книги]* [Электронная версия]. [Издательство]. [URL]
+[Last name, Initials.] ([Year]). *[Book title]* [Electronic version]. [Publisher]. [URL]
 
 ---
 
-## Статьи
+## Articles
 
-### Журнальные статьи
+### Journal Articles
 
-[Фамилия, И. О.] ([Год]). [Название статьи]. *[Название журнала]*, *[Том]*([Номер]), [страницы]. [DOI]
+[Last name, Initials.] ([Year]). [Article title]. *[Journal name]*, *[Volume]*([Number]), [pages]. [DOI]
 
 ```
-Пример:
-Smith, J., & Jones, M. (2020). The impact of AI on productivity. 
-Journal of Technology Studies, 45(3), 112-128. https://doi.org/10.xxx
+Example:
+Smith, J., & Jones, M. (2020). The impact of AI on productivity.
+Journal of Technology Studies, 45(3), 112–128. https://doi.org/10.xxx
 ```
 
-### Статьи из газет/журналов
+### Newspaper/Magazine Articles
 
-[Фамилия, И. О.] ([Дата]). [Название статьи]. *[Название издания]*. [URL]
+[Last name, Initials.] ([Date]). [Article title]. *[Publication name]*. [URL]
 
 ---
 
-## Онлайн-источники
+## Online Sources
 
-### Веб-страницы
+### Web Pages
 
-[Автор/Организация]. ([Дата]). *[Название страницы]*. [Название сайта]. [URL]
+[Author/Organization]. ([Date]). *[Page title]*. [Site name]. [URL]
 
 ```
-Пример:
-World Health Organization. (2023, March 15). Mental health statistics. 
+Example:
+World Health Organization. (2023, March 15). Mental health statistics.
 https://www.who.int/mental-health
 ```
 
-### Посты в блогах
+### Blog Posts
 
-[Фамилия, И. О.] ([Дата]). [Название поста]. *[Название блога]*. [URL]
-
----
-
-## Отчёты и документы
-
-### Официальные отчёты
-
-[Организация]. ([Год]). *[Название отчёта]* (Номер отчёта, если есть). [URL]
-
-### Диссертации
-
-[Фамилия, И. О.] ([Год]). *[Название диссертации]* [Докторская/кандидатская диссертация, Университет]. [База данных или URL]
+[Last name, Initials.] ([Date]). [Post title]. *[Blog name]*. [URL]
 
 ---
 
-## Мультимедиа
+## Reports and Documents
 
-### Подкасты
+### Official Reports
 
-[Ведущий, И. О.] (Ведущий). ([Дата]). [Название эпизода] (№ [номер]) [Эпизод подкаста]. В *[Название подкаста]*. [Продюсер]. [URL]
+[Organization]. ([Year]). *[Report title]* (Report number, if any). [URL]
 
-### Видео
+### Dissertations
 
-[Автор/Канал]. ([Дата]). *[Название видео]* [Видео]. [Платформа]. [URL]
+[Last name, Initials.] ([Year]). *[Dissertation title]* [Doctoral/Master's dissertation, University]. [Database or URL]
+
+---
+
+## Multimedia
+
+### Podcasts
+
+[Host, Initials.] (Host). ([Date]). [Episode title] (No. [number]) [Audio podcast episode]. In *[Podcast name]*. [Producer]. [URL]
+
+### Videos
+
+[Author/Channel]. ([Date]). *[Video title]* [Video]. [Platform]. [URL]
 
 ### TED Talks
 
-[Спикер, И. О.] ([Год, Месяц]). *[Название выступления]* [Видео]. TED Conferences. [URL]
+[Speaker, Initials.] ([Year, Month]). *[Talk title]* [Video]. TED Conferences. [URL]
 
 ---
 
-## Интервью
+## Interviews
 
-### Личные интервью
+### Personal Interviews
 
-[Фамилия, И. О.] (личная коммуникация, [дата]).
+[Last name, Initials.] (personal communication, [date]).
 
-*Примечание: Личные интервью обычно цитируются только в тексте, не в библиографии*
+*Note: Personal interviews are usually cited only in text, not in the bibliography*
 
-### Опубликованные интервью
+### Published Interviews
 
-[Интервьюер, И. О.] ([Дата]). [Название/Описание интервью] [Интервью с И. О. Фамилия]. *[Издание]*. [URL]
-
----
-
-## Список источников по главам
-
-### Введение
-1. [Источник]
-2. [Источник]
-
-### Глава 1: [Название]
-1. [Источник]
-2. [Источник]
-
-### Глава 2: [Название]
-1. [Источник]
-2. [Источник]
-
-[... продолжить для всех глав]
+[Interviewer, Initials.] ([Date]). [Title/Description of interview] [Interview with Initials. Last name]. *[Publication]*. [URL]
 
 ---
 
-## Полный алфавитный список
+## Sources by Chapter
 
-[Здесь будет финальный список всех источников в алфавитном порядке]
+### Introduction
+1. [Source]
+2. [Source]
+
+### Chapter 1: [Title]
+1. [Source]
+2. [Source]
+
+### Chapter 2: [Title]
+1. [Source]
+2. [Source]
+
+[... continue for all chapters]
+
+---
+
+## Complete Alphabetical List
+
+[Final list of all sources in alphabetical order will be here]
 
 A
 
@@ -136,8 +136,8 @@ C
 
 ---
 
-## Заметки
+## Notes
 
-- Все URL проверены на доступность: [дата]
-- Формат единообразен: ✅/❌
-- Все цитаты в тексте есть в библиографии: ✅/❌
+- All URLs checked for accessibility: [date]
+- Format is uniform: ✅/❌
+- All in-text citations are in the bibliography: ✅/❌

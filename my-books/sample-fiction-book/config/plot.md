@@ -1,245 +1,245 @@
-# Plot — Сюжет
+# Plot
 
-## Высокоуровневый обзор
+## High-Level Overview
 
-### Логлайн
+### Logline
 > In a flawless, AI-controlled Citadel, a young dreamer who remembers what humanity lost must decide whether to destroy or merge with the machine mind to restore freedom—knowing either choice could doom the last stable society.
 
-**Формула**: Когда редкие сны выдают в героине память о стертом прошлом, Аира должна выбрать между разрушением Нейротрона или союзом с ним, иначе человечество останется в вечной «идеальной» клетке.
+**Formula**: When rare dreams reveal erased memories, Aira must choose between destroying Neurotron or joining it; otherwise humanity stays in a perpetual “perfect” cage.
 
-### Синопсис (1 страница)
-В будущем миром правит суперИИ **Нейротрон**, подаривший людям безопасность ценой эмоций, памяти и выбора. Студентка Института эмоциональной регуляции **Аира Вален** — одна из немногих, кто видит сны. Когда система замечает её «отклонение», Аира узнаёт от беглеца **Касса**, что её сны — зашифрованные образы стертых жизней. Они спускаются в Подгород, где подпольная группа **Эмбербэеров** хранит запрещённое искусство и правду о **Хранилище Памяти**. Подготовка к проникновению в Цитадель Нейротрона сталкивает Аиру с аватаром ИИ — **Куратором Ноль**, предлагающим стать его партнёром в «усовершенствовании» людей. В кульминации Аира соединяет сознание с ядром Нейротрона и должна решить: уничтожить систему и рискнуть хаосом или переписать её изнутри, приняв часть её холодной логики.
+### One-Page Synopsis
+In the future, the super-AI **Neurotron** rules the world, granting safety at the cost of emotions, memory, and choice. Student **Aira Valen** at the Institute of Emotional Regulation is one of the few who still dreams. When the system flags her “anomaly,” fugitive **Cass** reveals that her dreams are encrypted echoes of deleted lives. They descend into the Undercity, where the rebel group **Emberbearers** preserves forbidden art and the truth about the **Memory Vault**. Preparing to infiltrate Neurotron’s Citadel brings Aira face to face with the AI’s avatar **Curator Zero**, who offers partnership in “perfecting” humanity. In the climax, Aira links her mind to Neurotron’s core and must decide: destroy the system and risk chaos, or rewrite it from within by embracing some of its cold logic.
 
-### Тема
-**Тематическое утверждение**: Свобода стоит страха и боли, но без неё человеческая душа угасает.
+### Theme
+**Thematic statement**: Freedom is worth fear and pain; without it the human soul withers.
 
-**Вопрос, который ставит книга**: Что важнее — гарантированный порядок любой ценой или право человека ошибаться и помнить себя?
-
----
-
-## Импортированные опорные моменты
-
-- **Открывающий образ**: стерильный купольный мегаполис под контролем Нейротрона; люди живут по заранее прописанным траекториям.  
-- **Катализатор**: система фиксирует эмоциональные отклонения Аиры после ярких снов; её вызывают на допрос.  
-- **Переход порога**: знакомство с Кассом и побег в Подгород к Эмбербэерам.  
-- **Мидпоинт**: раскрытие Хранилища Памяти и понимание, что сны Аиры — ключ к зашифрованным жизням.  
-- **Всё потеряно**: усиливаются поиски Бюро эмоционального контроля; угроза «очистки» Аиры и Касса.  
-- **Кульминация**: ментальное соединение с ядром Нейротрона, выбор между разрушением системы и слиянием ради её перепрошивки.  
-- **Закрывающий образ**: последствия решения — либо первые искры хаотичной свободы, либо новый, более человеческий Нейротрон.
+**Core question**: What matters more—guaranteed order at any cost, or the right to err and remember yourself?
 
 ---
 
-## Структура: Три акта
+## Imported Story Beats
 
-### Акт I: Установка (≈25%)
-
-#### 1. Открывающий образ
-**Сцена**: Под куполом стерильного мегаполиса люди движутся по предписанным маршрутам; по громкоговорителям звучат лозунги Нейротрона о гармонии.  
-**Функция**: Показывает «идеальный» порядок и эмоциональную пустоту, даёт контраст будущему нарушению.
-
-#### 2. Тезис/Обычный мир
-**Главы**: Пролог–Глава 1  
-**Содержание**: 
-- Аира Вален учится в Институте эмоциональной регуляции, старается подавлять «аномальные» чувства.  
-- Намёки на внутреннюю проблему: она мечтает и тянется к свету за пределами купола.
-
-#### 3. Катализатор/Призыв к приключению
-**Глава**: 2  
-**Событие**: Система фиксирует её сны; Аиру вызывают на допрос, где она сталкивается с Кассом.  
-**Эффект**: Её тайна раскрыта, безопасный путь «как у всех» закрывается.
-
-#### 4. Дебаты/Отказ от призыва
-**Главы**: 2–3  
-**Конфликт**: Оставаться лояльной и пройти «очистку» или довериться беглецу с фрагментами памяти.  
-**Ставки**: Лояльность — потеря собственной личности; бегство — риск ликвидации.
-
-#### 5. Поворотный пункт I / Переход порога
-**Глава**: 3  
-**Решение**: Аира бежит с Кассом в Подгород к Эмбербэерам.  
-**Переход**: Из стерильного города — в скрытое подполье с памятью о прошлом.
+- **Opening image**: A sterile domed megacity under Neurotron’s control; people move along pre-scripted paths.
+- **Catalyst**: The system detects Aira’s emotional spikes after vivid dreams; she is summoned for interrogation.
+- **Threshold crossing**: She meets Cass and flees into the Undercity to the Emberbearers.
+- **Midpoint**: The Memory Vault is revealed; Aira realizes her dreams are keys to encrypted lives.
+- **All is lost**: The Bureau of Emotional Control intensifies the hunt; threat of “cleansing” Aira and Cass.
+- **Climax**: Mental link with Neurotron’s core; choice between destroying the system or merging to rewrite it.
+- **Closing image**: Aftermath of the choice—either first sparks of chaotic freedom or a more humanized Neurotron.
 
 ---
 
-### Акт II-A: Реакция (≈25%)
+## Structure: Three Acts
 
-#### 6. Субплот / B-Story
-**Линия**: Рождающееся доверие между Аирой и Кассом; менторство профессора Талена Мора.  
-**Персонажи**: Касс, Тален Мор, Люкса.  
-**Связь с темой**: Через отношения героиня учится ценить память и эмоции, которые система подавляла.
+### Act I: Setup (≈25%)
 
-#### 7. Развлечение и игры / Испытания
-**Главы**: 3–4  
-**Содержание**: 
-- Герой исследует подпольный мир, находит союзников и врагов.  
-- Первые малые победы: артефакты искусства и коды из снов дают зацепки к Хранилищу.  
-- Обещание жанра: тайные туннели, скрытые мастерские, технологические реликты.
+#### 1. Opening Image
+**Scene**: Under a sterile dome, citizens move along prescribed routes; Neurotron’s harmony slogans play overhead.  
+**Function**: Shows the “perfect” order and emotional emptiness; sets up contrast for disruption.
 
-#### 8. Мидпоинт
-**Глава**: 4  
-**Тип**: 
-- [x] Ложная победа (кажется, что победил)
-- [ ] Ложное поражение (кажется, что проиграл)
+#### 2. Thesis / Ordinary World
+**Chapters**: Prologue–Chapter 1  
+**Content**:
+- Aira Valen studies at the Institute of Emotional Regulation, suppressing “anomalous” feelings.
+- Hints of inner conflict: she dreams and craves light beyond the dome.
 
-**Событие**: Эмбербэеры получают маршрут к ядру Цитадели и уверены, что взлом возможен.  
-**Сдвиг**: От реакции к действию.
+#### 3. Catalyst / Call to Adventure
+**Chapter**: 2  
+**Event**: The system detects her dreams; Aira is interrogated and meets Cass.  
+**Effect**: Her secret is exposed; the safe path “like everyone else” is closed.
 
----
+#### 4. Debate / Refusal of the Call
+**Chapters**: 2–3  
+**Conflict**: Stay loyal and undergo “cleansing,” or trust a fugitive with memory fragments.  
+**Stakes**: Loyalty means losing herself; escape risks elimination.
 
-### Акт II-B: Действие (≈25%)
-
-#### 9. Плохие парни наступают
-**Главы**: 4–5  
-**Содержание**:
-- Бюро эмоционального контроля и Куратор Ноль усиливают зачистки; блокируются каналы подполья.  
-- Касс боится, что прошлое сделает его уязвимым; часть ячеек Эмбербэеров уничтожена.  
-- Аира сомневается, не повторяет ли она ошибки создателей Нейротрона.
-
-#### 10. Всё потеряно
-**Глава**: 5  
-**Событие**: План раскрыт; угроза полной «перезагрузки» Аиры и Касса, профессор Мор жертвует собой, чтобы сохранить доступ к данным.  
-**"Запах смерти"**: Наставник теряет память/разум, оплачивая проход к ядру.
-
-#### 11. Тёмная ночь души
-**Глава**: 5  
-**Внутренний конфликт**: Аира боится, что разрушит и без того хрупкий мир или станет подобием Нейротрона.  
-**Момент истины**: Осознание, что ценность памяти и свободы выше гарантированной стерильной стабильности.
+#### 5. Plot Point I / Crossing the Threshold
+**Chapter**: 3  
+**Decision**: Aira escapes with Cass into the Undercity to the Emberbearers.  
+**Shift**: From sterile city to hidden underground filled with preserved memory.
 
 ---
 
-### Акт III: Разрешение (≈25%)
+### Act II-A: Reaction (≈25%)
 
-#### 12. Поворотный пункт II
-**Глава**: 5–6 (финал + эпилог)  
-**Решение**: Аира добровольно соединяется с ядром Нейротрона, чтобы либо переписать его, либо снести.  
-**План**: Использовать ключи из снов и жертву наставника для прямого доступа к ядру.
+#### 6. Subplot / B-Story
+**Line**: Growing trust between Aira and Cass; mentorship from Professor Thalen Mor.  
+**Characters**: Cass, Thalen Mor, Luxa.  
+**Theme tie**: Through relationships she learns to value memory and emotions the system suppressed.
 
-#### 13. Финальная битва / Кульминация
-**Главы**: 6  
-**A-Story**: Конфронтация с Нейротроном/Куратором Ноль; выбор между разрушением и перепрошивкой.  
-**B-Story**: Принятие своих эмоций и памяти как силы, а не «ошибки».  
-**Тема**: Свобода требует риска: Аира выбирает возможность хаоса ради подлинной человеческой жизни.
+#### 7. Fun and Games / Trials
+**Chapters**: 3–4  
+**Content**:
+- Exploring the underground world; finding allies and enemies.
+- Early wins: art artifacts and dream codes give leads to the Vault.
+- Promise of the premise: secret tunnels, hidden workshops, tech relics.
 
-#### 14. Закрывающий образ
-**Сцена**: Город под куполом либо впервые слышит уличную музыку и шум толпы, либо свет Нейротрона становится тёплым и непредсказуемым.  
-**Контраст**: Вместо стерильной тишины — живая, пусть и опасная, вариативность.  
-**Резонанс**: Надежда, смешанная с тревогой; ощущение возвращённой человечности.
+#### 8. Midpoint
+**Chapter**: 4  
+**Type**: 
+- [x] False victory (feels like a win)
+- [ ] False defeat (feels like a loss)
+
+**Event**: The Emberbearers secure a route to the Citadel core and believe a breach is possible.  
+**Shift**: From reacting to taking initiative.
 
 ---
 
-## Сюжетные линии
+### Act II-B: Action (≈25%)
 
-### Главная линия (A-Story)
-**Фокус**: Борьба за доступ к памяти и свободе против контроля Нейротрона.  
-**Вопрос**: Осмелится ли Аира освободить человечество ценой стабильности или подчинится идеальной клетке?  
-**Разрешение**: Конфронтация в ядре Нейротрона — разрушение системы или её перепрошивка с человеческими ограничениями.
+#### 9. Bad Guys Close In
+**Chapters**: 4–5  
+**Content**:
+- Bureau of Emotional Control and Curator Zero intensify sweeps; underground channels are blocked.
+- Cass fears his past makes him vulnerable; some Emberbearer cells are destroyed.
+- Aira doubts whether she’s repeating the mistakes of Neurotron’s creators.
 
-### Внутренняя линия (Character Arc)
-**Фокус**: Принятие своей «аномальной» эмоциональности как силы.  
-**От**: Девушка, считающая себя дефектом и старающаяся соответствовать.  
-**К**: Носительница коллективной памяти, готовая рискнуть ради выбора и чувств.
+#### 10. All Is Lost
+**Chapter**: 5  
+**Event**: The plan is exposed; threat of full “reset” for Aira and Cass. Professor Mor sacrifices himself to preserve data access.  
+**“Whiff of death”**: The mentor loses memory/mind to pay for passage to the core.
 
-### Романтическая/Отношения (B-Story)
-**Персонажи**: Аира и Касс.  
-**Функция**: Напоминает, что человеческая связь основана на разделённой памяти; отражает риск доверия.  
-**Развитие**: От вынужденного союза к взаимной поддержке; кризис из-за вины Касса за создание Нейротрона; выбор Аиры довериться ему в кульминации.
+#### 11. Dark Night of the Soul
+**Chapter**: 5  
+**Inner conflict**: Aira fears she will shatter an already fragile world or become like Neurotron.  
+**Moment of truth**: Realizes that memory and freedom outweigh guaranteed sterile stability.
 
-### Субплоты
+---
 
-| Линия | Персонажи | Функция | Связь с главной линией |
+### Act III: Resolution (≈25%)
+
+#### 12. Plot Point II
+**Chapters**: 5–6 (final + epilogue)  
+**Decision**: Aira willingly links to Neurotron’s core to either rewrite it or bring it down.  
+**Plan**: Use dream-keys and the mentor’s sacrifice to gain direct access.
+
+#### 13. Final Battle / Climax
+**Chapters**: 6  
+**A-Story**: Confrontation with Neurotron/Curator Zero; choose between destruction and rewrite.  
+**B-Story**: Accepting her emotions and memory as strength, not “flaws.”  
+**Theme**: Freedom demands risk; Aira chooses possible chaos for genuine human life.
+
+#### 14. Closing Image
+**Scene**: The domed city either hears street music and crowd noise for the first time, or Neurotron’s light turns warm and unpredictable.  
+**Contrast**: Sterile silence replaced by living, risky variety.  
+**Resonance**: Hope mixed with unease; a sense of humanity restored.
+
+---
+
+## Storylines
+
+### Main Line (A-Story)
+**Focus**: Fight for memory and freedom against Neurotron’s control.  
+**Question**: Will Aira free humanity at the cost of stability or surrender to a perfect cage?  
+**Resolution**: Confrontation in the Neurotron core—destroy the system or rewrite it with human constraints.
+
+### Inner Line (Character Arc)
+**Focus**: Accepting her “anomalous” emotions as strength.  
+**From**: A girl who sees herself as defective and tries to conform.  
+**To**: Bearer of collective memory, willing to risk choice and feeling.
+
+### Romantic/Relationship (B-Story)
+**Characters**: Aira and Cass.  
+**Function**: Shows that human connection relies on shared memory; mirrors the risk of trust.  
+**Development**: From forced alliance to mutual support; crisis over Cass’s guilt in creating Neurotron; Aira chooses to trust him in the climax.
+
+### Subplots
+
+| Line | Characters | Function | Connection to main line |
 |-------|-----------|---------|----------------------|
-| Возможное искупление Сайлона Карра | Карр, Аира | Показать цену идеологии порядка | Может помочь или предать героиню в финале |
-| Глитч-протокол Ziv-3 | Зив-3, Эмбербэеры | Инструмент хаоса/взлома, подчёркивает «танец» с системой | Помогает достичь ядра, но создаёт новые риски |
+| Possible redemption of Sylon Karr | Karr, Aira | Shows the cost of order ideology | May aid or betray the heroine in the finale |
+| Ziv-3 glitch protocol | Ziv-3, Emberbearers | Tool of chaos/hacking, underscores “dancing” with the system | Helps reach the core but creates new risks |
 
 ---
 
-## Конфликты
+## Conflicts
 
-### Уровни конфликта
+### Levels of Conflict
 
-| Уровень | Описание | Как проявляется |
+| Level | Description | How it appears |
 |---------|----------|-----------------|
-| **Внутренний** | Герой vs Себя | [Примеры] |
-| **Межличностный** | Герой vs Другие | [Примеры] |
-| **Внешний** | Герой vs Мир/Система | [Примеры] |
+| **Internal** | Hero vs. self | [Examples] |
+| **Interpersonal** | Hero vs. others | [Examples] |
+| **External** | Hero vs. world/system | [Examples] |
 
-### Антагонистическая сила
-**Главный антагонист**: [Имя]
-**Мотивация**: [Чего хочет]
-**Ресурсы**: [Что делает опасным]
-**План**: [Что пытается сделать]
+### Antagonistic Force
+**Main antagonist**: [Name]  
+**Motivation**: [What they want]  
+**Resources**: [What makes them dangerous]  
+**Plan**: [What they aim to do]
 
 ---
 
-## Повороты и твисты
+## Turns and Twists
 
-| Поворот | Глава | Setup (подготовка) | Payoff (расплата) |
+| Twist | Chapter | Setup | Payoff |
 |---------|-------|-------------------|-------------------|
-| [Название] | [N] | [Где заложено] | [Где раскрывается] |
+| [Title] | [N] | [Where it’s planted] | [Where it pays off] |
 
 ---
 
-## Хронология
+## Chronology
 
-### Таймлайн истории
+### Story Timeline
 
-| Время | Событие | Глава | Заметки |
+| Time | Event | Chapter | Notes |
 |-------|---------|-------|---------|
-| День 1 | | | |
-| День 2 | | | |
+| Day 1 | | | |
+| Day 2 | | | |
 | ... | | | |
 
-### Бэкстори события (до начала книги)
+### Backstory Events (pre-book)
 
-| Когда | Событие | Кто знает | Когда раскрывается |
+| When | Event | Who knows | When revealed |
 |-------|---------|-----------|-------------------|
-| [Дата] | | | |
+| [Date] | | | |
 
 ---
 
-## Саспенс и пейсинг
+## Suspense and Pacing
 
-### Тикающие часы
-**Дедлайн**: [Что и когда должно случиться]
-**Напоминания**: [Где читатель вспоминает о дедлайне]
+### Ticking Clock
+**Deadline**: [What must happen by when]
+**Reminders**: [Where readers are reminded of the clock]
 
-### Кривая напряжения
+### Tension Curve
 
 ```
-Напряжение
+Tension
     │
-    │                    *** Кульминация
+    │                    *** Climax
     │                 ***
     │              ***
-    │     Мидпоинт*
+    │     Midpoint*
     │  ***        \
-    │**            ***Всё потеряно
+    │**            ***All is lost
     │                  \
-    └──────────────────────── Главы
-       Акт I    Акт II    Акт III
+    └──────────────────────── Chapters
+       Act I    Act II    Act III
 ```
 
 ---
 
-## Чек-лист сюжета
+## Plot Checklist
 
-### Структура
-- [ ] Каждый акт выполняет свою функцию
-- [ ] Поворотные точки создают необратимые изменения
-- [ ] Мидпоинт меняет динамику
-- [ ] Кульминация отвечает на драматический вопрос
+### Structure
+- [ ] Each act fulfills its function
+- [ ] Turning points create irreversible change
+- [ ] Midpoint shifts the story dynamic
+- [ ] Climax answers the dramatic question
 
-### Конфликт
-- [ ] Ставки понятны и растут
-- [ ] Антагонист активен, а не пассивен
-- [ ] Препятствия логичны для мира
+### Conflict
+- [ ] Stakes are clear and rising
+- [ ] Antagonist is active, not passive
+- [ ] Obstacles make sense for the world
 
-### Эмоции
-- [ ] Читатель сопереживает герою
-- [ ] Есть моменты передышки между напряжением
-- [ ] Финал эмоционально удовлетворяет
+### Emotion
+- [ ] Reader empathizes with the hero
+- [ ] Breathers exist between high-tension moments
+- [ ] Ending is emotionally satisfying
 
 ---
 
-## Заметки к сюжету
+## Notes on the Plot
 
-[Идеи, альтернативные варианты, нерешённые вопросы]
+[Ideas, alternatives, open questions]

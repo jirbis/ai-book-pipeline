@@ -17,7 +17,7 @@ APA Example:
 Kahneman, D. (2011). Thinking, fast and slow. Farrar, Straus and Giroux.
 
 Example in other languages:
-Канеман, Д. (2014). Думай медленно... решай быстро. АСТ.
+Kahneman, D. (2014). Think Slowly... Decide Quickly. AST.
 ```
 
 ### Electronic Books
