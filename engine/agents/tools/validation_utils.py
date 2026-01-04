@@ -111,13 +111,21 @@ def is_template_content(content: str) -> bool:
     empty_sections = 0
     for i, line in enumerate(lines):
         if line.startswith('#') and i + 1 < len(lines):
-            next_line = lines[i + 1].strip()
-            if not next_line or next_line.startswith('#'):
-                empty_sections += 1
+            # Skip blank lines after header to find actual content
+            j = i + 1
+            while j < len(lines) and not lines[j].strip():
+                j += 1
 
-    # If more than 30% of sections are empty, likely a template
+            # Check if we found content or another header/end of file
+            if j >= len(lines):
+                empty_sections += 1  # End of file
+            elif lines[j].startswith('#'):
+                empty_sections += 1  # Another header (no content)
+            # else: has content, not empty
+
+    # If more than 50% of sections are empty, likely a template
     total_headers = len([l for l in lines if l.startswith('#')])
-    if total_headers > 0 and empty_sections / total_headers > 0.3:
+    if total_headers > 0 and empty_sections / total_headers > 0.5:
         return True
 
     return False

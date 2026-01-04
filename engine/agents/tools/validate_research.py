@@ -164,7 +164,7 @@ def extract_sources(content: str) -> list:
 
     # Method 1: Markdown table in Sources section
     sources_section = re.search(
-        r'##\s*Sources.*?\n(.*?)(?=\n##|\Z)',
+        r'##\s*Sources.*?\n(.*?)(?=\n##(?!#)|\Z)',
         content,
         re.IGNORECASE | re.DOTALL
     )
@@ -206,7 +206,7 @@ def extract_findings(content: str) -> list:
 
     # Look for "Findings" or "Key Findings" section
     findings_section = re.search(
-        r'##\s*(?:Key\s*)?Findings.*?\n(.*?)(?=\n##|\Z)',
+        r'##\s*(?:Key\s*)?Findings.*?\n(.*?)(?=\n##(?!#)|\Z)',
         content,
         re.IGNORECASE | re.DOTALL
     )
@@ -239,7 +239,7 @@ def extract_examples(content: str) -> list:
 
     # Look for "Examples" or "Case Studies" section
     examples_section = re.search(
-        r'##\s*(?:Examples|Case\s*Studies).*?\n(.*?)(?=\n##|\Z)',
+        r'##\s*(?:Examples|Case\s*Studies).*?\n(.*?)(?=\n##(?!#)|\Z)',
         content,
         re.IGNORECASE | re.DOTALL
     )
