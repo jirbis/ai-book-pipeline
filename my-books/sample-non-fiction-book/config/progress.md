@@ -2,10 +2,10 @@
 
 ## Project Overview
 
-**Project**: [Book title]  
-**Word goal**: [Total words]  
-**Deadline**: [Date]  
-**Start date**: [Date]
+**Project**: Surviving Crypto: How I Stopped Gambling, Learned to Trade, and Finally Became Profitable  
+**Word goal**: 70,000  
+**Deadline**: [Set date]  
+**Start date**: 2026-01-04
 
 ---
 
@@ -13,18 +13,18 @@
 
 ### Overall Progress
 
-██████████░░░░░░░░░░ 50% (40,000 / 80,000 words)
+░░░░░░░░░░░░░░░░░░░░ 0% (0 / 70,000 words)
 
 | Metric | Value |
 | --- | --- |
 | **Words written** | 0 |
-| **Chapters finished** | 0 / [total] |
+| **Chapters finished** | 0 / 20 (including intro + conclusion) |
 | **Days to deadline** | [N] |
 | **Words per day (needed)** | [N] |
 
 ### Project Phase
-- [ ] 📋 Planning
-- [ ] 🔬 Research
+- [x] 📋 Planning
+- [x] 🔬 Research
 - [ ] ✍️ First draft
 - [ ] ✂️ Editing
 - [ ] 🔍 Proofreading
@@ -36,11 +36,26 @@
 
 | # | Title | Target | Actual | % | Status | Updated |
 | --- | --- | --- | --- | --- | --- | --- |
-| 0 | Introduction | 3,000 | 0 | 0% | ⬜ outline | - |
-| 1 | [Title] | 5,000 | 0 | 0% | ⬜ outline | - |
-| 2 | [Title] | 5,000 | 0 | 0% | ⬜ outline | - |
-| 3 | [Title] | 5,000 | 0 | 0% | ⬜ outline | - |
-| N | Conclusion | 3,000 | 0 | 0% | ⬜ outline | - |
+| 0 | Introduction | 3,000 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 1 | The Math of Losing Traders | 3,500 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 2 | Volatility vs. Leverage | 3,500 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 3 | How Exchanges Always Win | 3,500 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 4 | Social Trading Without Blind Copying (eToro) | 3,500 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 5 | Tool Overload and Futures Traps (Binance) | 3,500 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 6 | Paying for Simplicity and Safety (Coinbase) | 3,500 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 7 | Bitcoin as Market Gravity | 3,800 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 8 | Ethereum as a Different Beast | 3,500 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 9 | Narratives, Not Lottery Tickets | 3,800 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 10 | A Life-Changing Win (and Why It Worked) | 3,800 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 11 | The Revenge Trade That Erased Months | 3,800 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 12 | Rebuilding After Blowups | 3,500 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 13 | Reading Market Regimes | 3,500 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 14 | Position Sizing as the Real Edge | 3,500 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 15 | Entry is Cheap, Exit Discipline is Expensive | 3,800 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 16 | Taking Profits Before the Market Does | 3,800 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 17 | Compounding Without Increasing Stress | 3,500 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 18 | Emotional Circuit Breakers for a 24/7 Market | 3,500 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
+| 19 | Conclusion | 2,200 | 0 | 0% | ⬜ outline | 2026-01-04 (import) |
 
 ### Status Legend
 
@@ -92,11 +107,11 @@
 
 | Milestone | Target | Deadline | Achieved | Status |
 | --- | --- | --- | --- | --- |
-| Outline ready | - | [date] | - | ⬜ |
-| 25% draft | [N] words | [date] | - | ⬜ |
-| 50% draft | [N] words | [date] | - | ⬜ |
-| 75% draft | [N] words | [date] | - | ⬜ |
-| Draft complete | [N] words | [date] | - | ⬜ |
+| Outline ready | Chapters 0–19 | [date] | 2026-01-04 | ✅ |
+| 25% draft | 17,500 words | [date] | - | ⬜ |
+| 50% draft | 35,000 words | [date] | - | ⬜ |
+| 75% draft | 52,500 words | [date] | - | ⬜ |
+| Draft complete | 70,000 words | [date] | - | ⬜ |
 | Edit #1 | - | [date] | - | ⬜ |
 | Edit #2 | - | [date] | - | ⬜ |
 | Final version | - | [date] | - | ⬜ |
