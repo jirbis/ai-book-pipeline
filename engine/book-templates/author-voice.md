@@ -23,7 +23,7 @@ This file describes unique characteristics of the author's style and voice that 
 
 If author already has written texts:
 ```markdown
-Read engine/files/import/**/*.md
+Read $BOOKS_ROOT/<book-short-name>/files/import/**/*.md
 Analyze:
 - Common speech patterns
 - Sentence length
