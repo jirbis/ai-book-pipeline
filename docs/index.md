@@ -4,6 +4,8 @@
 Structured workflow for writing, editing, and publishing books with quality control and author voice preservation.  
 **Open-source (MIT).**
 
+Read the [feature list](./features.md) for a concise view of pipeline capabilities.
+
 ---
 
 ## What is this?
