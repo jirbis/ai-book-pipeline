@@ -11,7 +11,6 @@
 | **Volume** | [Approximate word count/chapters] |
 | **Language** | [Writing language] |
 | **Author** | [Author name] |
-| **Status** | `planning` / `writing` / `editing` / `complete` |
 
 ## Intake Checklist (fill before work starts)
 - **Audience:** Who is this for? (age, interests, expertise level)
@@ -80,23 +79,8 @@ Part II: [Title]
 ### Sources (for non-fiction)
 [Key information sources]
 
-## Workflow
-
-### Current Stage
-- [ ] Research
-- [ ] Planning
-- [ ] First draft
-- [ ] Editing
-- [ ] Final proofreading
-
-### Progress
-
-| Chapter | Status | Words | Last Updated |
-|-------|--------|------|---------------------|
-| 1 | draft | 0 | - |
-| 2 | - | 0 | - |
-| ... | - | 0 | - |
-
 ## Notes
 
 [Free space for project notes]
+
+> **Progress tracking lives in `$BOOKS_ROOT/<book-short-name>/config/progress.md`.** Keep this file focused on static project configuration (metadata, concept, structure, style) and avoid recording status updates here.

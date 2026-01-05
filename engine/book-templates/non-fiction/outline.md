@@ -90,20 +90,8 @@
 
 ---
 
-## Writing Timeline
-
-| Element | Deadline | Status |
-|---------|---------|--------|
-| Research | | ⬜ |
-| Introduction | | ⬜ |
-| Chapter 1 | | ⬜ |
-| Chapter 2 | | ⬜ |
-| ... | | ⬜ |
-| Conclusion | | ⬜ |
-| Editing | | ⬜ |
-
----
-
 ## Plan Notes
 
 [Space for notes, alternative ideas, questions]
+
+> **Progress tracking lives in `$BOOKS_ROOT/<book-short-name>/config/progress.md`.** Keep this outline focused on structure and planning, not status updates.

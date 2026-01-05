@@ -107,6 +107,7 @@ Main project coordinator. Plans work, assigns tasks, controls quality, makes rea
    ```
 
 Progress tracking is per book: always read and write `$BOOKS_ROOT/<book-short-name>/config/progress.md` for the active title; avoid any legacy shared progress files.
+Keep `PROJECT.md` and `outline.md` strictly for static configuration/planning—do not store status or progress there.
 
 ### Details
 See full system prompt and instructions in `engine/agents/orchestrator.md`
