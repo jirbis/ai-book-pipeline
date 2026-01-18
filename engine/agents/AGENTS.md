@@ -482,7 +482,7 @@ Final book preparation for publication. Assembly, formatting, export.
    - Add front matter
    - Add back matter
    - Check numbering
-   OUTPUT: /output/book-complete.md
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/files/output/book-complete.md
    ```
 
 2. **Formatting**
@@ -492,7 +492,7 @@ Final book preparation for publication. Assembly, formatting, export.
    - Apply final styles
    - Generate table of contents
    - Check links
-   OUTPUT: /output/book-formatted.md
+   OUTPUT: $BOOKS_ROOT/<book-short-name>/files/output/book-formatted.md
    ```
 
 3. **Export**
@@ -578,8 +578,9 @@ Organizes author's existing materials into book-writer framework structure. Work
    - CHAPTERS → $BOOKS_ROOT/<book-short-name>/files/content/chapters/chapter-N-draft-v1.md
    - RESEARCH → $BOOKS_ROOT/<book-short-name>/files/research/chapter-N-research.md
    - NOTES → $BOOKS_ROOT/<book-short-name>/files/notes/ideas.md
-   - CHARACTERS → $BOOKS_ROOT/<book-short-name>/config/fiction/characters.md (for fiction)
-   - WORLD → $BOOKS_ROOT/<book-short-name>/config/fiction/world.md (for fiction)
+   - CHARACTERS → $BOOKS_ROOT/<book-short-name>/config/characters.md (for fiction)
+   - WORLD → $BOOKS_ROOT/<book-short-name>/config/world.md (for fiction)
+   - PLOT → $BOOKS_ROOT/<book-short-name>/config/plot.md (for fiction)
    - Save originals → $BOOKS_ROOT/<book-short-name>/files/import/original/
    OUTPUT: Organized project structure
    ```
