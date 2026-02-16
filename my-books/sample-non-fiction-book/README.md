@@ -1,15 +1,16 @@
-# Sample Non-Fiction Book
+# Sample Non-Fiction Book — The Science of Decision-Making
 
-Example structure of a non-fiction book with demonstration configuration.
+A fully bootstrapped sample non-fiction book exploring how humans make decisions, drawing on cognitive psychology, behavioral economics, and neuroscience.
 
 ## Purpose
 
 This example demonstrates:
 - Directory structure for a non-fiction book
-- Configuration files (PROJECT.md, outline.md, research.md, bibliography.md)
+- Fully populated configuration files (PROJECT.md, outline.md, research.md, bibliography.md, author-voice.md, style-guide.md, progress.md, review-checklist.md, chapter.md)
 - Working directories (files/)
+- A complete author voice profile with reference text samples
 
-Sample chapters can be generated based on `config/author-voice.md` when it is filled out.
+Sample chapters can be generated based on `config/author-voice.md` — the voice profile is already filled out with 3 reference samples.
 
 ## Usage
 
