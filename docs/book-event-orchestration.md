@@ -91,9 +91,9 @@ must not be processed by cloud agents without the author's approval.
 - The workflow was not activated and no GitHub Copilot account or PAT was
   connected by this PR.
 
-**Stacked PR dependency:** PR #31 targets the PR #30 feature branch.
-First merge PR #30 into `main`, then retarget #31 to `main` and review the
-diff before merging and enabling book automation.
+**Dependency resolved:** PR #30 has been merged into `main`. PR #31 now
+targets `main` directly and contains only its seven orchestration files.
+Review and merge PR #31 separately; this does NOT enable agents or change books.
 
 ## References
 
