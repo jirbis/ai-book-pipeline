@@ -132,6 +132,12 @@ class GitHubAPI:
                 return None
         raise ValueError("Too many issues to safely establish task idempotency.")
 
+    def get_issue(self, issue_number: int) -> dict:
+        result = self.request("GET", f"/repos/{self.repo}/issues/{issue_number}")
+        if not isinstance(result, dict):
+            raise ValueError("Invalid GitHub Issue API response.")
+        return result
+
     def create_issue(self, title: str, body: str) -> dict:
         data = self.request("POST", f"/repos/{self.repo}/issues",
                             {"title": title, "body": body})
@@ -185,24 +191,79 @@ def dispatch(plan: dict, repo: str, *, apply: bool = False,
             "url": created.get("html_url")}
 
 
+def assign_existing_copilot_task(repo: str, issue_number: int, key: str,
+                                 *, copilot_token: str,
+                                 api: GitHubAPI | None = None) -> dict:
+    """Assign only an Issue created by the trusted queue job for this routing key.
+
+    Copilot authentication must be supplied by the main-restricted GitHub
+    Environment job, never by the unprivileged routing job.
+    """
+    if (not isinstance(repo, str) or not REPO.fullmatch(repo) or
+            not isinstance(issue_number, int) or isinstance(issue_number, bool) or
+            issue_number < 1 or not isinstance(key, str) or not KEY.fullmatch(key)):
+        raise ValueError("Malformed Copilot assignment request.")
+    if not copilot_token:
+        raise ValueError("Missing protected Copilot Environment token.")
+    if api is None:
+        api = GitHubAPI(repo, os.getenv("GH_TOKEN", ""))
+    issue = api.get_issue(issue_number)
+    marker = f"<!-- book-pipeline-task:{key} -->"
+    if (issue.get("number") != issue_number or issue.get("state") != "open" or
+            "pull_request" in issue or
+            not isinstance(issue.get("body"), str) or
+            issue["body"].count(marker) != 1 or
+            issue.get("user", {}).get("login") != "github-actions[bot]"):
+        raise ValueError("Issue is not a trusted, open, marker-matched queue task.")
+    # Avoid duplicate assignments if a human has already taken the task.
+    if issue.get("assignees"):
+        raise ValueError("Issue already has assignees; review manually.")
+    api.assign_copilot(issue_number, copilot_token)
+    return {"status": "assigned_to_copilot", "issue": issue_number,
+            "url": issue.get("html_url")}
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--decision", type=Path, required=True)
+    p.add_argument("--decision", type=Path)
     p.add_argument("--repo", required=True)
     p.add_argument("--books-prefix", default="books")
     p.add_argument("--apply", action="store_true")
     p.add_argument("--assign-copilot", action="store_true")
+    p.add_argument("--issue", type=int, help="Existing Issue for isolated Copilot job")
+    p.add_argument("--expected-key", help="Idempotency key from trusted router job")
+    p.add_argument("--github-output", type=Path, help="Write safe job outputs")
     a = p.parse_args(argv)
     try:
-        plan = json.loads(a.decision.read_text(encoding="utf-8"))
-        if plan.get("status") != "ready":
-            print(json.dumps({"status": "skipped", "reason": plan.get("reason")}))
-            return 0
-        result = dispatch(
-            plan, a.repo, apply=a.apply, assign_copilot=a.assign_copilot,
-            books_prefix=a.books_prefix,
-            copilot_token=os.getenv("COPILOT_USER_TOKEN", ""),
-        )
+        if a.issue is not None:
+            if (a.decision is not None or a.apply or a.assign_copilot or
+                    not a.expected_key or a.github_output is not None):
+                raise ValueError("Assignment mode requires only --issue and --expected-key.")
+            result = assign_existing_copilot_task(
+                a.repo, a.issue, a.expected_key,
+                copilot_token=os.getenv("COPILOT_USER_TOKEN", ""),
+            )
+        else:
+            if a.decision is None or a.expected_key is not None:
+                raise ValueError("Queue mode requires --decision.")
+            plan = json.loads(a.decision.read_text(encoding="utf-8"))
+            if plan.get("status") != "ready":
+                print(json.dumps({"status": "skipped", "reason": plan.get("reason")}))
+                return 0
+            # The privileged Copilot token must never be exposed to queue mode.
+            if a.assign_copilot:
+                raise ValueError("Copilot assignment is restricted to the Environment job.")
+            result = dispatch(plan, a.repo, apply=a.apply,
+                              books_prefix=a.books_prefix)
+            if a.github_output is not None:
+                status = result.get("status", "")
+                issue = result.get("issue")
+                if status not in {"created_for_manual_assignment", "already_created"}:
+                    raise ValueError("Unexpected Issue queue result.")
+                if not isinstance(issue, int) or isinstance(issue, bool) or issue < 1:
+                    raise ValueError("Missing valid queued Issue number.")
+                with a.github_output.open("a", encoding="utf-8") as output:
+                    output.write(f"status={status}\nissue_number={issue}\n")
         print(json.dumps(result, indent=2, sort_keys=True))
         return 0
     except (ValueError, OSError, urllib.error.URLError, TypeError) as e:
