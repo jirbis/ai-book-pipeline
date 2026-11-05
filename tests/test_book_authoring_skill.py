@@ -4,13 +4,17 @@ All mutable fixtures are under TemporaryDirectory, never in my-books/.
 """
 from __future__ import annotations
 
+import importlib.util
+import io
 import json
 import os
 import subprocess
 import sys
 import tempfile
 import unittest
+from contextlib import redirect_stderr
 from pathlib import Path
+from unittest.mock import patch
 
 
 REPO = Path(__file__).resolve().parents[1]
@@ -29,6 +33,18 @@ class BookAuthoringAdapterTests(unittest.TestCase):
             "--repo", str(REPO), "--books-root", str(self.books_root), *parts,
         ]
         return subprocess.run(argv, text=True, capture_output=True, env=env, check=False)
+
+    def test_missing_phase_validator_dependency_has_distinct_exit_code(self):
+        spec = importlib.util.spec_from_file_location("book_adapter_for_test", ADAPTER)
+        self.assertIsNotNone(spec)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        err = io.StringIO()
+        with patch.object(module.importlib.util, "find_spec", return_value=None):
+            with redirect_stderr(err):
+                result = module.validate_phase(REPO, self.books_root / "missing", "1")
+        self.assertEqual(result, 3)
+        self.assertIn("PyYAML", err.getvalue())
 
     def test_status_does_not_create_missing_book(self):
         result = self.command("status", "missing")

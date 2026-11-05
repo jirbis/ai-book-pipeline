@@ -47,7 +47,15 @@ python skills/book-authoring/scripts/github_workspace.py --checkout /path/to/my-
 python skills/book-authoring/scripts/github_workspace.py --checkout /path/to/my-private-books push-branch my-book --confirm-remote-write
 ```
 
-The helper refuses to switch branches in a dirty checkout; commit from `main`, on an unrelated book branch, or when changed paths extend outside the selected book; and push without an approved GitHub `origin`. No automatic remote mutation or PR merge.
+The helper refuses to switch branches in a dirty checkout; commit from `main`, on an unrelated book branch, or when changed paths extend outside the selected book; and push without an approved GitHub `origin`. Before pushing, it verifies **the actual resolved push URL**, not just the fetch URL, refuses multiple push URLs and mismatched GitHub destinations, and uses a single explicit branch refspec. No automatic remote mutation or PR merge.
+
+### Trust model for local Git clones
+
+- `commit-book` intentionally disables Git commit hooks, including custom `core.hooksPath`, so an untrusted repository cannot execute hook scripts during an agent-created commit. Human developers can still run their usual hooks independently.
+- **Do not run the helper against an untrusted checkout**: `git add` can still execute configured Git clean/smudge filters from attributes, and Git configuration can affect commands. Use a clean, authenticated clone you control, and review changes before committing.
+- `inspect` lists modified paths only inside the selected book and reports the **count** of unrelated changed paths, not their names.
+- Git's branch protection, credentials and permissions still apply; this is a safety wrapper, not a sandbox.
+
 
 ## GitHub connector mode (host-dependent)
 

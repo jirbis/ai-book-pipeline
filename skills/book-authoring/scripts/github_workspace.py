@@ -75,24 +75,42 @@ def dirty_paths(root: Path) -> list[str]:
     return sorted(names)
 
 
-def github_remote(root: Path) -> str:
-    url = git(root, "remote", "get-url", "origin")
+def canonical_github_url(url: str) -> str:
+    """Validate a Git remote URL and return a credential-free canonical URL."""
     if url.startswith("git@github.com:"):
         path = url.split(":", 1)[1]
     elif url.startswith("ssh://"):
         parsed = urlsplit(url)
         if parsed.hostname != "github.com":
-            raise ValueError("origin is not hosted on github.com.")
+            raise ValueError("Remote is not hosted on github.com.")
         path = parsed.path.lstrip("/")
     else:
         parsed = urlsplit(url)
         if parsed.scheme != "https" or parsed.hostname != "github.com":
-            raise ValueError("origin must be a github.com HTTPS or SSH remote.")
+            raise ValueError("Remote must be a github.com HTTPS or SSH URL.")
         path = parsed.path.lstrip("/")
     path = path.removesuffix(".git")
     if len(path.split("/")) != 2 or not all(SLUG.fullmatch(part) for part in path.split("/")):
-        raise ValueError("origin does not identify a GitHub owner/repository.")
+        raise ValueError("Remote does not identify a GitHub owner/repository.")
     return "https://github.com/" + path
+
+
+def github_remote(root: Path, *, for_push: bool = False) -> str:
+    """Verify the actual push target, not only origin's fetch URL.
+
+    Git supports remote.origin.pushurl, URL rewrite rules, and multiple push URLs.
+    Git's get-url --push --all resolves these. Refuse ambiguous or redirected pushes.
+    """
+    fetch_url = canonical_github_url(git(root, "remote", "get-url", "origin"))
+    if not for_push:
+        return fetch_url
+    push_urls = git(root, "remote", "get-url", "--push", "--all", "origin").splitlines()
+    if len(push_urls) != 1:
+        raise ValueError("origin must have exactly one push URL; refusing ambiguous push.")
+    push_url = canonical_github_url(push_urls[0])
+    if push_url != fetch_url:
+        raise ValueError("origin push URL must match its validated GitHub fetch repository.")
+    return push_url
 
 
 def inspect(root: Path, path: Path, relative: str) -> int:
@@ -100,13 +118,16 @@ def inspect(root: Path, path: Path, relative: str) -> int:
         remote = github_remote(root)
     except ValueError:
         remote = None
+    modified = dirty_paths(root)
+    own_paths = [name for name in modified if name.startswith(relative + "/")]
     print(json.dumps({
         "checkout": str(root),
         "book": relative,
         "book_exists": path.is_dir(),
         "branch": current_branch(root) or None,
         "github_repository": remote,
-        "modified_paths": dirty_paths(root),
+        "modified_paths": own_paths,
+        "other_modified_paths_count": len(modified) - len(own_paths),
         "read_only": True,
     }, indent=2))
     return 0
@@ -147,7 +168,9 @@ def commit_book(root: Path, path: Path, relative: str, slug: str, message: str, 
     staged = git(root, "diff", "--cached", "--name-only", "-z").split("\0")
     if any(item and not item.startswith(relative + "/") for item in staged):
         raise ValueError("Staged content extends outside this book; commit aborted.")
-    git(root, "commit", "-m", message)
+    # Untrusted repository hooks can execute arbitrary code: disable them for agent commits.
+    # This also overrides a custom core.hooksPath set in the checkout.
+    git(root, "-c", "core.hooksPath=/dev/null", "commit", "-m", message)
     print(f"Committed only {relative}/ on {branch}. Nothing was pushed.")
     return 0
 
@@ -158,10 +181,14 @@ def push_branch(root: Path, slug: str, confirm: bool) -> int:
     branch = current_branch(root)
     if not branch_for_book(branch, slug):
         raise ValueError("Push allowed only on this book's book/<slug>/<topic> branch.")
-    remote = github_remote(root)
+    remote = github_remote(root, for_push=True)
     if dirty_paths(root):
         raise ValueError("Commit or discard working-tree changes before pushing.")
-    git(root, "push", "--set-upstream", "origin", branch)
+    # Explicit refspec prevents push.default or remote.push from widening scope.
+    # Disable mirror mode and follow-tags in case they were set in Git config.
+    git(root, "-c", "remote.origin.mirror=false", "-c", "push.followTags=false",
+        "push", "--no-follow-tags", "--set-upstream", "origin",
+        f"refs/heads/{branch}:refs/heads/{branch}")
     print(f"Pushed {branch} to {remote}. Open a Pull Request for review; no merge was done.")
     return 0
 

@@ -45,7 +45,7 @@ The existing publisher workflow remains unchanged. `final-check` does not run th
 
 For books stored in a **GitHub repository**, set `BOOKS_ROOT` to the cloned repository's `books/` directory while keeping `BOOK_PIPELINE_REPO` pointed at the book pipeline engine. The [GitHub workflow guide](references/github-workflow.md) covers both an authenticated local Git clone and an agent using its GitHub connector.
 
-The helper `scripts/github_workspace.py` supports `inspect` (read-only), `start` (opt-in local `book/<slug>/draft` branch), `commit-book` (opt-in changes **only** within `books/<slug>/`), and `push-branch` (explicitly authorized GitHub push). It never merges PRs or publishes to Amazon Kindle.
+The helper `scripts/github_workspace.py` supports `inspect` (read-only), `start` (opt-in local `book/<slug>/draft` branch), `commit-book` (opt-in changes **only** within `books/<slug>/`), and `push-branch` (explicitly authorized GitHub push). It never merges PRs or publishes to Amazon Kindle. It validates resolved push URLs, blocks ambiguous or redirected pushes, uses an explicit refspec, and skips local commit hooks; see the trust limitations in the GitHub workflow guide.
 
 ```bash
 python skills/book-authoring/scripts/github_workspace.py --checkout /path/to/manuscript-repo inspect my-book

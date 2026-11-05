@@ -62,7 +62,7 @@ After each step, summarize what was done, unresolved questions, evidence, propos
 - Default to reading and recommending changes. Never silently overwrite drafts, edit original imports, mutate templates, publish, commit, push, or sync external services.
 - `status`, `phase`, `validate-phase` and `final-check` are inspection operations. `init` requires `--confirm-write` and refuses an existing book directory.
 - `final-check` is read-only and calls the engine's existing chapter-number collectors. It reports **filename completeness**, not content quality or author approval. The underlying `validate_final_chapters.py` also writes a handoff on failure, so do not call its CLI in inspection-only workflows.
-- Phase validators can return exit 2 for warnings. Do not interpret warnings as success or declare a book publishable from one validator alone.
+- Phase validators can return exit 2 for warnings; the wrapper returns exit 3 for a missing PyYAML dependency. Do not interpret warnings as success or declare a book publishable from one validator alone.
 - Preserve `author-voice.md` even during proofreading. For factual non-fiction, retain sources and unresolved verification items.
 - Before any cloud model request, obtain authorization for sensitive material and apply the host's data/PII controls. This skill does not implement PII filtering.
 - Final publication requires an explicit author decision. See `references/workflow-map.md` for required handoffs.

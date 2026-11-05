@@ -63,7 +63,7 @@ def call_engine_cli(repo: Path, books_root: Path, command: str, *args: str) -> i
 def validate_phase(repo: Path, book: Path, phase: str) -> int:
     if importlib.util.find_spec("yaml") is None:
         print("Phase validators require PyYAML: python -m pip install PyYAML", file=sys.stderr)
-        return 2
+        return 3  # Dependency error, distinct from validator warning exit code 2.
     script = repo / "engine" / "agents" / "tools" / f"validate_phase_{phase}.py"
     if not script.is_file():
         raise ValueError(f"Missing engine validator for phase {phase}")
@@ -77,6 +77,9 @@ def final_check(repo: Path, book: Path) -> int:
     if spec is None or spec.loader is None:
         raise ValueError(f"Cannot load final chapter validator: {module_file}")
     validator = importlib.util.module_from_spec(spec)
+    # The current trusted engine module defines pure collectors at import time.
+    # exec_module executes top-level code: re-audit if that module changes.
+    # Do not call its main(), which writes a handoff file on validation failure.
     spec.loader.exec_module(validator)
 
     chapters = book / "files" / "content" / "chapters"

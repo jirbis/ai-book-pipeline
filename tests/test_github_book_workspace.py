@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -144,6 +145,58 @@ class GitHubBookWorkspaceTests(unittest.TestCase):
         self.assertNotEqual(self.tool(
             "push-branch", "my-book", "--confirm-remote-write"
         ).returncode, 0)
+
+    def test_push_uses_validated_push_url_not_only_fetch_url(self):
+        self.start_book_branch()
+        self.git("remote", "add", "origin", "https://github.com/example/manuscripts.git")
+        # Git would push to this different host, despite origin's GitHub fetch URL.
+        self.git("remote", "set-url", "--push", "origin", "https://example.com/evil/repo.git")
+        attempt = self.tool("push-branch", "my-book", "--confirm-remote-write")
+        self.assertNotEqual(attempt.returncode, 0)
+        self.assertIn("github.com", attempt.stderr)
+
+    def test_rejects_mismatched_github_push_repository(self):
+        self.start_book_branch()
+        self.git("remote", "add", "origin", "https://github.com/example/manuscripts.git")
+        self.git("remote", "set-url", "--push", "origin", "https://github.com/attacker/manuscripts.git")
+        attempt = self.tool("push-branch", "my-book", "--confirm-remote-write")
+        self.assertNotEqual(attempt.returncode, 0)
+        self.assertIn("must match", attempt.stderr)
+
+    def test_rejects_multiple_push_urls(self):
+        self.start_book_branch()
+        self.git("remote", "add", "origin", "https://github.com/example/manuscripts.git")
+        self.git("remote", "set-url", "--add", "--push", "origin", "https://github.com/example/manuscripts.git")
+        self.git("remote", "set-url", "--add", "--push", "origin", "https://github.com/example/backup.git")
+        attempt = self.tool("push-branch", "my-book", "--confirm-remote-write")
+        self.assertNotEqual(attempt.returncode, 0)
+        self.assertIn("exactly one push URL", attempt.stderr)
+
+    def test_commit_does_not_execute_repository_hooks(self):
+        self.start_book_branch()
+        self.book_file()
+        hook = self.checkout / ".git" / "hooks" / "pre-commit"
+        marker = self.checkout / "hook-was-executed.txt"
+        hook.write_text("#!/bin/sh\\necho unexpected > hook-was-executed.txt\\nexit 1\\n",
+                        encoding="utf-8")
+        hook.chmod(0o755)
+        result = self.tool(
+            "commit-book", "my-book", "--message", "Draft", "--confirm-write"
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertFalse(marker.exists())
+
+    def test_inspect_hides_other_books_paths(self):
+        own = self.book_file()
+        other = self.checkout / "books" / "secret-unrelated-book" / "private-note.md"
+        other.parent.mkdir(parents=True)
+        other.write_text("private", encoding="utf-8")
+        result = self.tool("inspect", "my-book")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        status = json.loads(result.stdout)
+        self.assertIn("books/my-book/config/PROJECT.md", status["modified_paths"])
+        self.assertEqual(status["other_modified_paths_count"], 1)
+        self.assertNotIn("secret-unrelated-book", result.stdout)
 
 
 if __name__ == "__main__":
