@@ -59,6 +59,24 @@ See the [author's book showcase](docs/showcase.md), including *The Huna Guide*, 
 
 Store book folders in a GitHub repository (private for unpublished manuscripts), use dedicated `book/<slug>/<topic>` branches, and review chapter changes through Pull Requests. The portable [book-authoring skill](skills/book-authoring/SKILL.md) provides a [Git-backed workspace helper](skills/book-authoring/references/github-workflow.md) for local clones and a documented GitHub-connector workflow for agents. No automatic publishing or merging.
 
+## Enable event-driven book automation (private repositories)
+
+The optional GitHub workflow routes **human-merged, stage-labeled Pull Requests** to the next authoring task: materials → plan → manuscript → proofreading → **human approval before publication**. It creates an Issue by default; launching a cloud AI agent is a separate opt-in. **Do not enable automation until the following repository protections are configured.**
+
+1. **Install the orchestration files in the private manuscript repository and merge them into its default branch.** Include `.github/workflows/book-pr-scope.yml`, `.github/workflows/book-transition-router.yml`, `.github/CODEOWNERS`, and `scripts/book_pipeline/`. Workflows in this engine repository do not monitor another repository's PRs.
+2. **Require the `Book PR scope / scope` status check before merging.** In the manuscript repository, open **Settings → Rules → Rulesets** (or **Settings → Branches → Branch protection rules**), create or update protection for `main`, enable required status checks, and select `Book PR scope / scope`. The check validates changed paths for book-labeled PRs; it must be present in the default branch before GitHub can offer it as a required check.
+3. **Require Code Owner reviews.** Configure `.github/CODEOWNERS` for `.github/workflows/`, `scripts/book_pipeline/` and the ownership file itself. Enable **Require review from Code Owners** (or an equivalent ruleset), require Pull Requests before merging, and restrict bypasses. **Adding CODEOWNERS alone does not turn on review enforcement.** Ensure an eligible independent reviewer can approve changes (the PR author cannot approve their own PR).
+4. **Only after these protections are active**, set the Actions repository variable `BOOK_PIPELINE_ENABLED=true`. This queues next-stage Issues after eligible human merges, but does not run a language model.
+5. To **automatically assign GitHub Copilot cloud agent**, separately set `BOOK_PIPELINE_ASSIGN_COPILOT=true` and the `COPILOT_USER_TOKEN` secret, then validate access and permissions in a private test repository. Do not enable this on sensitive manuscripts without approval of cloud processing.
+
+**These branch protection/ruleset settings and token configuration are manual GitHub repository administration steps; merging this PR does not enable or enforce them.** Automatic merging, public publication, and Amazon KDP uploads are not implemented.
+
+Read the [event-driven orchestration setup and security guide](docs/book-event-orchestration.md) for the complete deployment checklist.
+
+## Documentation language
+
+Repository documentation, setup instructions, and developer-facing Markdown are maintained in **English**. Book manuscripts and source material may use the author's chosen language.
+
 ## Project structure
 
 ```

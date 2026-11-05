@@ -5,6 +5,10 @@ on:
     paths:
       - 'scripts/book_pipeline/**'
       - 'tests/test_book_pipeline_*.py'
+      - 'README.md'
+      - 'docs/**'
+      - 'skills/book-authoring/**'
+      - 'engine/**'
       - '.github/workflows/book-transition-router.yml'
       - '.github/workflows/book-pr-scope.yml'
       - '.github/CODEOWNERS'

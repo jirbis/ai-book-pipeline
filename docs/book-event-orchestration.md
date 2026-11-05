@@ -25,6 +25,28 @@ including renamed files originating in another book, and >300 changed files.
 No automatically created or merely closed PR advances the book.
 **Only an actual human merge** of an appropriate labeled PR does so.
 
+## Required repository protection before activation
+
+**Do not set `BOOK_PIPELINE_ENABLED=true` until both protections below are
+configured and verified in the private manuscript repository:**
+
+1. **Required status check:** In **Settings → Rules → Rulesets** (or **Settings →
+   Branches → Branch protection rules**), require
+   `Book PR scope / scope` for merges into `main`. This check runs the
+   read-only path guard. The workflow must first be merged to the private
+   repository's default branch so that GitHub can recognize the status name.
+2. **Required Code Owner review:** Install `.github/CODEOWNERS` covering
+   `.github/workflows/`, `scripts/book_pipeline/` and `.github/CODEOWNERS`
+   itself. Enable **Require review from Code Owners** or equivalent ruleset,
+   require Pull Requests for `main`, and limit bypass rights. The PR author
+   cannot approve their own change, so arrange an independent authorized
+   reviewer or an explicit administrative review policy.
+
+**These are GitHub repository settings, not automated by this PR.**
+Neither the CODEOWNERS file nor a workflow by itself enforces the policy.
+Also confirm your plan and repository type support the chosen protection
+rules before enabling an autonomous agent.
+
 ## Configure in the PRIVATE manuscript repository
 
 1. Install the following in the manuscript repo: `scripts/book_pipeline/router.py`,
@@ -114,8 +136,8 @@ must not be processed by cloud agents without the author's approval.
   connected by this PR.
 
 **Dependency resolved:** PR #30 has been merged into `main`. PR #31 now
-targets `main` directly and contains only its seven orchestration files.
-Review and merge PR #31 separately; this does NOT enable agents or change books.
+targets `main` directly. Review and merge PR #31 separately; this does NOT
+activate the workflow, enable agents, or change books.
 
 ## References
 
