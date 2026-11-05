@@ -38,6 +38,14 @@ No vendor lock-in. No hidden services. Fully transparent.
 
 ---
 
+## Kindle publishing examples
+
+See [books by the project author](showcase.md): *The Huna Guide*, *Surviving Crypto*, and *Stop Talking. Start Building*. Titles are linked to their author-catalog entries. Direct Amazon Kindle listings are pending independent ASIN verification, and the showcase distinguishes author portfolio from documented pipeline-produced work.
+
+## GitHub manuscript collaboration
+
+Work on drafts and reviews **in a GitHub repository**, including private manuscripts: one book directory, a dedicated feature branch, commits scoped to that book, and a Draft Pull Request for author review. The [portable skill](../skills/book-authoring/SKILL.md) supports Git-backed local clones and explains [GitHub-connector operation](../skills/book-authoring/references/github-workflow.md). GitHub version control does not publish to Kindle.
+
 ## How it works (high level)
 
 The pipeline models book creation as a sequence of explicit roles:

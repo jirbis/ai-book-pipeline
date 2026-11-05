@@ -51,6 +51,14 @@ Set `BOOKS_ROOT` to your workspace directory for books (defaults to `my-books/`)
 - **PROOFREADER:** Catches typos and formatting issues before release.
 - **PUBLISHER:** Assembles the final manuscript and exports files.
 
+## Books and Amazon Kindle examples
+
+See the [author's book showcase](docs/showcase.md), including *The Huna Guide*, *Surviving Crypto*, and *Stop Talking. Start Building*. Verified author-catalog references are provided there; direct Amazon Kindle product links will be added when ASINs are confirmed. The showcase does not claim that every title was made with this pipeline.
+
+## Write manuscripts in GitHub
+
+Store book folders in a GitHub repository (private for unpublished manuscripts), use dedicated `book/<slug>/<topic>` branches, and review chapter changes through Pull Requests. The portable [book-authoring skill](skills/book-authoring/SKILL.md) provides a [Git-backed workspace helper](skills/book-authoring/references/github-workflow.md) for local clones and a documented GitHub-connector workflow for agents. No automatic publishing or merging.
+
 ## Project structure
 
 ```
