@@ -61,6 +61,9 @@ def call_engine_cli(repo: Path, books_root: Path, command: str, *args: str) -> i
 
 
 def validate_phase(repo: Path, book: Path, phase: str) -> int:
+    if importlib.util.find_spec("yaml") is None:
+        print("Phase validators require PyYAML: python -m pip install PyYAML", file=sys.stderr)
+        return 2
     script = repo / "engine" / "agents" / "tools" / f"validate_phase_{phase}.py"
     if not script.is_file():
         raise ValueError(f"Missing engine validator for phase {phase}")
