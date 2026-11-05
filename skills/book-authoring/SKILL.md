@@ -17,7 +17,7 @@ Coordinate a book project with the existing `ai-book-pipeline` engine. This is a
 
 ## Commands
 
-Use Python 3.10+; the adapter uses only the standard library and **delegates** to the existing engine. Options `--repo` and `--books-root` precede the command.
+Use Python 3.10+; the adapter uses only the standard library and **delegates** to the existing engine. The engine's phase validators additionally need `PyYAML` (`python -m pip install PyYAML`). Options `--repo` and `--books-root` precede the command.
 
 ```bash
 python skills/book-authoring/scripts/book.py --books-root /path/to/books status my-book
