@@ -46,6 +46,16 @@ class BookAuthoringAdapterTests(unittest.TestCase):
         self.assertEqual(result, 3)
         self.assertIn("PyYAML", err.getvalue())
 
+    def test_github_copilot_discovers_portable_skill_entrypoint(self):
+        entry = REPO / ".github" / "skills" / "book-authoring" / "SKILL.md"
+        primary = REPO / "skills" / "book-authoring" / "SKILL.md"
+        self.assertTrue(primary.is_file())
+        self.assertTrue(entry.is_file())
+        text = entry.read_text(encoding="utf-8")
+        self.assertIn("name: book-authoring", text)
+        self.assertIn("skills/book-authoring/SKILL.md", text)
+        self.assertIn("Do not merge", text)
+
     def test_status_does_not_create_missing_book(self):
         result = self.command("status", "missing")
         self.assertNotEqual(result.returncode, 0)

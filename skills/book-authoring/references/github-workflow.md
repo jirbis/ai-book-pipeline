@@ -70,6 +70,10 @@ An agent with authorized GitHub tools can work directly on GitHub, without a loc
 
 The connector workflow is an instruction contract, not a claim that this Python script itself calls the GitHub API. Hosts without GitHub tools can use the local Git adapter above.
 
+## Running agents and phases on GitHub
+
+See [GitHub agent and phase execution](github-agents.md) for the distinction between the existing CLI (phase guidance/validation only), Copilot coding agent, GitHub Agentic Workflows, and an explicit GitHub Actions job. Without a configured model runtime, the CLI **does not autonomously generate chapter text**.
+
 ## Versioning and collaboration conventions
 
 - All book work remains in `books/<slug>/`; one book change set per branch/PR.

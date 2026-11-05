@@ -41,6 +41,14 @@ python skills/book-authoring/scripts/book.py --books-root /tmp/author-books fina
 
 The existing publisher workflow remains unchanged. `final-check` does not run the original validator main routine because that routine creates a handoff file on failure.
 
+## GitHub Copilot cloud-agent discovery
+
+GitHub Copilot cloud agent discovers project skills in `.github/skills/`, `.claude/skills/`, or `.agents/skills/`, rather than automatically scanning arbitrary top-level `skills/` directories. A lightweight compatibility entrypoint lives at `.github/skills/book-authoring/SKILL.md`; it delegates to the canonical `skills/book-authoring/SKILL.md` and its existing scripts and references. Keep the canonical version authoritative.
+
+This auto-discovery applies to the **repository containing the entrypoint**. To use Copilot in a separate private manuscript repository, install the skill into a supported skills directory of **that repository**, and give the agent access to the `ai-book-pipeline` engine checkout. Loading a skill alone does not launch a phase: the agent must be assigned a task or triggered by a workflow.
+
+See [GitHub agent and phase execution](references/github-agents.md) for hosted execution options.
+
 ## GitHub-backed manuscripts
 
 For books stored in a **GitHub repository**, set `BOOKS_ROOT` to the cloned repository's `books/` directory while keeping `BOOK_PIPELINE_REPO` pointed at the book pipeline engine. The [GitHub workflow guide](references/github-workflow.md) covers both an authenticated local Git clone and an agent using its GitHub connector.
