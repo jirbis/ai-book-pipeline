@@ -177,9 +177,15 @@ class GitHubBookWorkspaceTests(unittest.TestCase):
         self.book_file()
         hook = self.checkout / ".git" / "hooks" / "pre-commit"
         marker = self.checkout / "hook-was-executed.txt"
-        hook.write_text("#!/bin/sh\\necho unexpected > hook-was-executed.txt\\nexit 1\\n",
+        hook.write_text("#!/bin/sh\necho unexpected > hook-was-executed.txt\nexit 1\n",
                         encoding="utf-8")
         hook.chmod(0o755)
+        # Control: prove this is a valid executable hook that would fail the commit.
+        control = subprocess.run([str(hook)], cwd=self.checkout,
+                                 capture_output=True, text=True, check=False)
+        self.assertEqual(control.returncode, 1)
+        self.assertTrue(marker.exists())
+        marker.unlink()
         result = self.tool(
             "commit-book", "my-book", "--message", "Draft", "--confirm-write"
         )

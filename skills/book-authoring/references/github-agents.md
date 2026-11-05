@@ -2,6 +2,12 @@
 
 **Yes**, but distinguish three levels of execution. A GitHub repository is versioned storage; GitHub Actions supplies an execution runner; GitHub Copilot and other configured model runtimes supply the agent's generative intelligence.
 
+## References (official)
+- [GitHub Copilot agent skills](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills)
+- [GitHub Agentic Workflows](https://github.github.com/gh-aw/)
+- [Agentic safe outputs for Draft PRs](https://github.github.com/gh-aw/reference/safe-outputs-pull-requests/)
+- [GitHub Actions trigger behavior](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow)
+
 ## 1. Existing phase commands — deterministic (already implemented)
 
 The engine CLI `python -m engine.cli phase <book> draft` **prints the phase instructions**. It does not write the chapter. `validate-phase` checks existing files; `final-check` checks chapter filenames. These can run in GitHub Actions (including manual `workflow_dispatch`) with read-only repository permissions after the workflow is merged to the repository's default branch.
