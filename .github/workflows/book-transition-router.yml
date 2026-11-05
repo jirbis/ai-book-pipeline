@@ -1,7 +1,8 @@
 name: Book pipeline - merged PR router
 
 on:
-  pull_request:
+  # Uses workflow/script files from the trusted default branch, never a PR merge-ref.
+  pull_request_target:
     types: [closed]
   workflow_dispatch:
     inputs:
@@ -30,6 +31,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          # Never checkout a pull request head/merge ref in this privileged workflow.
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: '3.11'
@@ -55,19 +60,26 @@ jobs:
             --github-output "$GITHUB_OUTPUT" \
             > "$RUNNER_TEMP/book-decision.json"
           jq '{status,reason,book,gate,next_stage,idempotency_key}' "$RUNNER_TEMP/book-decision.json"
-      - name: Queue one stage task or opt-in Copilot assignment
-        if: steps.route.outputs.status == 'ready'
+      - name: Queue task without Copilot credentials
+        if: steps.route.outputs.status == 'ready' && vars.BOOK_PIPELINE_ASSIGN_COPILOT != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-          COPILOT_USER_TOKEN: ${{ secrets.COPILOT_USER_TOKEN }}
-          ASSIGN_COPILOT: ${{ vars.BOOK_PIPELINE_ASSIGN_COPILOT }}
           BOOKS_PREFIX: ${{ vars.BOOKS_PREFIX }}
         run: |
           set -euo pipefail
-          args=(--decision "$RUNNER_TEMP/book-decision.json"
-                --repo "$GITHUB_REPOSITORY"
-                --books-prefix "${BOOKS_PREFIX:-books}" --apply)
-          if [[ "$ASSIGN_COPILOT" == "true" ]]; then
-            args+=(--assign-copilot)
-          fi
-          python scripts/book_pipeline/issue_worker.py "${args[@]}"
+          python scripts/book_pipeline/issue_worker.py \
+            --decision "$RUNNER_TEMP/book-decision.json" \
+            --repo "$GITHUB_REPOSITORY" \
+            --books-prefix "${BOOKS_PREFIX:-books}" --apply
+      - name: Queue task and explicitly assign Copilot
+        if: steps.route.outputs.status == 'ready' && vars.BOOK_PIPELINE_ASSIGN_COPILOT == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COPILOT_USER_TOKEN: ${{ secrets.COPILOT_USER_TOKEN }}
+          BOOKS_PREFIX: ${{ vars.BOOKS_PREFIX }}
+        run: |
+          set -euo pipefail
+          python scripts/book_pipeline/issue_worker.py \
+            --decision "$RUNNER_TEMP/book-decision.json" \
+            --repo "$GITHUB_REPOSITORY" \
+            --books-prefix "${BOOKS_PREFIX:-books}" --apply --assign-copilot

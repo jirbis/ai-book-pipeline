@@ -71,19 +71,19 @@ def task_text(plan: dict, *, books_prefix: str = "books") -> tuple[str, str]:
 **Book:** {book}
 **Phase:** {stage}
 **Source:** merged PR #{pr}
-**Scope:** \`{folder}\`
+**Scope:** `{folder}`
 
 ## Agent instructions
 
 {TASK_INSTRUCTIONS[stage]}
 
-Read \`skills/book-authoring/SKILL.md\` and \`engine/agents/AGENTS.md\` if installed
+Read `skills/book-authoring/SKILL.md` and `engine/agents/AGENTS.md` if installed
 in this repository. If the manuscripts are in a separate repository, install
 the canonical skill and provide authorized access to the engine first.
 
-**File boundary:** edit only \`{folder}\`. Do not change \`main\` directly,
+**File boundary:** edit only `{folder}`. Do not change `main` directly,
 modify another book, merge PRs, expose unpublished material publicly or
-publish to Amazon. Add the proposed \`book:{'plan' if stage == 'plan' else 'manuscript' if stage == 'manuscript' else 'proofread'}\`
+publish to Amazon. Add the proposed `book:{stage}`
 label before the author merges the resulting PR. The author must check it.
 
 **Human gate:** The agent's result is a proposed Draft PR, not authorization

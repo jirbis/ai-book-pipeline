@@ -1,0 +1,5 @@
+# Owner review is effective only when branch protection/rulesets require it.
+/.github/workflows/ @jirbis
+/scripts/book_pipeline/ @jirbis
+/tests/test_book_pipeline_*.py @jirbis
+/.github/CODEOWNERS @jirbis

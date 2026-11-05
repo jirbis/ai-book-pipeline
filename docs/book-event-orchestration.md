@@ -32,7 +32,16 @@ No automatically created or merely closed PR advances the book.
    `.github/workflows/book-transition-router.yml`, and
    the `book-authoring` skill, with authorized access to engine references.
    The workflow reacts to merges **in its own repository**, not another repo.
-2. Protect `main` with required reviews and passing checks. Add labels:
+   Install the separate pre-merge `.github/workflows/book-pr-scope.yml`
+   and require its **Book PR scope / scope** status in branch protection.
+   Apply CODEOWNERS review protection for workflow/dispatcher paths.
+2. Protect `main` with required reviews and passing checks (including
+   `Book PR scope / scope`). Enable **Require review from Code Owners**
+   or an equivalent repository ruleset, and restrict who can bypass it.
+   The included `.github/CODEOWNERS` assigns workflow, router, worker,
+   and test files to `@jirbis`. A CODEOWNERS file alone does not enforce
+   approval requirements; configure branch protection yourself.
+   Add labels:
    `book:materials`, `book:plan`, `book:manuscript` and `book:proofread`.
 3. Set GitHub Actions repository variable `BOOK_PIPELINE_ENABLED=true` to
    enable task creation. By default the workflow job is **disabled**.
@@ -74,11 +83,24 @@ must not be processed by cloud agents without the author's approval.
 
 ## Security, scope, remaining tasks
 
+- Security fix: the privileged post-merge dispatcher uses
+  `pull_request_target: closed`, and checks out **only the repository
+  default branch** with persisted checkout credentials disabled. It never
+  executes the PR head or PR merge-ref. An event merely provides the PR
+  number; the main-branch router fetches authoritative metadata.
+- A separate read-only `pull_request_target` status check
+  (`Book PR scope / scope`) validates a book-labeled PR's paths before
+  merge, including rename origins and deleted-only source artifacts.
+  Protect `main` by requiring this status; otherwise it is advisory.
 - The router has no write/LLM capability. Only the worker can create an issue,
   and only if the repo automation variable is enabled; assignment needs another
   opt-in variable and a user token. The main workflow permissions are
   `contents: read`, `pull-requests: read`, `issues: write`.
 - Book files are never modified directly by the router/worker.
+- An issue with a matching task marker could be planted by a writer with
+  Issue permissions and suppress an automated task; review task ownership
+  on unexpected `already_created` results. A fake marker cannot authorize
+  publication, but it can delay work.
 - Source prompts enforce **book-scoped changes, Draft PR and human review**,
   but the actual Copilot output must still be checked. A prompt is not an
   enforceable file-system sandbox; enforce branch protection and allowed path
@@ -86,7 +108,7 @@ must not be processed by cloud agents without the author's approval.
 - This is an initial **single-chapter** routing mechanism, not a full
   multi-book scheduler or robust cross-provider retry engine.
 - For a complete production pipeline, add a durable state journal,
-  output validation, chapter sequence/scheduling, strict CI path guards,
+  output validation, chapter sequence/scheduling,
   budgets/rate limits and optional Claude/Asgard executor integrations.
 - The workflow was not activated and no GitHub Copilot account or PAT was
   connected by this PR.

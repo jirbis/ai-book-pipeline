@@ -6,6 +6,8 @@ on:
       - 'scripts/book_pipeline/**'
       - 'tests/test_book_pipeline_*.py'
       - '.github/workflows/book-transition-router.yml'
+      - '.github/workflows/book-pr-scope.yml'
+      - '.github/CODEOWNERS'
       - '.github/workflows/book-transition-tests.yml'
   workflow_dispatch:
 

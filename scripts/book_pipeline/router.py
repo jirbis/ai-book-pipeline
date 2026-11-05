@@ -63,28 +63,13 @@ def valid_paths(stage: str, relative: list[str]) -> bool:
                    for p in essentials[stage]) for item in relative)
 
 
-def classify(pr: dict, changed_files: list, *, books_prefix: str = "books",
-             target_branch: str = "main") -> dict:
-    """Fail closed on ambiguity; never infer stage from a title or code PR."""
-    if not isinstance(pr, dict) or not isinstance(changed_files, list):
-        return decision("invalid_input", status="blocked")
-    if pr.get("merged") is not True:
-        return decision("not_merged")
-    if pr.get("base", {}).get("ref") != target_branch:
-        return decision("not_target_branch")
-    labels = [x.get("name") for x in pr.get("labels", []) if isinstance(x, dict)]
-    stage_labels = [x for x in labels if isinstance(x, str) and x.startswith(LABEL_PREFIX)]
-    if not stage_labels:
-        return decision("not_a_book_gate")
-    if len(stage_labels) != 1 or stage_labels[0][len(LABEL_PREFIX):] not in GATES:
-        return decision("unknown_or_multiple_gates", status="blocked")
-    stage = stage_labels[0][len(LABEL_PREFIX):]
-    # Only human-merged PRs can unlock a gate.
-    if pr.get("merged_by", {}).get("type") != "User":
-        return decision("human_merge_required", status="blocked")
-    merge_sha = pr.get("merge_commit_sha")
-    if not isinstance(merge_sha, str) or not SHA.fullmatch(merge_sha):
-        return decision("invalid_merge_sha", status="blocked")
+def validate_stage_scope(stage: str, changed_files: list,
+                         *, books_prefix: str = "books") -> dict:
+    """Shared read-only scope validator for pre-merge CI and post-merge routing."""
+    if stage not in GATES:
+        return decision("unknown_gate", status="blocked")
+    if not isinstance(changed_files, list):
+        return decision("invalid_changed_file_list", status="blocked")
     if not isinstance(books_prefix, str) or not SLUG.fullmatch(books_prefix) or books_prefix in {".", ".."}:
         return decision("invalid_books_prefix", status="blocked")
     if not changed_files or len(changed_files) > 300:
@@ -117,6 +102,59 @@ def classify(pr: dict, changed_files: list, *, books_prefix: str = "books",
 
     if not valid_paths(stage, relative):
         return decision("unexpected_or_missing_stage_artifacts", status="blocked")
+    return {"status": "ok", "book": book, "source_paths": sorted(set(relative))}
+
+
+def preflight(pr: dict, changed_files: list, *, books_prefix: str = "books",
+              target_branch: str = "main") -> dict:
+    """Require a book-labeled PR to remain within one book before merge."""
+    if not isinstance(pr, dict) or not isinstance(changed_files, list):
+        return decision("invalid_input", status="blocked")
+    labels = [item.get("name") for item in pr.get("labels", [])
+              if isinstance(item, dict)]
+    book_labels = [label for label in labels if isinstance(label, str) and
+                   label.startswith(LABEL_PREFIX)]
+    if not book_labels:
+        return decision("not_a_book_gate")
+    if pr.get("base", {}).get("ref") != target_branch:
+        return decision("not_target_branch", status="blocked")
+    if len(book_labels) != 1 or book_labels[0][len(LABEL_PREFIX):] not in GATES:
+        return decision("unknown_or_multiple_gates", status="blocked")
+    stage = book_labels[0][len(LABEL_PREFIX):]
+    scope = validate_stage_scope(stage, changed_files, books_prefix=books_prefix)
+    if scope["status"] != "ok":
+        return scope
+    return decision("book_pr_scope_valid", status="ok", gate=stage,
+                    book=scope["book"], source_paths=scope["source_paths"])
+
+
+def classify(pr: dict, changed_files: list, *, books_prefix: str = "books",
+             target_branch: str = "main") -> dict:
+    """Fail closed on ambiguity; never infer stage from a title or code PR."""
+    if not isinstance(pr, dict) or not isinstance(changed_files, list):
+        return decision("invalid_input", status="blocked")
+    if pr.get("merged") is not True:
+        return decision("not_merged")
+    if pr.get("base", {}).get("ref") != target_branch:
+        return decision("not_target_branch")
+    labels = [x.get("name") for x in pr.get("labels", []) if isinstance(x, dict)]
+    stage_labels = [x for x in labels if isinstance(x, str) and x.startswith(LABEL_PREFIX)]
+    if not stage_labels:
+        return decision("not_a_book_gate")
+    if len(stage_labels) != 1 or stage_labels[0][len(LABEL_PREFIX):] not in GATES:
+        return decision("unknown_or_multiple_gates", status="blocked")
+    stage = stage_labels[0][len(LABEL_PREFIX):]
+    # Only human-merged PRs can unlock a gate.
+    if pr.get("merged_by", {}).get("type") != "User":
+        return decision("human_merge_required", status="blocked")
+    merge_sha = pr.get("merge_commit_sha")
+    if not isinstance(merge_sha, str) or not SHA.fullmatch(merge_sha):
+        return decision("invalid_merge_sha", status="blocked")
+    scope = validate_stage_scope(stage, changed_files, books_prefix=books_prefix)
+    if scope["status"] != "ok":
+        return scope
+    book = scope["book"]
+    relative = scope["source_paths"]
     next_stage = GATES[stage]
     if next_stage == "hold":
         return decision("publication_requires_separate_human_authorization",
