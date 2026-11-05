@@ -41,12 +41,25 @@ python skills/book-authoring/scripts/book.py --books-root /tmp/author-books fina
 
 The existing publisher workflow remains unchanged. `final-check` does not run the original validator main routine because that routine creates a handoff file on failure.
 
+## GitHub-backed manuscripts
+
+For books stored in a **GitHub repository**, set `BOOKS_ROOT` to the cloned repository's `books/` directory while keeping `BOOK_PIPELINE_REPO` pointed at the book pipeline engine. The [GitHub workflow guide](references/github-workflow.md) covers both an authenticated local Git clone and an agent using its GitHub connector.
+
+The helper `scripts/github_workspace.py` supports `inspect` (read-only), `start` (opt-in local `book/<slug>/draft` branch), `commit-book` (opt-in changes **only** within `books/<slug>/`), and `push-branch` (explicitly authorized GitHub push). It never merges PRs or publishes to Amazon Kindle.
+
+```bash
+python skills/book-authoring/scripts/github_workspace.py --checkout /path/to/manuscript-repo inspect my-book
+python skills/book-authoring/scripts/github_workspace.py --checkout /path/to/manuscript-repo start my-book --confirm-write
+```
+
+Use a private manuscript repository for unpublished books. Existing `my-books/` examples in the engine repository are not modified.
+
 ## Tests
 
 Run from the repository root:
 
 ```bash
-python -m unittest discover -s tests -p 'test_book_authoring_skill.py' -v
+python -m unittest discover -s tests -p 'test_*book*.py' -v
 ```
 
 The adapter itself uses only Python's standard library. Existing phase validators import **PyYAML** via `engine/agents/tools/validation_utils.py`; install it with `python -m pip install PyYAML` before running `validate-phase` or the full integration test suite. GitHub Actions installs this engine dependency.

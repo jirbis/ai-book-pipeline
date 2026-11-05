@@ -28,3 +28,10 @@ This system delivers an end-to-end, file-first book pipeline with specialized AI
 
 ## One-command demo content
 - `engine/demo.sh` plus the quickstart script populate sample fiction and non-fiction projects with ready-made Phase 1 → Phase 2 artifacts for fast walkthroughs and screenshots. 【F:docs/getting-started.md†L7-L39】
+
+## GitHub-backed book authoring (portable skill)
+- Store book workspaces inside a GitHub repository; keep drafts, research, reviews and author voice under version control. The optional standard-library `github_workspace.py` provides inspect, explicit book-branch creation, scoped book commits and explicitly approved pushes. Agents with GitHub connector permissions can instead create/update chapter files on a dedicated book branch and open Draft PRs for review. [Workflow and safeguards](../skills/book-authoring/references/github-workflow.md)
+- GitHub collaboration does **not** automatically publish to Kindle or merge changes. The author remains in control of approval and release.
+
+## Published-book examples
+- A [book showcase](showcase.md) links to verifiable author-catalog entries, with Amazon Kindle listing URLs to be added after ASIN verification; it does not automatically attribute every book to this pipeline.
