@@ -49,4 +49,6 @@ Run from the repository root:
 python -m unittest discover -s tests -p 'test_book_authoring_skill.py' -v
 ```
 
+The adapter itself uses only Python's standard library. Existing phase validators import **PyYAML** via `engine/agents/tools/validation_utils.py`; install it with `python -m pip install PyYAML` before running `validate-phase` or the full integration test suite. GitHub Actions installs this engine dependency.
+
 The integration tests create books only in temporary directories and do not touch `my-books/`. A dedicated GitHub Actions workflow runs them on pull requests.
