@@ -62,6 +62,16 @@ python skills/book-authoring/scripts/github_workspace.py --checkout /path/to/man
 
 Use a private manuscript repository for unpublished books. Existing `my-books/` examples in the engine repository are not modified.
 
+## Before enabling GitHub book automation
+
+In the **private manuscript repository**, require the **`Book PR scope / scope`** status check for the default branch and enable **Require review from Code Owners** (or equivalent ruleset protection) for workflow and orchestration code. These protections **must be configured manually in GitHub Settings**; adding the files or merging the orchestration PR does not enable them.
+
+See the root [deployment checklist](../../README.md#enable-event-driven-book-automation-private-repositories) and [event-driven orchestration guide](../../docs/book-event-orchestration.md). Keep `BOOK_PIPELINE_ENABLED` disabled until both protections have been verified.
+Before enabling `BOOK_PIPELINE_ASSIGN_COPILOT=true`, create the `book-copilot-main`
+GitHub Environment with **Selected branches and tags → branch `main` only**,
+and store `COPILOT_USER_TOKEN` as an **Environment secret** (never a repository
+or organization secret). See the root README's full setup sequence.
+
 ## Tests
 
 Run from the repository root:

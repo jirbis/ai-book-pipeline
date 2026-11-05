@@ -1,0 +1,122 @@
+name: Book pipeline - merged PR router
+
+on:
+  # Uses workflow/script files from the trusted default branch, never a PR merge-ref.
+  pull_request_target:
+    types: [closed]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "Merged PR number to re-evaluate (idempotent)"
+        required: true
+        type: number
+
+# Enable only in a private manuscript repository (BOOK_PIPELINE_ENABLED=true).
+permissions:
+  contents: read
+  pull-requests: read
+  issues: write
+
+concurrency:
+  group: book-route-${{ github.repository }}-${{ github.event.pull_request.number || inputs.pr_number }}
+  cancel-in-progress: false
+
+jobs:
+  route:
+    # No Copilot PAT or protected Environment secret is visible to this job.
+    outputs:
+      stage_status: ${{ steps.route.outputs.status }}
+      routing_key: ${{ steps.route.outputs.idempotency_key }}
+      queued_status: ${{ steps.queue.outputs.status }}
+      issue_number: ${{ steps.queue.outputs.issue_number }}
+    if: >-
+      vars.BOOK_PIPELINE_ENABLED == 'true' &&
+      (github.event_name == 'workflow_dispatch' ||
+       github.event.pull_request.merged == true)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          # Never checkout a pull request head/merge ref in this privileged workflow.
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.11'
+      - name: Fetch authoritative PR and paginated changed paths
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number || inputs.pr_number }}
+        run: |
+          set -euo pipefail
+          gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}" > "$RUNNER_TEMP/book-pr.json"
+          gh api --paginate "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/files?per_page=100" \
+            | jq -s 'add' > "$RUNNER_TEMP/book-changes.json"
+      - name: Determine next stage without mutation
+        id: route
+        env:
+          BOOKS_PREFIX: ${{ vars.BOOKS_PREFIX }}
+        run: |
+          set -euo pipefail
+          python scripts/book_pipeline/router.py \
+            --event "$RUNNER_TEMP/book-pr.json" \
+            --files "$RUNNER_TEMP/book-changes.json" \
+            --books-prefix "${BOOKS_PREFIX:-books}" \
+            --github-output "$GITHUB_OUTPUT" \
+            > "$RUNNER_TEMP/book-decision.json"
+          jq '{status,reason,book,gate,next_stage,idempotency_key}' "$RUNNER_TEMP/book-decision.json"
+      - name: Queue next stage as a GitHub Issue
+        id: queue
+        if: steps.route.outputs.status == 'ready'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BOOKS_PREFIX: ${{ vars.BOOKS_PREFIX }}
+        run: |
+          set -euo pipefail
+          python scripts/book_pipeline/issue_worker.py \
+            --decision "$RUNNER_TEMP/book-decision.json" \
+            --repo "$GITHUB_REPOSITORY" \
+            --books-prefix "${BOOKS_PREFIX:-books}" --apply \
+            --github-output "$GITHUB_OUTPUT"
+
+  assign_copilot:
+    # Only this isolated job can receive the Copilot PAT. An Environment
+    # restricted to the main branch MUST exist before enabling this job.
+    needs: route
+    if: >-
+      needs.route.result == 'success' &&
+      needs.route.outputs.stage_status == 'ready' &&
+      needs.route.outputs.queued_status == 'created_for_manual_assignment' &&
+      vars.BOOK_PIPELINE_ASSIGN_COPILOT == 'true' &&
+      github.ref == 'refs/heads/main' &&
+      github.event.repository.default_branch == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: book-copilot-main
+    permissions:
+      contents: read
+      issues: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.11'
+      - name: Assign trusted queued Issue to Copilot
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COPILOT_USER_TOKEN: ${{ secrets.COPILOT_USER_TOKEN }}
+          QUEUED_ISSUE: ${{ needs.route.outputs.issue_number }}
+          ROUTING_KEY: ${{ needs.route.outputs.routing_key }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = 'refs/heads/main'
+          test -n "$COPILOT_USER_TOKEN"
+          python scripts/book_pipeline/issue_worker.py \
+            --repo "$GITHUB_REPOSITORY" \
+            --issue "$QUEUED_ISSUE" \
+            --expected-key "$ROUTING_KEY"
