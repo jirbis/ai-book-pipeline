@@ -71,6 +71,12 @@ class BookRoutingTests(unittest.TestCase):
         r = router.classify(make_pr(), ["books/demo/files/import/a.md", "engine/cli.py"])
         self.assertEqual(r["status"], "blocked")
 
+    def test_deletions_do_not_unlock_a_gate(self):
+        r = router.classify(make_pr(), [
+            {"filename": "books/demo/files/import/removed-note.md", "status": "removed"}
+        ])
+        self.assertEqual(r["reason"], "deleted_files_do_not_unlock_gate")
+
     def test_rename_cannot_hide_out_of_scope_previous_path(self):
         r = router.classify(make_pr(), [{
             "filename": "books/demo/files/import/a.md",

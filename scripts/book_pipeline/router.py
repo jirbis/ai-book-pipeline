@@ -96,6 +96,9 @@ def classify(pr: dict, changed_files: list, *, books_prefix: str = "books",
         if isinstance(item, str):
             paths = [item]
         elif isinstance(item, dict) and isinstance(item.get("filename"), str):
+            # A deletion-only merge must not launch an agent on missing source files.
+            if item.get("status") == "removed":
+                return decision("deleted_files_do_not_unlock_gate", status="blocked")
             paths = [item["filename"]]
             if item.get("previous_filename"):
                 paths.append(item["previous_filename"])
