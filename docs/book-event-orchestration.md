@@ -21,6 +21,9 @@ from title/body. **Exactly one known label** is required. It also checks a
 human merge (`merged_by.type=User`), merge SHA, target `main`, a single book,
 and essential artifacts for the stage. It rejects changes outside that book,
 including renamed files originating in another book, and >300 changed files.
+Deletions of files in the permitted scope may accompany genuine edits. A
+deletion-only PR, or a PR that only removes a required stage artifact without
+adding/modifying/renaming another required artifact, does not unlock the gate.
 
 No automatically created or merely closed PR advances the book.
 **Only an actual human merge** of an appropriate labeled PR does so.
@@ -46,6 +49,34 @@ configured and verified in the private manuscript repository:**
 Neither the CODEOWNERS file nor a workflow by itself enforces the policy.
 Also confirm your plan and repository type support the chosen protection
 rules before enabling an autonomous agent.
+
+### Mandatory Copilot token isolation (before enabling agent assignment)
+
+Create an Environment called **`book-copilot-main`** in the **private manuscript
+repository**, through **Settings → Environments → New environment**.
+
+1. Under **Deployment branches and tags**, select **Selected branches and tags**
+   and add **only the branch `main`**. Do not choose the unrestricted option
+   or broadly allow protected branches and tags.
+2. Add the user-to-server token as **Environment secret `COPILOT_USER_TOKEN`**.
+   Do not store this PAT in repository or organization secrets. Remove any
+   existing repository/organization-scoped copies.
+3. Confirm that the GitHub plan supports Environment secrets for private
+   repositories. If required reviewers are available, consider enabling them
+   for extra control, noting that approval pauses automatic assignment.
+4. Verify the main-branch restriction, secret isolation, branch protection,
+   required book-scope check and Code Owner review **before** setting
+   `BOOK_PIPELINE_ASSIGN_COPILOT=true`.
+
+The workflow now has two jobs: `route` creates an Issue without the PAT,
+then `assign_copilot` accesses the protected Environment **only on
+`refs/heads/main`** when assignment is explicitly enabled. It rechecks that
+the Issue is open, matches the routing marker, and was created by
+`github-actions[bot]` before making the assignment. A task that already
+exists is not re-assigned by replay. If the Environment is missing or
+unrestricted, **do not enable assignment**. The PR cannot configure
+environment settings or migrate secrets itself. See
+[GitHub Environment security](https://docs.github.com/en/actions/reference/workflows-and-actions/deployments-and-environments).
 
 ## Configure in the PRIVATE manuscript repository
 
@@ -74,13 +105,14 @@ rules before enabling an autonomous agent.
    instructions. Without any further configuration, it remains an unassigned
    issue for manual handoff and **does not call an LLM**.
 6. To actually **start Copilot automatically**, configure a paid Copilot plan,
-   enable its cloud agent for this repo, set variable
-   `BOOK_PIPELINE_ASSIGN_COPILOT=true`, and add secret
-   `COPILOT_USER_TOKEN`. The value must be a **user-to-server GitHub token**;
-   an installation token or the default Actions `GITHUB_TOKEN` alone is not
-   sufficient for this preview assignment API. This token needs the GitHub
-   permissions required for agent issue assignment (Actions, Contents, Issues
-   and Pull Requests read/write). Test against a private sample book.
+   enable its cloud agent in this repo and complete the mandatory
+   `book-copilot-main` Environment configuration above. Store
+   `COPILOT_USER_TOKEN` **only as an Environment secret**, restrict that
+   Environment to branch `main`, and only then set
+   `BOOK_PIPELINE_ASSIGN_COPILOT=true`. The token must be a user-to-server
+   GitHub token with the permissions required for Copilot issue assignment;
+   the default Actions `GITHUB_TOKEN` does not replace it. Test against a
+   private sample book before production.
 7. Copilot processes the scoped issue, and proposes a PR with the requested
    draft plan/chapter/proofreading work. The **author** must review it, ensure
    the next `book:<gate>` label is attached, and merge only if approved.
@@ -99,7 +131,8 @@ must not be processed by cloud agents without the author's approval.
   it **fails closed** instead of risking duplicate work.
 - GitHub Actions concurrency serializes runs for each PR number.
 - If issue creation succeeds but Copilot assignment fails, the issue remains
-  for **manual recovery**. No silent retry or duplicate work.
+  for **manual recovery**. No silent retry or duplicate work. Queue creation
+  and privileged assignment are separate jobs; no PAT is exposed to routing.
 - Manual replay: GitHub Actions → Book pipeline - merged PR router → Run
   workflow → existing merged PR number. It is idempotent.
 
@@ -112,12 +145,15 @@ must not be processed by cloud agents without the author's approval.
   number; the main-branch router fetches authoritative metadata.
 - A separate read-only `pull_request_target` status check
   (`Book PR scope / scope`) validates a book-labeled PR's paths before
-  merge, including rename origins and deleted-only source artifacts.
+  merge, including rename origins and deletion-only PRs (while permitting
+  scoped deletions alongside valid added/modified stage artifacts).
   Protect `main` by requiring this status; otherwise it is advisory.
-- The router has no write/LLM capability. Only the worker can create an issue,
-  and only if the repo automation variable is enabled; assignment needs another
-  opt-in variable and a user token. The main workflow permissions are
-  `contents: read`, `pull-requests: read`, `issues: write`.
+- The router has no write/LLM capability. The unprivileged `route` job queues
+  Issues using the limited `GITHUB_TOKEN` and **never receives the Copilot PAT**.
+  Only the separate `assign_copilot` Environment job can use that token,
+  on the `main` execution ref, with `contents: read` and `issues: read`.
+  The workflow's routing permissions include `contents: read`,
+  `pull-requests: read` and `issues: write` for queue creation.
 - Book files are never modified directly by the router/worker.
 - An issue with a matching task marker could be planted by a writer with
   Issue permissions and suppress an automated task; review task ownership

@@ -35,12 +35,18 @@ class BookDocumentationTests(unittest.TestCase):
         self.assertIn("Require review from Code Owners", readme)
         self.assertIn("BOOK_PIPELINE_ENABLED=true", readme)
         self.assertIn("manual GitHub repository administration steps", readme)
+        self.assertIn("book-copilot-main", readme)
+        self.assertIn("Environment secrets", readme)
+        self.assertIn("main", readme)
 
     def test_orchestration_guide_requires_protection_before_activation(self):
         guide = (REPO / "docs/book-event-orchestration.md").read_text(encoding="utf-8")
         self.assertIn("Do not set", guide)
         self.assertIn("Book PR scope / scope", guide)
         self.assertIn("Require review from Code Owners", guide)
+        self.assertIn("Selected branches and tags", guide)
+        self.assertIn("Environment secret", guide)
+        self.assertIn("deletion-only", guide)
 
 
 if __name__ == "__main__":
