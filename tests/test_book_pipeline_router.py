@@ -75,7 +75,23 @@ class BookRoutingTests(unittest.TestCase):
         r = router.classify(make_pr(), [
             {"filename": "books/demo/files/import/removed-note.md", "status": "removed"}
         ])
-        self.assertEqual(r["reason"], "deleted_files_do_not_unlock_gate")
+        self.assertEqual(r["reason"], "missing_active_stage_artifacts")
+
+    def test_valid_edit_with_scoped_deletion_is_allowed(self):
+        r = router.classify(make_pr(), [
+            {"filename": "books/demo/files/import/old.md", "status": "removed"},
+            {"filename": "books/demo/files/import/new.md", "status": "added"},
+        ])
+        self.assertEqual(r["status"], "ready")
+        self.assertEqual(r["book"], "demo")
+
+    def test_deletion_plus_nonessential_edit_does_not_unlock_gate(self):
+        r = router.classify(make_pr("plan"), [
+            {"filename": "books/demo/config/outline.md", "status": "removed"},
+            {"filename": "books/demo/config/PROJECT.md", "status": "modified"},
+        ])
+        self.assertEqual(r["status"], "blocked")
+        self.assertEqual(r["reason"], "missing_active_stage_artifacts")
 
     def test_rename_cannot_hide_out_of_scope_previous_path(self):
         r = router.classify(make_pr(), [{

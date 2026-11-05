@@ -77,13 +77,13 @@ def validate_stage_scope(stage: str, changed_files: list,
 
     book = None
     relative = []
+    active_relative = []
     for item in changed_files:
         if isinstance(item, str):
             paths = [item]
         elif isinstance(item, dict) and isinstance(item.get("filename"), str):
-            # A deletion-only merge must not launch an agent on missing source files.
-            if item.get("status") == "removed":
-                return decision("deleted_files_do_not_unlock_gate", status="blocked")
+            # Deletions may accompany valid edits; only surviving artifacts
+            # can satisfy a stage's required output.
             paths = [item["filename"]]
             if item.get("previous_filename"):
                 paths.append(item["previous_filename"])
@@ -98,10 +98,21 @@ def validate_stage_scope(stage: str, changed_files: list,
             if book is not None and parts[1] != book:
                 return decision("multiple_books", status="blocked")
             book = parts[1]
-            relative.append("/".join(parts[2:]))
+            scoped_path = "/".join(parts[2:])
+            relative.append(scoped_path)
+            # A renamed file contributes only its destination, not its
+            # removed previous path, to the list of surviving artifacts.
+            if filename == paths[0] and (
+                    not isinstance(item, dict) or item.get("status") != "removed"):
+                active_relative.append(scoped_path)
 
+    # All changed files must belong to this book and meet the stage's
+    # allowlist, including deleted files. But a deletion alone cannot
+    # unlock a gate: a required artifact must be added/modified/renamed.
     if not valid_paths(stage, relative):
         return decision("unexpected_or_missing_stage_artifacts", status="blocked")
+    if not valid_paths(stage, active_relative):
+        return decision("missing_active_stage_artifacts", status="blocked")
     return {"status": "ok", "book": book, "source_paths": sorted(set(relative))}
 
 

@@ -57,6 +57,13 @@ class BookScopeSecurityTests(unittest.TestCase):
                     "status": "removed"}]
         self.assertEqual(router.preflight(pr(), removed)["status"], "blocked")
 
+    def test_preflight_allows_valid_change_with_scoped_deletion(self):
+        changes = [
+            {"filename": "books/demo/files/import/old.md", "status": "removed"},
+            {"filename": "books/demo/files/import/new.md", "status": "added"},
+        ]
+        self.assertEqual(router.preflight(pr(), changes)["status"], "ok")
+
     def test_preflight_wrong_label_and_base_fail_closed(self):
         self.assertEqual(router.preflight(pr("book:unknown"), [])["status"], "blocked")
         self.assertEqual(router.preflight(pr(base="feature"), [
