@@ -77,6 +77,52 @@ class BookIssueTests(unittest.TestCase):
         self.assertEqual(result["status"], "assigned_to_copilot")
         self.assertEqual([x[0] for x in api.calls], ["find", "create", "assign"])
 
+    def test_assign_existing_copilot_checks_bot_marker_and_issue_state(self):
+        api = FakeAPI()
+        marker = "<!-- book-pipeline-task:" + "c" * 20 + " -->"
+        api.get_issue = lambda number: {
+            "number": number, "state": "open", "body": "Task\\n" + marker,
+            "user": {"login": "github-actions[bot]"}, "assignees": [],
+            "html_url": "https://github.com/demo/books/issues/24",
+        }
+        result = worker.assign_existing_copilot_task(
+            "demo/books", 24, "c" * 20, copilot_token="test", api=api)
+        self.assertEqual(result["status"], "assigned_to_copilot")
+        self.assertEqual(api.calls[-1][0], "assign")
+
+    def test_assign_existing_refuses_untrusted_or_modified_issue(self):
+        api = FakeAPI()
+        marker = "<!-- book-pipeline-task:" + "c" * 20 + " -->"
+        issue = {
+            "number": 24, "state": "open", "body": marker,
+            "user": {"login": "attacker"}, "assignees": [],
+        }
+        api.get_issue = lambda number: issue
+        with self.assertRaises(ValueError):
+            worker.assign_existing_copilot_task(
+                "demo/books", 24, "c" * 20, copilot_token="test", api=api)
+        issue["user"]["login"] = "github-actions[bot]"
+        issue["body"] = "Wrong marker"
+        with self.assertRaises(ValueError):
+            worker.assign_existing_copilot_task(
+                "demo/books", 24, "c" * 20, copilot_token="test", api=api)
+        issue["body"] = marker
+        issue["state"] = "closed"
+        with self.assertRaises(ValueError):
+            worker.assign_existing_copilot_task(
+                "demo/books", 24, "c" * 20, copilot_token="test", api=api)
+        self.assertFalse(api.calls)
+
+    def test_assign_existing_requires_pat_and_valid_routing_key(self):
+        api = FakeAPI()
+        with self.assertRaises(ValueError):
+            worker.assign_existing_copilot_task(
+                "demo/books", 24, "c" * 20, copilot_token="", api=api)
+        with self.assertRaises(ValueError):
+            worker.assign_existing_copilot_task(
+                "demo/books", 24, "wrong", copilot_token="test", api=api)
+        self.assertFalse(api.calls)
+
     def test_invalid_plan_rejected_before_network(self):
         for invalid in (
             {**decision(), "status": "skip"},

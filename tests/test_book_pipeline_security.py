@@ -114,11 +114,26 @@ class BookScopeSecurityTests(unittest.TestCase):
         self.assertNotIn("secrets.", content)
         self.assertIn("ref: ${{ github.event.repository.default_branch }}", content)
 
-    def test_copilot_token_only_loaded_when_enabled(self):
+    def test_copilot_token_only_in_main_restricted_environment_job(self):
         workflow = (REPO / ".github/workflows/book-transition-router.yml").read_text()
-        self.assertEqual(workflow.count("secrets.COPILOT_USER_TOKEN"), 1)
-        self.assertIn("vars.BOOK_PIPELINE_ASSIGN_COPILOT == 'true'", workflow)
-        self.assertIn("vars.BOOK_PIPELINE_ASSIGN_COPILOT != 'true'", workflow)
+        route, assignment = workflow.split("\n  assign_copilot:", 1)
+        self.assertNotIn("COPILOT_USER_TOKEN", route)
+        self.assertEqual(assignment.count("secrets.COPILOT_USER_TOKEN"), 1)
+        self.assertIn("environment:\n      name: book-copilot-main", assignment)
+        self.assertIn("vars.BOOK_PIPELINE_ASSIGN_COPILOT == 'true'", assignment)
+        self.assertIn("github.ref == 'refs/heads/main'", assignment)
+        self.assertIn("github.event.repository.default_branch == 'main'", assignment)
+        self.assertIn("ref: ${{ github.event.repository.default_branch }}", assignment)
+        self.assertIn("persist-credentials: false", assignment)
+        self.assertIn("queued_status == 'created_for_manual_assignment'", assignment)
+        self.assertIn("issues: read", assignment)
+
+    def test_router_always_queues_without_copilot_credentials(self):
+        workflow = (REPO / ".github/workflows/book-transition-router.yml").read_text()
+        route = workflow.split("\n  assign_copilot:", 1)[0]
+        self.assertIn("--github-output", route)
+        self.assertNotIn("--assign-copilot", route)
+        self.assertIn("id: queue", route)
 
     def test_codeowners_covers_privileged_files(self):
         content = (REPO / ".github/CODEOWNERS").read_text()
